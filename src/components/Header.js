@@ -12,7 +12,7 @@ function Header() {
       <div className="flex justify-between items-center px-4 py-4 max-w-7xl mx-auto">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-white-smoke-1 rounded-lg flex items-center justify-center text-emerald-500 font-bold text-xl">
+          <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-emerald-500 font-bold text-xl">
             P
           </div>
           <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
@@ -38,7 +38,7 @@ function Header() {
             Assessment
           </Link>
          
-         
+
           <Link
             href="/about-us"
             className="hover:text-emerald-600 transition-colors"
