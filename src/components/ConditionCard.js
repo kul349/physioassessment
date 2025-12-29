@@ -16,7 +16,7 @@ const ConditionCard = ({ Icon, title, description }) => {
       <p className="text-slate-600 leading-relaxed text-sm">{description}</p>
 
       <div className="mt-6 flex items-center text-sm font-semibold text-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity">
-        <Link href="/test"> Learn more</Link>
+        <Link href="/test" className="cursor-pointer"> Learn more</Link>
         <svg
           className="w-4 h-4 ml-1"
           fill="none"
