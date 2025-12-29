@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 const ConditionCard = ({ Icon, title, description }) => {
   return (
     <div className="group relative bg-white p-8 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
@@ -15,7 +16,7 @@ const ConditionCard = ({ Icon, title, description }) => {
       <p className="text-slate-600 leading-relaxed text-sm">{description}</p>
 
       <div className="mt-6 flex items-center text-sm font-semibold text-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity">
-        Learn more
+        <Link href="/test"> Learn more</Link>
         <svg
           className="w-4 h-4 ml-1"
           fill="none"
