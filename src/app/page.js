@@ -5,6 +5,10 @@ import Link from "next/link";
 import Head from "next/head";
 import { ArrowRight, Play } from "lucide-react";
 import Image from "next/image";
+import Information from "@/components/Information";
+import CommonConditionsSection from "@/components/CommonConditionsSection";
+import PhysioFAQ from "@/components/FAQ";
+import DownloadSection from "@/components/DownloadSection";
 
 
 
@@ -99,7 +103,7 @@ export default function HomePage() {
 
                     <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
                       <Link
-                        href="/page/test-details"
+                        href="/test"
                         className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-white text-emerald-900 hover:scale-105 active:scale-95 font-bold tracking-wide rounded-full shadow-xl shadow-black/10 transition-all duration-300"
                       >
                         <span> Explore Physiotherapy Tests</span>
@@ -146,6 +150,13 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+
+        <main id="learning">
+          <Information />
+          <CommonConditionsSection />
+          <DownloadSection />
+          <PhysioFAQ />
+        </main>
       </div>
     </>
   );
