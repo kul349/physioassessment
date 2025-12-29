@@ -1,0 +1,2488 @@
+export const tests=[
+  {
+    id: 1,
+    region: "Shoulder",
+    test_name: "Apprehension Test (Anterior)",
+    slug: "apprehension-test",
+    purpose:
+      "The Apprehension test is generally used to test the integrity of the glenohumeral joint capsule, or to assess glenohumeral instability in an anterior direction.",
+    starting_position:
+      "Patient is supine. Shoulder is abducted to 90° and elbow is flexed to 90°.",
+    procedure:
+      "The patient should be position in supine. The therapist will flex the patient's elbow to 90 degrees and abducts the patient's shoulder to 90 degrees in sagittal plane and 180 degrees in frontal plane (horizontal abduction), maintaining neutral rotation. The examiner then slowly applies an external rotation force to the arm to 90 degrees while carefully monitoring the patient. Patient apprehension from this maneuver, not pain, is considered a positive test. Pain with the maneuver, but not apprehension may indicate a pathology other than instability, such as posterior impingement of the rotator cuff.",
+    positive_test_criteria:
+      "The patient exhibits **apprehension, anxiety, or guarding** (a feeling that the shoulder is about to dislocate) and reports reproduction of their pain, causing them to stop the movement.",
+    grading_or_notes:
+      "The test puts the anterior capsule on stretch. A positive test indicates dynamic instability.",
+    youtube: "https://www.youtube.com/watch?v=_JA-qvXcUdQ&t=2s",
+  },
+  {
+    id: 2,
+    region: "Shoulder",
+    test_name: "Hawkins-Kennedy Test",
+    slug: "hawkins-kennedy-test",
+    purpose:
+      "To detect **subacromial impingement syndrome**, specifically involving the supraspinatus tendon or biceps long head tendon.",
+    starting_position:
+      "Patient is sitting or standing. Shoulder is flexed to 90° and elbow is flexed to 90°.",
+    procedure:
+      "The examiner passively **internally rotates the shoulder** while maintaining 90° of flexion.",
+    positive_test_criteria:
+      "The reproduction of the patient's **pain in the subacromial area** (top/front of the shoulder).",
+    grading_or_notes:
+      "Internal rotation pushes the greater tuberosity against the coracoacromial ligament, narrowing the subacromial space. ",
+    youtube: "https://youtu.be/6GkKB2oXi3o?si=u6-EWGkdmuikOKzq",
+  },
+  {
+    id: 3,
+    region: "Shoulder",
+    test_name: "Jobe's Test (Empty Can Test)",
+    slug: "jobe-test",
+    purpose:
+      "To assess for a tear or pathology of the **Supraspinatus muscle or tendon**.",
+    starting_position:
+      "Patient is sitting or standing. Shoulder is abducted to 90° in the **scapular plane** (30° horizontal adduction). The arm is maximally **internally rotated** (thumb pointing down, simulating an 'empty can').",
+    procedure:
+      "The therapist applies an external rotation force to the shoulder. If the patient reports apprehension, the Apprehension Test is considered positive.The therapist then applies a posteriorly directed force to the shoulder. If the patient's apprehension or pain decreases, the Jobe Relocation Test is considered positive.It's crucial to return the arm to a neutral position before releasing the posterior force to prevent shoulder dislocation.",
+    positive_test_criteria:
+      "The patient reports a sudden **onset of pain** at the greater tuberosity/deltoid insertion, or demonstrates **inability/marked weakness** compared to the unaffected side.",
+    grading_or_notes:
+      "The 'empty can' position is believed to best isolate the supraspinatus muscle. ",
+    youtube: "https://youtu.be/DeO50UTxwoo?si=KeuMZVdnJMEgRoa9",
+  },
+  {
+    id: 4,
+    region: "Shoulder",
+    test_name: "Sulcus Sign",
+    slug: "sulcus-sign",
+    purpose:
+      "The sulcus test is used to assess the glenohumeral joint for inferior instability, due to laxity of the superior glenohumeral ligament and coracohumeral ligament.It was first described by Neer and Foster in 1980 to examine multidirectional instability",
+    starting_position:
+      "Patient is sitting or standing with the arm at the side.",
+    procedure:
+      "This test can be performed with the patient sitting, standing, or in a supine position with their shoulder in neutral (0 degrees rotation). The examiner then pulls the distal part of the humerus in a caudal direction. However, the sitting position with arms by the side is considered to provide more reliable results as suggested by McFarland et al. The test is considered positive when the appearance of sulcus in the subacromial space is more than 1cm as the humeral head translates in the inferior direction.To enhance the diagnostic accuracy, the test should be performed twice, first with the arm in neutral rotation and second with the arm in external rotation. Inferior translation should be the same in both positions. An increased degree of inferior translation with the arm in external rotation suggests a potential lesion of the rotator interval.",
+    positive_test_criteria:
+      "The visible presence of a **dimple or 'sulcus'** (a groove) beneath the acromion. The size of the sulcus is graded (Grade I <1cm, Grade II 1-2cm, Grade III >2cm).",
+    grading_or_notes:
+      "Indicates excessive inferior laxity. A positive test is often associated with MDI. ",
+    youtube: "https://youtu.be/vV7u2JtdYWI?si=EofpmzQ2eZp9d-DB",
+  },
+  {
+    id: 5,
+    region: "Shoulder",
+    test_name: "Yergason's Test",
+    slug: "yergason-test",
+    purpose:
+      "To assess for **pathology of the Long Head of the Biceps tendon** (e.g., instability, tear, or tendinopathy) and its stability in the bicipital groove.",
+    starting_position:
+      "Patient is sitting or standing. Elbow is flexed to 90°, forearm is pronated (palm down).",
+    procedure:
+      "The patient is instructed to actively **supinate the forearm** and **externally rotate the shoulder** against the examiner's strong resistance.",
+    positive_test_criteria:
+      "Reproduction of **pain localized to the bicipital groove** (anterior shoulder) or a **palpable snapping/clicking** of the biceps tendon out of the groove (subluxation).",
+    grading_or_notes:
+      "The combination of movements maximally stresses the tendon and the transverse humeral ligament. ",
+    youtube: "https://youtu.be/KxuskHhckK0?si=4obnNXAl8voCW2LT",
+  },
+  {
+    id: 6,
+    region: "Elbow",
+    test_name: "Elbow Quadrant Tests",
+    slug: "elbow-quardrant-test",
+    purpose:
+      "A generalized term for assessing the **end-feel and range of motion** of the elbow joint in flexion and extension, often used to assess stiffness or loose bodies.",
+    starting_position: "Patient is supine. Examiner is at the head of the bed.",
+    procedure:
+      "The examiner applies overpressure into **maximal elbow flexion and maximal extension**, while also introducing a slight valgus and varus stress near end-range to explore the entire joint quadrant.",
+    positive_test_criteria:
+      "The reproduction of pain, restriction of motion, or an abnormal 'springy' or 'bony' end-feel compared to the unaffected side.",
+    grading_or_notes:
+      "A bony end-feel can suggest osteophytes or loose bodies (joint mice).",
+    youtube: "https://www.youtube.com/watch?v=3xF9_5fbJ8A",
+  },
+  {
+    id: 7,
+    region: "Elbow",
+    test_name: "Cozen's Test",
+    slug: "cozen-test",
+    purpose:
+      "To detect **Lateral Epicondylitis** (Tennis Elbow), which is tendinopathy of the **Extensor Carpi Radialis Brevis (ECRB)** origin.",
+    starting_position:
+      "Patient is sitting or standing. Elbow is slightly flexed. Forearm is pronated.",
+    procedure:
+      "The patient actively **extends the wrist** and is asked to maintain this position against the strong, opposing resistance applied by the examiner.",
+    positive_test_criteria:
+      "Sharp **pain is reproduced precisely over the lateral epicondyle** of the elbow.",
+    grading_or_notes:
+      "The resisted extension stresses the common extensor tendon origin, causing pain if inflamed. ",
+    youtube: "https://youtu.be/8K7jzDIUpLI?si=qH7Gk_c5X0K2SLQ_",
+  },
+  {
+    id: 8,
+    region: "Elbow",
+    test_name: "Mill's Test",
+    slug: "mill-test",
+    purpose:
+      "To detect **Lateral Epicondylitis** (Tennis Elbow) by passively stressing the common extensor tendon origin.",
+    starting_position: "Patient is sitting or standing. Elbow is extended.",
+    procedure:
+      "The examiner passively moves the patient's arm through the following sequence: **1) Pronate the forearm** maximally. **2) Flex the wrist** fully. **3) Fully extend the elbow**.",
+    positive_test_criteria:
+      "Sharp **pain is reproduced precisely over the lateral epicondyle** of the elbow.",
+    grading_or_notes:
+      "This maneuver maximally stretches the ECRB and the common extensor tendon origin across the lateral epicondyle. ",
+    youtube: "https://youtu.be/r_A84ox9JRM?si=fylalSn2sn4fzLYe",
+  },
+  {
+    id: 9,
+    region: "Elbow",
+    test_name: "Tinel's Test (at the Elbow)",
+    slug: "tinel-test",
+    purpose:
+      "To assess for irritation, regeneration, or entrapment of the **Ulnar Nerve** at the elbow (**Cubital Tunnel Syndrome**).",
+    starting_position:
+      "Patient is sitting or standing with the elbow slightly flexed.",
+    procedure:
+      "The examiner gently and repeatedly **taps over the ulnar nerve** in the cubital tunnel (the groove between the olecranon and the medial epicondyle).",
+    positive_test_criteria:
+      "Reproduction of **paresthesia (tingling) or electric shooting pain** in the ulnar nerve distribution (ring and little fingers) distal to the point of tapping.",
+    grading_or_notes:
+      "Tapping a compressed or irritated nerve causes the distal paresthesia. ",
+    youtube: "https://youtu.be/ASRatLbu8i0?si=dx1tMWOqHAe08O3D",
+  },
+  {
+    id: 10,
+    region: "Elbow",
+    test_name: "Valgus Stress Test (Elbow)",
+    slug: "valgus-stress-test",
+    purpose:
+      "To assess the integrity of the **Ulnar Collateral Ligament (UCL)** (Medial Collateral Ligament), which resists valgus forces.",
+    starting_position:
+      "Patient is sitting or supine. The elbow is positioned in **20° to 30° of flexion** (unlocked position).",
+    procedure:
+      "The examiner applies a **valgus stress** (force directed laterally to medially) across the elbow joint while stabilizing the humerus.",
+    positive_test_criteria:
+      "**Excessive medial joint line gapping** compared to the unaffected side and/or reproduction of the patient's **medial elbow pain**.",
+    grading_or_notes:
+      "This test is crucial for diagnosing UCL sprains, common in throwing athletes. ",
+    youtube: "https://youtu.be/3xF9_5fbJ8A?si=n3d8GXMDRlPUD7-_",
+  },
+  {
+    id: 11,
+    region: "Elbow",
+    test_name: "Wringing test for lateral epicondylitis",
+    slug: "wringing-test-for-lateral-epicondylitis",
+    purpose:
+      "A functional test to provoke pain associated with **Lateral Epicondylitis** (Tennis Elbow).",
+    starting_position: "Patient is sitting or standing.",
+    procedure:
+      "The patient is asked to mimic the action of **wringing out a towel** (using wrist extension and pronation/supination).",
+    positive_test_criteria:
+      "The reproduction of **pain over the lateral epicondyle** of the elbow during the wringing action.",
+    grading_or_notes:
+      "This test is primarily for the **Elbow** region, as it stresses the common extensor origin.",
+    youtube: "https://youtu.be/oaHLn2uT39c?si=gQVWG5ld8SrWixRQ",
+  },
+  {
+    id: 12,
+    region: "Wrist/Hand",
+    test_name: "Beighton Score",
+    slug: "beighton-score",
+    purpose:
+      "To quantify **generalized joint hypermobility** (laxity) across the body. The wrist/hand components assess passive joint laxity.",
+    starting_position: "Patient is sitting or standing.",
+    procedure:
+      "The components relevant to the hand/wrist are: **1)** Passive dorsiflexion of the little finger (MCP joint) beyond 90° (1 point per side). **2)** Passive apposition of the thumb to the forearm (1 point per side).",
+    positive_test_criteria:
+      "A positive test is indicated by meeting the specified range criteria for each component (e.g., thumb touching the forearm). A total score of 4/9 or more usually indicates generalized hypermobility.",
+    grading_or_notes:
+      "This test is a screening tool for connective tissue disorders or congenital laxity. ",
+    youtube: "https://youtu.be/ZwWts_P-Xws?si=o-6nj5KcmsxrHbqW",
+  },
+  {
+    id: 13,
+    region: "Wrist/Hand",
+    test_name: "Bunnell-Littler Test (or Finochietto-Bunnell Test)",
+    slug: "bunnell-littler-test",
+    purpose:
+      "To differentiate between **Intrinsic Muscle tightness** (interossei and lumbricals) and **Capsular restriction** at the proximal interphalangeal (PIP) joint.",
+    starting_position:
+      "Patient is sitting. The PIP joint to be tested is held in extension.",
+    procedure:
+      "**Phase 1 (Intrinsic Tightness):** The metacarpophalangeal (MCP) joint is held in **extension** while the examiner attempts to passively flex the PIP joint. **Phase 2 (Capsular/Control):** The MCP joint is then held in **slight flexion** while the examiner attempts to passively flex the PIP joint again.",
+    positive_test_criteria:
+      "If PIP flexion is **increased** when the MCP is flexed (Phase 2), the cause is **Intrinsic Muscle Tightness**. If PIP flexion **remains restricted** in both positions, the cause is **Capsular Restriction**.",
+    grading_or_notes:
+      "Flexing the MCP joint relaxes the intrinsic muscles; if motion improves, the muscles are the problem.",
+    youtube: "https://youtu.be/-WAETmImfCA?si=WMy30UJbf2-uEtKA",
+  },
+  {
+    id: 14,
+    region: "Wrist/Hand",
+    test_name: "De Quervain's Tenosynovitis",
+    slug: "de-quervain-tenosynovitis",
+    purpose:
+      "This is the **condition name** (inflammation of the APL and EPB tendons), not a specific test. The Finkelstein Test is the primary diagnostic test.",
+    starting_position: "N/A",
+    procedure: "N/A",
+    positive_test_criteria: "N/A",
+    grading_or_notes:
+      "This condition involves the tendons in the first dorsal compartment of the wrist.",
+    youtube: "https://www.youtube.com/watch?v=8WBVXBx34W0",
+  },
+  {
+    id: 15,
+    region: "Wrist/Hand",
+    test_name: "Elson Test",
+    slug: "elson-test",
+    purpose:
+      "To assess the integrity of the **Central Slip** of the Extensor Digitorum Communis (EDC) tendon, rupture of which leads to a Boutonniere deformity.",
+    starting_position:
+      "Patient is sitting. Hand is placed on a table with the finger being tested dangling over the edge.",
+    procedure:
+      "The examiner holds the patient's finger, stabilizing the proximal interphalangeal (PIP) joint in 90° of flexion. The patient is instructed to **actively extend the PIP joint** against the examiner's resistance.",
+    positive_test_criteria:
+      "If the PIP joint remains flexed but the examiner feels that the **Distal Interphalangeal (DIP) joint forcefully hyperextends**, it suggests a central slip rupture.",
+    grading_or_notes:
+      "The force is transmitted to the lateral bands, causing DIP hyperextension, indicating loss of central slip function.",
+    youtube: "https://www.youtube.com/watch?v=G9HY0qXWUvE",
+  },
+  {
+    id: 16,
+    region: "Wrist/Hand",
+    test_name: "Figure of Eight Measurement of the Hand",
+    slug: "figure-of-eight-measurement-of-the-hand",
+    purpose:
+      "To quantitatively measure and track **hand and wrist edema (swelling)** over time, often used post-injury or post-surgery.",
+    starting_position: "Patient is seated. Hand is resting on a table.",
+    procedure:
+      "A measuring tape is used in a specific 'figure of eight' pattern: starting at the radial styloid, diagonally across the dorsal hand to the 5th MCP head, diagonally across the palmar surface to the 2nd MCP head, and back across the dorsum to the radial styloid.",
+    positive_test_criteria:
+      "An **increase in measurement (circumference)** compared to the previous measurement or the opposite, unaffected hand indicates edema.",
+    grading_or_notes:
+      "The measurement should be performed in a consistent manner and position to ensure reliability.",
+    youtube: "https://www.youtube.com/watch?v=7VIldqF2orY",
+  },
+  {
+    id: 17,
+    region: "Wrist/Hand",
+    test_name: "Finkelstein Test",
+    slug: "finkelstein-test",
+    purpose:
+      "To diagnose **De Quervain's Tenosynovitis** (tendinosis of APL and EPB tendons).",
+    starting_position:
+      "Patient is sitting or standing with the forearm supported.",
+    procedure:
+      "The patient is asked to **make a fist** with their thumb tucked inside the fingers. The examiner then passively and sharply **ulnar deviates the wrist**.",
+    positive_test_criteria:
+      "Sharp **pain over the radial styloid** and along the course of the APL and EPB tendons.",
+    grading_or_notes:
+      "This test places maximum stretch on the inflamed tendons. ",
+    youtube: "https://www.youtube.com/watch?v=8WBVXBx34W0",
+  },
+  {
+    id: 18,
+    region: "Wrist/Hand",
+    test_name: "Flick Sign",
+    slug: "flick-sign",
+    purpose:
+      "A symptom-based history sign used to screen for **Carpal Tunnel Syndrome (CTS)**.",
+    starting_position:
+      "N/A (This is a historical cue, not a physical exam test).",
+    procedure:
+      "The clinician asks the patient if they find themselves **'flicking'** their wrist (shaking or moving the hand/wrist vigorously) in an attempt to relieve symptoms of numbness, tingling, or pain.",
+    positive_test_criteria:
+      "The patient reports the use of a **'flicking' motion** as a way to alleviate numbness/paresthesia in the median nerve distribution.",
+    grading_or_notes:
+      "This has a high reported sensitivity in history-taking for CTS, as the flicking motion is thought to briefly change the pressure within the carpal tunnel.",
+    youtube: "https://www.youtube.com/watch?v=QX2h4haky2I",
+  },
+  {
+    id: 19,
+    region: "Wrist/Hand",
+    test_name: "Phalen’s Test",
+    slug: "phalen-test",
+    purpose:
+      "To provoke symptoms associated with **Carpal Tunnel Syndrome (CTS)**, which is median nerve entrapment at the wrist.",
+    starting_position: "Patient is sitting or standing.",
+    procedure:
+      "The patient is instructed to passively and maximally **flex both wrists** by pushing the dorsal surfaces of the hands together. This position is held for **60 seconds**.",
+    positive_test_criteria:
+      "The reproduction of **numbness and tingling** in the median nerve distribution (thumb, index, middle, and radial half of the ring finger) within 60 seconds.",
+    grading_or_notes:
+      "Wrist flexion increases pressure within the carpal tunnel, compressing the median nerve.",
+    youtube: "https://www.youtube.com/watch?v=rQJNrkq7tIs",
+  },
+  {
+    id: 20,
+    region: "Wrist/Hand",
+    test_name: "Scaphoid Shift Test (Watson Test)",
+    slug: "scaphoid-shift-test",
+    purpose:
+      "To assess for instability of the **scaphoid** bone, often due to a tear of the **scapholunate ligament**.",
+    starting_position:
+      "Patient is sitting. Examiner's thumb is placed over the volar aspect of the scaphoid.",
+    procedure:
+      "The examiner moves the wrist from **ulnar deviation/extension** to **radial deviation/flexion** while applying a constant **dorsal pressure** on the scaphoid tubercle with the thumb.",
+    positive_test_criteria:
+      "A painful **'clunk' or 'shift'** is felt as the scaphoid subluxates dorsally over the rim of the radius and then relocates.",
+    grading_or_notes: "A painful clunk suggests scapholunate instability.",
+    youtube: "https://www.youtube.com/watch?v=xBBUwsVi2-o",
+  },
+  {
+    id: 21,
+    region: "Wrist/Hand",
+    test_name: "Scapholunate Ligament",
+    slug: "scapholunate-ligament",
+    purpose:
+      "This is a **ligament/structure name**, not a specific test. Its integrity is assessed primarily by the Scaphoid Shift (Watson) Test.",
+    starting_position: "N/A",
+    procedure: "N/A",
+    positive_test_criteria: "N/A",
+    grading_or_notes:
+      "Tear of this ligament is a common cause of wrist instability.",
+    youtube: "https://www.youtube.com/watch?v=bt5ShQ6547g",
+  },
+  {
+    id: 22,
+    region: "Wrist/Hand",
+    test_name: "Sollerman Hand Function Test",
+    slug: "sollerman-hand-function-test",
+    purpose:
+      "A battery of tests used to measure **functional performance** of the hand and wrist, especially after nerve or tendon injuries.",
+    starting_position: "Patient is seated at a table.",
+    procedure:
+      "The patient performs **20 standard tasks** that simulate activities of daily living (ADLs), such as buttoning a shirt, picking up coins, turning a key, and tying a knot. Each task is scored based on time and quality.",
+    positive_test_criteria:
+      "N/A (This is a graded measure, not a positive/negative test). The final score reflects the patient's level of impairment or functional capacity, with scores ranging from 0 (worst) to 80 (best).",
+    grading_or_notes:
+      "It is an outcome measure used to track recovery and compare functional deficits.",
+    youtube: "https://www.youtube.com/watch?v=adaoXVzp3ks",
+  },
+  {
+    id: 23,
+    region: "Wrist/Hand",
+    test_name: "Supination Lift Test",
+    slug: "supination-left-test",
+    purpose:
+      "To assess for a tear of the **Triangular Fibrocartilage Complex (TFCC)**, which is crucial for distal radioulnar joint (DRUJ) stability.",
+    starting_position:
+      "Patient is sitting. Elbows are flexed 90° with the forearms in supination (palms up).",
+    procedure:
+      "The patient is instructed to actively lift a **heavy object** or push up against the bottom of a table using their hands while maintaining full supination.",
+    positive_test_criteria:
+      "Sharp **pain localized to the ulnar side of the wrist** (over the TFCC) and a feeling of weakness.",
+    grading_or_notes:
+      "This test loads the TFCC by placing compressive and rotational forces on the distal radioulnar joint.",
+    youtube: "https://www.youtube.com/watch?v=BU4h2M5eSus",
+  },
+  {
+    id: 24,
+    region: "Wrist/Hand",
+    test_name: "The Allen Test for Blood Flow",
+    slug: "the-allen-test-for-blood-flow",
+    purpose:
+      "To assess the **patency (openness) of the radial and ulnar arteries** and determine the primary blood supply to the hand.",
+    starting_position: "Patient is sitting. Arm is resting comfortably.",
+    procedure:
+      "The patient makes a tight fist. The examiner compresses both the **radial and ulnar arteries**. The patient opens the hand. The examiner then releases **one artery** (e.g., ulnar) and notes the time for the hand color to return.",
+    positive_test_criteria:
+      "A **delayed or incomplete return of color** to the hand after releasing one artery, indicating poor collateral circulation from that artery.",
+    grading_or_notes:
+      "A return of color within 5-7 seconds is usually considered normal. ",
+    youtube: "https://www.youtube.com/watch?v=D1tJO0RW9UM",
+  },
+  {
+    id: 25,
+    region: "Wrist/Hand",
+    test_name: "Thumb CMC Grind Test",
+    slug: "thumb-cmc-gring-test",
+    purpose:
+      "To assess for **Osteoarthritis (OA)** in the **Carpometacarpal (CMC) joint** of the thumb (Base of the thumb).",
+    starting_position: "Patient is sitting. Forearm is supported.",
+    procedure:
+      "The examiner grasps the patient's thumb metacarpal and applies an **axial compression load** (pushing down the length of the thumb) and simultaneously **rotates and moves** the metacarpal in a circular grinding motion over the trapezium.",
+    positive_test_criteria:
+      "The reproduction of the patient's **pain** and/or a palpable **crepitus (grinding/crunching sound)**, suggesting degenerative changes in the joint cartilage.",
+    grading_or_notes:
+      "This is a key diagnostic test for thumb basal joint arthritis.",
+    youtube: "https://www.youtube.com/watch?v=kaNVc4uHTI8",
+  },
+  {
+    id: 26,
+    region: "Wrist/Hand",
+    test_name: "Tinel’s Test (at the Wrist)",
+    slug: "tinel-test-at-the-wrist",
+    purpose:
+      "To assess for nerve irritation, regeneration, or entrapment of the **Median Nerve** at the wrist (**Carpal Tunnel Syndrome**).",
+    starting_position:
+      "Patient is sitting. Wrist is relaxed and held in neutral.",
+    procedure:
+      "The examiner gently and repeatedly **taps over the median nerve** at the wrist, specifically over the carpal tunnel (midline of the wrist).",
+    positive_test_criteria:
+      "Reproduction of **paresthesia (tingling) or electric shooting pain** in the median nerve distribution (distal to the point of tapping).",
+    grading_or_notes:
+      "The tingling sensation indicates nerve irritation or regenerating nerve fibers. ",
+    youtube: "https://www.youtube.com/watch?v=U8cPjPeZgFw",
+  },
+  {
+    id: 27,
+    region: "Wrist/Hand",
+    test_name: "Trousseau's Sign",
+    slug: "trousseau-sign",
+    purpose:
+      "To test for potential **hypocalcemia** (low calcium levels in the blood), which can lead to neuromuscular hyperexcitability.",
+    starting_position: "Patient is sitting or supine.",
+    procedure:
+      "A **blood pressure cuff** is placed around the patient's upper arm and inflated to a pressure above the patient's systolic blood pressure for **up to three minutes**.",
+    positive_test_criteria:
+      "The onset of a **carpopedal spasm** (involuntary, painful sustained contraction of the fingers and wrist, often described as an obstetrician's hand posture).",
+    grading_or_notes:
+      "While not a standard physiotherapy test, a positive sign requires urgent medical attention and may explain neuromuscular symptoms like cramping and paresthesia. ",
+    youtube: "https://www.youtube.com/watch?v=p2hnxQTmwuY",
+  },
+  {
+    id: 28,
+    region: "Wrist/Hand",
+    test_name: "Weber Two-Point Discrimination Test",
+    slug: "weber-two-point-discrimination-test",
+    purpose:
+      "To assess the **functional status of the nerve and nerve endings** in the hand by measuring the density of cutaneous innervation (sensory function).",
+    starting_position: "Patient is sitting. Hand is supported, palm up.",
+    procedure:
+      "The examiner uses a caliper or standardized discriminator with two points and touches the skin (usually fingertip pulp). The patient is asked whether they feel **one point or two points**. The distance between the two points is decreased until the patient can no longer distinguish two points.",
+    positive_test_criteria:
+      "An inability to reliably distinguish two points at a distance of **less than 6mm** (normal two-point discrimination) or a significant difference compared to the unaffected side.",
+    grading_or_notes:
+      "The test is crucial for assessing recovery after nerve injury or repair. A discrimination of >10-15mm is often considered protective sensation loss.",
+    youtube: "https://www.youtube.com/watch?v=tBuPNE8AC3I",
+  },
+  {
+    id: 29,
+    region: "Wrist/Hand",
+    test_name: "Wrist Hyperflexion and Abduction of the Thumb (WHAT) Test",
+    slug: "wrist-hyperflexion-and-abduction-of-the-thumb-test",
+    purpose:
+      "To diagnose **De Quervain's Tenosynovitis**, often considered a more sensitive alternative to the Finkelstein test.",
+    starting_position: "Patient is sitting. Forearm is pronated.",
+    procedure:
+      "The patient actively **hyperflexes the wrist** and then attempts to **abduct the thumb** against the examiner's resistance.",
+    positive_test_criteria:
+      "Pain is reproduced **over the radial styloid** and along the APL and EPB tendons during resisted thumb abduction.",
+    grading_or_notes:
+      "This maneuver isolates the stress on the APL and EPB tendons more than the classic Finkelstein test.",
+    youtube: "https://www.youtube.com/watch?v=FlFMFhrbWwM",
+  },
+  {
+    id: 30,
+    region: "Wrist/Hand",
+    test_name: "Wrinkling Test (or Immersion Test)",
+    slug: "wrinkling-test",
+    purpose:
+      "To assess the **function of the sympathetic nervous system** and its innervation to the hand (sensory nerve integrity).",
+    starting_position: "Patient is sitting. Hand is submerged in warm water.",
+    procedure:
+      "The affected fingers/hand are submerged in **warm water (approx. 40°C)** for approximately **20 to 30 minutes**.",
+    positive_test_criteria:
+      "If the **fingertip pulp does not wrinkle** (or wrinkles less than the unaffected side), it suggests a loss of sympathetic nerve function due to a sensory nerve lesion (denervation).",
+    grading_or_notes:
+      "Wrinkling is a sympathetically mediated response. If the nerve supply is damaged, the wrinkling response is absent.",
+    youtube: "https://www.youtube.com/watch?v=3-B-3xSEtL4",
+  },
+  {
+    id: 31,
+    region: "Hip/Groin",
+    test_name: "Adductor Squeeze Test",
+    slug: "adductor-squeeze-test",
+    purpose:
+      "To assess for **adductor muscle strain or tear** (groin strain) or **adductor tendinopathy**.",
+    starting_position:
+      "Patient is supine with hips and knees flexed to 45° to 60°, feet flat on the table. A blood pressure cuff or ball is placed between the knees.",
+    procedure:
+      "The patient is instructed to **squeeze the object between their knees** (resisted hip adduction) with maximal effort, while the examiner monitors the pressure or holds the object.",
+    positive_test_criteria:
+      "The reproduction of **sharp pain in the groin/adductor muscle origin** during the resisted squeeze, compared to the unaffected side.",
+    grading_or_notes:
+      "The test can be graded based on the patient's pain level and ability to generate force. It is also used to track recovery.",
+    youtube: "https://www.youtube.com/watch?v=xF2Xj2dDKJ0",
+  },
+  {
+    id: 32,
+    region: "Hip/Lumbar Nerve Tension",
+    test_name: "Bowstring Sign (or Slump Test Variation)",
+    slug: "bowstring-sign-test",
+    purpose:
+      "To assess for **Sciatic Nerve irritation or tension** due to disc herniation or other space-occupying lesions. *Note: This is often an extension of the Straight Leg Raise (SLR) test.*",
+    starting_position:
+      "Patient is supine. The affected leg has been passively raised into a position that reproduces their leg pain (positive SLR).",
+    procedure:
+      "The examiner flexes the patient's knee slightly (to relieve tension) and then firmly **presses into the popliteal fossa (the 'bowstring')** behind the knee.",
+    positive_test_criteria:
+      "The sudden reproduction of **radicular pain (shooting pain or numbness)** into the patient's calf or foot when pressure is applied in the popliteal fossa.",
+    grading_or_notes:
+      "This maneuver places direct pressure on the already taut sciatic nerve. ",
+    youtube: "https://www.youtube.com/watch?v=ws5n1p2lsSI",
+  },
+  {
+    id: 33,
+    region: "Hip",
+    test_name: "Craig's Test (or Ryder's Test)",
+    slug: "craig-test",
+    purpose:
+      "To determine the approximate amount of **femoral anteversion** (or retroversion) and assess for abnormal hip rotation alignment.",
+    starting_position: "Patient is prone with the knee flexed to 90°.",
+    procedure:
+      "The examiner passively **internally and externally rotates the hip** until the greater trochanter of the femur is felt to be **most parallel** to the examination table (i.e., at its most lateral point). The degree of internal rotation is then measured.",
+    positive_test_criteria:
+      "Normal anteversion is typically around **8° to 15° of internal rotation**. **Excessive internal rotation** (>15°-20°) suggests femoral anteversion. **Excessive external rotation** or minimal internal rotation (<8°) suggests femoral retroversion.",
+    grading_or_notes:
+      "This test measures a bony alignment and is used to explain gait abnormalities or predisposition to pathology.",
+    youtube: "https://www.youtube.com/watch?v=GVTRle_fivo",
+  },
+  {
+    id: 34,
+    region: "Hip",
+    test_name: "Ely's Test (Prone Rectus Femoris Contracture Test)",
+    slug: "ely-test",
+    purpose:
+      "To assess for **tightness or contracture of the Rectus Femoris** muscle (a hip flexor and knee extensor).",
+    starting_position: "Patient is prone with the pelvis stabilized.",
+    procedure:
+      "The examiner passively and maximally **flexes the patient's knee** on the affected side.",
+    positive_test_criteria:
+      "The patient's **hip passively flexes** (lifts off the table) as the knee is flexed, indicating that the rectus femoris is too tight to allow full knee flexion without pulling the hip into flexion.",
+    grading_or_notes:
+      "A positive test is also indicated by pain in the hip or anterior thigh.",
+    youtube: "https://www.youtube.com/watch?v=0FgacndWb4Q",
+  },
+  {
+    id: 35,
+    region: "Hip",
+    test_name: "FADIR (Flexion, Adduction, Internal Rotation) Test",
+    slug: "flexion-adduction-internal-rotation-test",
+    purpose:
+      "To provoke symptoms associated with **Femoroacetabular Impingement (FAI)**, particularly **Anterior/Pincer Impingement** or **Acetabular Labral Tears**.",
+    starting_position:
+      "Patient is supine. The examiner passively flexes the hip to 90°.",
+    procedure:
+      "The hip is then moved into a combination of **maximal adduction** and **maximal internal rotation**.",
+    positive_test_criteria:
+      "The reproduction of the patient's characteristic **sharp groin or anterior hip pain**.",
+    grading_or_notes:
+      "This maneuver jams the femoral head into the anterior/superior acetabulum, stressing the labrum and joint capsule. It is highly sensitive for FAI.",
+    youtube: "https://www.youtube.com/watch?v=xyJUIhsL4lg",
+  },
+  {
+    id: 36,
+    region: "Hip/Lumbar Nerve Tension",
+    test_name:
+      "FAIR Test (Flexion, Adduction, Internal Rotation for Piriformis)",
+    slug: "flexion-adduction-internal-rotation-for-piriformis-test",
+    purpose:
+      "To assess for **Piriformis Syndrome**, where the piriformis muscle compresses the sciatic nerve.",
+    starting_position:
+      "Patient is side-lying on the unaffected side. Hip is flexed to 60°-90°.",
+    procedure:
+      "The examiner applies a combination of hip **flexion, adduction, and internal rotation** (similar to the FADIR position, but with more emphasis on muscle length).",
+    positive_test_criteria:
+      "Reproduction of **pain or buttock/posterior hip symptoms** that travel down the leg (sciatic distribution), indicating irritation of the nerve by the piriformis muscle.",
+    grading_or_notes:
+      "The stretch/compression is created by the piriformis being forcefully lengthened and rotated over the sciatic nerve.",
+    youtube: "https://www.youtube.com/watch?v=QvsNjFYYrN0",
+  },
+  {
+    id: 37,
+    region: "Hip/Lumbar Nerve Tension",
+    test_name: "Femoral Nerve Tension Test",
+    slug: "femoral-nerve-tension-test",
+    purpose:
+      "To assess for mechanical tension or irritation of the **Femoral Nerve** (L2-L4 nerve roots).",
+    starting_position: "Patient is prone.",
+    procedure:
+      "The examiner stabilizes the pelvis and passively **flexes the patient's knee** (similar to Ely's Test). If this does not reproduce symptoms, the examiner then passively **extends the hip** while maintaining knee flexion.",
+    positive_test_criteria:
+      "The reproduction of the patient's familiar **anterior thigh pain or paresthesia** (numbness/tingling) due to the stretch on the femoral nerve.",
+    grading_or_notes:
+      "The combination of knee flexion and hip extension maximally elongates the femoral nerve.",
+    youtube: "https://www.youtube.com/watch?v=6Gv0GrdhLOU",
+  },
+  {
+    id: 38,
+    region: "Hip",
+    test_name: "Fulcrum Test",
+    slug: "fulcrum-test",
+    purpose: "To screen for a **Stress Fracture of the Femoral Shaft**.",
+    starting_position:
+      "Patient is sitting at the edge of the table with the legs dangling.",
+    procedure:
+      "The examiner places their **forearm (fulcrum)** transversely under the patient's thigh and uses the other hand to apply a **gentle downward pressure** on the patient's knee.",
+    positive_test_criteria:
+      "Sharp **pain reproduced at the point where the forearm is acting as the fulcrum** (the stress fracture site).",
+    grading_or_notes:
+      "The test applies a bending moment to the femur, which is highly painful if a stress fracture is present.",
+    youtube: "https://www.youtube.com/watch?v=k2vDNa7hW2c",
+  },
+  {
+    id: 39,
+    region: "Hip/SI Joint",
+    test_name: "Gaenslen Test",
+    slug: "gaenslen-test",
+    purpose:
+      "To assess for dysfunction or pathology of the **Sacroiliac (SI) Joint** or hip pathology (less specific).",
+    starting_position:
+      "Patient is supine, lying close to the edge of the table. One hip/knee is maximally flexed and held to the chest.",
+    procedure:
+      "The hip/knee of the unaffected leg is held in full flexion. The other leg (the affected side) is allowed to **fall off the edge of the table into hip hyperextension**.",
+    positive_test_criteria:
+      "Reproduction of **sharp pain in the SI joint, buttock, or posterior hip region** during the hyperextension component.",
+    grading_or_notes:
+      "This test creates both compressive force on the flexed side and shearing/tensile force on the hyperextended side of the SI joint. ",
+    youtube: "https://www.youtube.com/watch?v=ED_bYoQk9d4",
+  },
+  {
+    id: 40,
+    region: "Hip",
+    test_name: "Hip Quadrant Test (or Scour Test)",
+    slug: "hip-quadrant-test",
+    purpose:
+      "To assess the integrity of the **articular surfaces of the hip joint** (femoral head and acetabulum) and detect defects like osteochondral lesions or loose bodies.",
+    starting_position: "Patient is supine. Hip and knee are flexed.",
+    procedure:
+      "The examiner applies an **axial load** (compression) through the shaft of the femur and performs a circular, **scouring motion** throughout the available range of hip flexion, adduction, and abduction.",
+    positive_test_criteria:
+      "The reproduction of the patient's **groin pain** or the presence of a **grinding, catching, or jarring sensation** within the joint, suggesting articular cartilage damage or a labral tear.",
+    grading_or_notes: "This test stresses the entire joint surface.",
+    youtube: "https://www.youtube.com/watch?v=tsCKRDDv4ss",
+  },
+  {
+    id: 41,
+    region: "Hip/SI Joint",
+    test_name: "Patrick's Test (FABER: Flexion, Abduction, External Rotation)",
+    slug: "patrick-test",
+    purpose:
+      "To assess for pathology in the **hip joint** (e.g., OA or labral tear) or the **Sacroiliac (SI) joint**.",
+    starting_position:
+      "Patient is supine. The affected leg is placed in the **Figure-4 position** (foot crossed over the opposite knee).",
+    procedure:
+      "The examiner stabilizes the opposite ASIS (Anterior Superior Iliac Spine) and gently applies a **downward pressure** on the medial aspect of the flexed knee.",
+    positive_test_criteria:
+      "If pain is reproduced in the **anterior hip/groin**, it suggests **Hip Joint** pathology. If pain is reproduced in the **posterior buttock/SI joint**, it suggests **SI Joint** dysfunction.",
+    grading_or_notes:
+      "The inability of the knee to drop below the level of the opposite leg suggests hip tightness or capsular restriction.",
+    youtube: "https://www.youtube.com/watch?v=89Qiht82zmg",
+  },
+  {
+    id: 42,
+    region: "Hip/SI Joint",
+    test_name: "Posterior Shear Test (or Posterior Thigh Thrust)",
+    slug: "posterior-shear-test",
+    purpose:
+      "To assess for dysfunction of the **Sacroiliac (SI) Joint**, specifically a posterior shearing force.",
+    starting_position:
+      "Patient is supine. Hip is flexed to 90°, and the knee is flexed to 90°.",
+    procedure:
+      "The examiner applies a strong, axial **posterior thrusting force** through the femur (down the shaft of the femur) which stresses the SI joint.",
+    positive_test_criteria:
+      "Reproduction of the patient's **posterior buttock/SI joint pain**.",
+    grading_or_notes:
+      "This test is one of five cluster tests commonly used to diagnose symptomatic SI joint dysfunction.",
+    youtube: "https://www.youtube.com/watch?v=id4GqQ82BiM",
+  },
+  {
+    id: 43,
+    region: "Hip",
+    test_name: "Thomas Test (Rectus Femoris and Iliopsoas Tightness)",
+    slug: "thomas-test",
+    purpose:
+      "To assess for a **hip flexion contracture**, differentiating between tightness of the **Iliopsoas** and the **Rectus Femoris**.",
+    starting_position:
+      "Patient is supine at the end of the table. Both hips and knees are fully flexed.",
+    procedure:
+      "The patient holds the unaffected leg in maximal hip flexion (to flatten the lumbar spine). The examiner passively **lowers the affected leg** toward the table.",
+    positive_test_criteria:
+      "The thigh of the lowered leg **fails to drop to the table** (indicating **Iliopsoas** tightness). If the thigh is flat but the **knee extends** (loses 80°-90° of flexion), it indicates **Rectus Femoris** tightness.",
+    grading_or_notes:
+      "The amount the thigh lifts off the table quantifies the tightness.",
+    youtube: "https://www.youtube.com/watch?v=NMDd-4NspHs",
+  },
+  {
+    id: 44,
+    region: "Hip/SI Joint",
+    test_name: "Trendelenburg Sign",
+    slug: "trendelenburg-sign",
+    purpose:
+      "To assess the functional strength of the **Hip Abductors**, primarily the **Gluteus Medius** muscle.",
+    starting_position: "Patient is standing equally on both feet.",
+    procedure:
+      "The patient is instructed to **stand on one leg** (the stance leg) for 10 seconds, lifting the foot of the unsupported leg off the ground.",
+    positive_test_criteria:
+      "The **pelvis drops down** on the **unsupported side** (the side that is off the ground). This indicates **weakness of the hip abductors** (Gluteus Medius) on the **stance leg** (the side bearing weight).",
+    grading_or_notes:
+      "A positive sign results in a compensatory shift of the trunk toward the stance leg to maintain balance.",
+    youtube: "https://www.youtube.com/watch?v=0rcczDEWDqU",
+  },
+  {
+    id: 45,
+    region: "Knee",
+    test_name: "Pivot Shift Test",
+    slug: "pivot-shift-test",
+    purpose:
+      "To dynamically assess for **anterolateral rotatory instability** of the knee, which is highly indicative of a **complete ACL tear**.",
+    starting_position:
+      "Patient is supine. Knee is in full extension, and the hip is slightly flexed and abducted.",
+    procedure:
+      "The examiner applies an **axial compression** through the leg, a **valgus stress** to the knee, and **internal rotation** of the tibia. The knee is then slowly moved from extension into **flexion**.",
+    positive_test_criteria:
+      "A palpable **subluxation (clunk) of the tibia** occurs as the knee moves into flexion, followed by a sudden **reduction (shift)** as the ITB passes the axis of rotation.",
+    grading_or_notes:
+      "A positive test is very specific for ACL rupture. Grading is based on the magnitude of the shift (Glide, Jump, Gross).",
+    youtube: "https://www.youtube.com/watch?v=qqy5IfkEvfw",
+  },
+  {
+    id: 46,
+    region: "Knee",
+    test_name: "Posterior Drawer Test of the Knee",
+    slug: "posterior-drawer-test-of-the-knee",
+    purpose:
+      "To assess the integrity of the **Posterior Cruciate Ligament (PCL)**.",
+    starting_position:
+      "Patient is supine. Hip is flexed to 45°, and the knee is flexed to **90°**. Foot is stabilized by the examiner sitting on it.",
+    procedure:
+      "The examiner grasps the tibia just below the joint line and applies a **straight posteriorly directed force** (pushing backward).",
+    positive_test_criteria:
+      "**Excessive posterior translation** of the tibia on the femur, compared to the unaffected side, or a 'soft' (absent) endpoint, indicating a PCL tear.",
+    grading_or_notes:
+      "Often confused with the 'sag sign' (gravity-induced displacement). Always check the starting position for posterior sag first.",
+    youtube: "https://www.youtube.com/watch?v=wDIGll5wzZs",
+  },
+  {
+    id: 47,
+    region: "Knee",
+    test_name: "Posterior Sag Sign (Gravity Drawer Test)",
+    slug: "posterior-sag-sign-test",
+    purpose:
+      "To detect a rupture of the **Posterior Cruciate Ligament (PCL)** by observing the effect of gravity.",
+    starting_position:
+      "Patient is supine. Hips and knees are flexed to **90°**. Feet are flat on the table, unsupported.",
+    procedure:
+      "The examiner observes the contour of the knee joint from the side.",
+    positive_test_criteria:
+      "The **tibia on the affected side sags or drops posteriorly** relative to the femur (The step-off created by the tibial plateau is lost), indicating a PCL tear.",
+    grading_or_notes:
+      "This is often the first and most obvious sign of a PCL injury.",
+    youtube: "https://www.youtube.com/watch?v=BVWD2V0RwRA",
+  },
+  {
+    id: 48,
+    region: "Knee",
+    test_name: "Slocum Test (Anterolateral Rotatory Instability)",
+    slug: "slocum-test",
+    purpose:
+      "To assess for **anterolateral rotatory instability** and the function of the **Anterolateral Ligament** (a dynamic variant of the Anterior Drawer).",
+    starting_position:
+      "Patient is supine. Knee is flexed to 90°. Foot is stabilized by the examiner sitting on it.",
+    procedure:
+      "The foot is placed in **30° of internal rotation**. The examiner then performs a strong **Anterior Drawer Test** (pulling the tibia forward).",
+    positive_test_criteria:
+      "Excessive anterior translation of the **lateral tibial plateau** (the outside part of the tibia) compared to the medial side, or a 'soft' endpoint.",
+    grading_or_notes:
+      "Internal rotation of the foot tightens the lateral knee structures (LCL, ITB), isolating the strain to the ACL and anterolateral structures.",
+    youtube: "https://www.youtube.com/watch?v=8Krej3rD6Zo",
+  },
+  {
+    id: 49,
+    region: "Knee",
+    test_name: "Thessaly Test",
+    slug: "thessaly-test",
+    purpose:
+      "To assess for **meniscal tears** by dynamically loading the meniscus in a weight-bearing, rotational manner.",
+    starting_position:
+      "Patient is standing on the affected leg, holding the examiner's hands for balance. The knee is flexed to **5°**.",
+    procedure:
+      "The patient rotates the body **internally and externally three times** on the loaded leg. The test is repeated with the knee flexed to **20°**.",
+    positive_test_criteria:
+      "The reproduction of **joint line pain** or a definite sense of **locking or catching** in the joint.",
+    grading_or_notes:
+      "The 20° flexion position is generally more sensitive for posterior meniscal lesions. This test is done cautiously due to the weight-bearing nature.",
+    youtube: "https://www.youtube.com/watch?v=ebraZ4jM36A",
+  },
+  {
+    id: 50,
+    region: "Knee",
+    test_name: "Valgus Stress Test (Knee)",
+    slug: "valgus-stress-knee-test",
+    purpose:
+      "To assess the integrity of the **Medial Collateral Ligament (MCL)**.",
+    starting_position:
+      "Patient is supine. The knee is tested in **full extension** and then again in **20° to 30° of flexion**.",
+    procedure:
+      "The examiner stabilizes the ankle and applies a strong, lateral-to-medial force (**valgus stress**) at the knee joint.",
+    positive_test_criteria:
+      "**Excessive medial joint line gapping** compared to the unaffected side and/or reproduction of the patient's **medial knee pain**.",
+    grading_or_notes:
+      "Gapping in **20-30° flexion only** suggests an isolated MCL tear. Gapping in **full extension** suggests a severe injury involving the MCL, posteromedial capsule, and potentially the ACL/PCL.",
+    youtube: "https://www.youtube.com/watch?v=QX1iLSc1TVA",
+  },
+  {
+    id: 51,
+    region: "Knee",
+    test_name: "Varus Stress Test (Knee)",
+    slug: "varus-stress-test-knee",
+    purpose:
+      "To assess the integrity of the **Lateral Collateral Ligament (LCL)** and posterolateral corner structures.",
+    starting_position:
+      "Patient is supine. The knee is tested in **full extension** and then again in **20° to 30° of flexion**.",
+    procedure:
+      "The examiner stabilizes the ankle and applies a strong, medial-to-lateral force (**varus stress**) at the knee joint.",
+    positive_test_criteria:
+      "**Excessive lateral joint line gapping** compared to the unaffected side and/or reproduction of the patient's **lateral knee pain**.",
+    grading_or_notes:
+      "Gapping in **20-30° flexion only** suggests an isolated LCL tear. Gapping in **full extension** suggests a severe injury involving the LCL, posterolateral capsule, and potentially the cruciate ligaments.",
+    youtube: "https://www.youtube.com/watch?v=sg1gk6QKARw",
+  },
+  {
+    id: 52,
+    region: "Cervical Spine",
+    test_name: "Distraction Test (Cervical)",
+    slug: "distraction-test-cervical",
+    purpose:
+      "To relieve symptoms associated with **Cervical Radiculopathy** (nerve root compression) or **Facet Joint irritation**.",
+    starting_position: "Patient is sitting.",
+    procedure:
+      "The examiner places both hands under the patient's occiput and mandibular arch (chin) and gently applies a **vertical distraction force** (lifting the head straight up).",
+    positive_test_criteria:
+      "A **decrease or complete relief of the patient's pain or radicular symptoms** (pain, numbness, tingling in the arm/hand).",
+    grading_or_notes:
+      "Relief suggests that nerve root compression is likely due to a space-occupying lesion (e.g., disc bulge or foraminal stenosis).",
+    youtube: "https://www.youtube.com/watch?v=uLdzgd5snmw",
+  },
+  {
+    id: 53,
+    region: "Cervical Spine",
+    test_name: "Foraminal Compression Test (Spurling's Test)",
+    slug: "foraminal-compression-test",
+    purpose:
+      "To detect **Cervical Radiculopathy** caused by nerve root compression, usually due to **foraminal stenosis** (bone spurs) or a **disc herniation**.",
+    starting_position: "Patient is sitting.",
+    procedure:
+      "The patient is asked to **laterally flex** (side-bend) and mildly **rotate** the head toward the side being tested. The examiner then applies a **gentle, vertical compression force** through the patient's head (pushing down).",
+    positive_test_criteria:
+      "The reproduction of the patient's characteristic **radicular symptoms** (shooting pain, numbness, tingling) radiating down the arm/hand.",
+    grading_or_notes:
+      "The combination of movements maximally narrows the intervertebral foramen, compressing the nerve root. A highly specific test.",
+    youtube: "https://www.youtube.com/watch?v=3ZSNdv0o0yk",
+  },
+  {
+    id: 54,
+    region: "Cervical Spine",
+    test_name: "Jackson Compression Test (Vertical Compression)",
+    slug: "jackson-compression-test",
+    purpose:
+      "To detect general **nerve root irritation** or **facet joint pathology** (less specific than Spurling's).",
+    starting_position:
+      "Patient is sitting with the head held in a neutral position.",
+    procedure:
+      "The examiner applies a **gentle, vertical compression force** directly through the patient's head.",
+    positive_test_criteria:
+      "Reproduction of **local cervical pain** (suggesting facet joint or muscle issues) or **radicular pain/paresthesia** into the arm (suggesting nerve root compression).",
+    grading_or_notes:
+      "Less sensitive and specific than Spurling's, as it does not isolate the foramen.",
+    youtube: "https://www.youtube.com/watch?v=vcEWxalJem4",
+  },
+  {
+    id: 55,
+    region: "Cervical Spine",
+    test_name: "Lhermitte's Sign",
+    slug: "lhermitte-sign-test",
+    purpose:
+      "To screen for **central nervous system pathology** such as **Multiple Sclerosis (MS)**, cervical myelopathy, or other spinal cord lesions.",
+    starting_position: "Patient is sitting or supine.",
+    procedure:
+      "The patient is asked to **actively flex the head and neck** maximally toward their chest.",
+    positive_test_criteria:
+      "A sudden, transient, electric-shock-like sensation that radiates down the **spine** and/or into the **limbs**.",
+    grading_or_notes:
+      "The sign indicates hyper-excitability or damage to the dorsal columns of the spinal cord (posterior cord).",
+    youtube: "https://www.youtube.com/watch?v=mDQ-UdK-PDs",
+  },
+  {
+    id: 56,
+    region: "Cervical Spine",
+    test_name: "Maximal Cervical Compression Test",
+    slug: "maximal-cervical-compression-test",
+    purpose:
+      "To assess for general **cervical nerve root compression** and **facet joint irritation**.",
+    starting_position: "Patient is sitting.",
+    procedure:
+      "The patient maximally moves the head through a combination of **lateral flexion, rotation, and hyperextension** toward the side being tested.",
+    positive_test_criteria:
+      "Reproduction of **radicular pain** (shooting pain down the arm) suggests nerve root compression. Reproduction of **local neck pain** suggests facet joint pathology.",
+    grading_or_notes:
+      "This test is a comprehensive, multi-directional stress test on the cervical spine.",
+    youtube: "https://www.youtube.com/watch?v=9zMynez0sQ0",
+  },
+  {
+    id: 57,
+    region: "Cervical Spine",
+    test_name: "Shoulder Abduction Relief Sign (Bakody's Sign)",
+    slug: "shoulder-abduction-relief-sign",
+    purpose:
+      "To provide a highly sensitive sign for **Cervical Radiculopathy**, usually at the C5 or C6 nerve root level.",
+    starting_position:
+      "Patient is sitting, typically complaining of radiating arm pain.",
+    procedure:
+      "The patient is instructed to **place their hand or forearm on top of their head**, supporting the elbow with the other hand.",
+    positive_test_criteria:
+      "A **decrease or complete relief of radicular symptoms** (pain, numbness, tingling) in the arm within 30-60 seconds.",
+    grading_or_notes:
+      "Placing the arm overhead lessens the tension on the nerve root by shortening the distance the nerve has to travel from the neck to the hand.",
+    youtube: "https://www.youtube.com/watch?v=1Dr43Vh64Z0",
+  },
+  {
+    id: 58,
+    region: "Thoracic Outlet",
+    test_name: "Allen Test (for TOS)",
+    slug: "allen-test-for-thoracic-outlet",
+    purpose:
+      "To detect vascular compression of the **subclavian artery** as it passes under the Pectoralis Minor muscle (Pec Minor Syndrome, or Hyperabduction Syndrome).",
+    starting_position:
+      "Patient is sitting or standing. Arm is abducted to 90° and externally rotated.",
+    procedure:
+      "The examiner palpates the **radial pulse**. The patient is instructed to **rotate the head away** from the tested side. The position is held for 1 minute.",
+    positive_test_criteria:
+      "A **diminution or disappearance of the radial pulse** and/or reproduction of the patient's hand/arm symptoms.",
+    grading_or_notes:
+      "This test is highly sensitive but not specific, as the pulse can diminish in healthy individuals in this extreme position.",
+    youtube: "https://www.youtube.com/watch?v=D1tJO0RW9UM",
+  },
+  {
+    id: 59,
+    region: "Thoracic Outlet",
+    test_name: "Costoclavicular Test (Military Brace Test)",
+    slug: "costoclavicular-test",
+    purpose:
+      "To detect compression of the neurovascular bundle between the **clavicle** and the **first rib** (Costoclavicular space).",
+    starting_position: "Patient is sitting or standing.",
+    procedure:
+      "The patient is instructed to assume a **military posture** (shoulders drawn down and back). The examiner palpates the **radial pulse** while passively applying a gentle **downward traction** on the patient's arm (distracting the shoulder).",
+    positive_test_criteria:
+      "A **diminution or disappearance of the radial pulse** and/or the reproduction of the patient's neurological symptoms.",
+    grading_or_notes:
+      "This maneuver narrows the costoclavicular space, simulating the position that compresses the bundle in this specific region.",
+    youtube: "https://www.youtube.com/watch?v=XEWO_cFy5YI",
+  },
+  {
+    id: 60,
+    region: "Thoracic Outlet",
+    test_name: "Hyperabduction Test (Wright's Test)",
+    slug: "hyperabduction-test",
+    purpose:
+      "To detect vascular compression of the **subclavian artery** due to entrapment under the **Pectoralis Minor tendon** (Pec Minor Syndrome).",
+    starting_position:
+      "Patient is sitting. Examiner palpates the radial pulse.",
+    procedure:
+      "The arm is passively moved into a position of **maximal hyperabduction** (above the head) and **full external rotation**. The position is held for 1 minute.",
+    positive_test_criteria:
+      "A **diminution or disappearance of the radial pulse** and/or the reproduction of the patient's hand/arm symptoms.",
+    grading_or_notes:
+      "Hyperabduction stretches the Pectoralis Minor, which can pinch the neurovascular bundle against the coracoid process.",
+    youtube: "https://www.youtube.com/watch?v=e-6AiDPyd2Q",
+  },
+  {
+    id: 61,
+    region: "Lumbar Spine/SI Joint",
+    test_name: "Gapping Test (Sacroiliac Joint)",
+    slug: "gapping-test",
+    purpose:
+      "To assess for **SI joint pathology** by applying an anterior distraction force to the anterior ligaments.",
+    starting_position: "Patient is supine.",
+    procedure:
+      "The examiner places their hands over the patient's **Anterior Superior Iliac Spines (ASIS)** and applies a firm, sustained **downward and outward (anterior distraction)** force to separate the anterior aspects of the pelvis.",
+    positive_test_criteria:
+      "Reproduction of the patient's **posterior pain** (in the SI joint or buttock).",
+    grading_or_notes:
+      "This maneuver stresses the anterior sacroiliac ligaments. It is one of the cluster tests for SI joint pain.",
+    youtube: "https://www.youtube.com/watch?v=lbLt4Gp39BY",
+  },
+  {
+    id: 62,
+    region: "Lumbar Spine",
+    test_name: "Lasegue's Sign (Straight Leg Raise - SLR)",
+    slug: "straight-leg-raise-test",
+    purpose:
+      "To assess for tension or irritation of the **Sciatic Nerve** (L4-S3 nerve roots), typically due to a **Lumbar Disc Herniation**.",
+    starting_position: "Patient is supine with the head in neutral.",
+    procedure:
+      "The examiner slowly and passively **flexes the patient's hip** (lifts the leg straight up) while maintaining the knee in full extension.",
+    positive_test_criteria:
+      "The reproduction of the patient's characteristic **radicular pain** (shooting into the leg/foot) below the knee, usually occurring between **30° and 70° of hip flexion**.",
+    grading_or_notes:
+      "This test stretches the sciatic nerve. Pain at a low angle (<30°) may indicate acute inflammation or hamstring tightness.",
+    youtube: "https://www.youtube.com/watch?v=CnITUzAD1SE",
+  },
+  {
+    id: 63,
+    region: "Lumbar Spine",
+    test_name: "Slump Test",
+    slug: "slump-test",
+    purpose:
+      "A highly sensitive test to assess for **neural tension** or irritation of the spinal cord and nerve roots, often due to disc pathology or stenosis.",
+    starting_position: "Patient is sitting at the edge of the table.",
+    procedure:
+      "The examiner guides the patient through a sequence of movements: **1)** Slump the trunk (thoracic and lumbar flexion). **2)** Flex the neck. **3)** Extend the knee. **4)** Dorsiflex the ankle.",
+    positive_test_criteria:
+      "The reproduction of the patient's familiar **radicular symptoms** or pain that is relieved by **releasing one component** (e.g., neck extension).",
+    grading_or_notes:
+      "This test sequentially places maximum stress on the dura mater and the entire spinal nervous system.",
+    youtube: "https://www.youtube.com/watch?v=HFGfP84uwEo",
+  },
+  {
+    id: 64,
+    region: "Lumbar Spine/SI Joint",
+    test_name: "Squish Test (Sacroiliac Joint)",
+    slug: "squish-test",
+    purpose:
+      "To assess for SI joint pathology by applying a compressive force, stressing the posterior ligaments.",
+    starting_position: "Patient is side-lying.",
+    procedure:
+      "The examiner applies a firm, sustained **downward force** through the superior ilium (pushing the iliac crest medially and inward) to compress the SI joint.",
+    positive_test_criteria:
+      "Reproduction of the patient's **posterior SI joint pain**.",
+    grading_or_notes:
+      "This maneuver is less sensitive than gapping but can be useful in a cluster of SI joint provocation tests.",
+    youtube: "https://www.youtube.com/watch?v=siJaNmYRqQI",
+  },
+  {
+    id: 65,
+    region: "Lumbar Spine",
+    test_name: "Valsalva Maneuver",
+    slug: "valsalva-maneuver-test",
+    purpose:
+      "To increase **intra-abdominal and intrathecal pressure** to provoke symptoms related to a space-occupying lesion in the spinal canal (e.g., disc herniation, tumor).",
+    starting_position: "Patient is sitting or standing.",
+    procedure:
+      "The patient is instructed to **take a deep breath, hold it, and bear down** (as if having a bowel movement).",
+    positive_test_criteria:
+      "Reproduction of **low back or radicular pain** (shooting into the leg) during the maneuver.",
+    grading_or_notes:
+      "The increased pressure pushes on the dura and nerve roots, aggravating pain from a disc herniation or other mass.",
+    youtube: "https://www.youtube.com/watch?v=k5o26XwpCt4",
+  },
+  {
+    id: 66,
+    region: "Foot",
+    test_name: "Coleman Block Test",
+    slug: "coleman-block-test",
+    purpose:
+      "To assess the **flexibility of a hindfoot varus deformity** and determine if it is fixed (bony) or flexible (soft tissue) in a patient with a **Cavus Foot (High Arch)**.",
+    starting_position:
+      "Patient is standing with the lateral border of the foot elevated on a 1-inch wooden block, leaving the heel and first metatarsal head free.",
+    procedure:
+      "The patient shifts weight onto the block. The block allows the forefoot to plantarflex, which *removes the influence of the forefoot on the hindfoot*.",
+    positive_test_criteria:
+      "If the **hindfoot varus corrects or reduces** to neutral when standing on the block, the deformity is considered **flexible** (due to soft tissue/muscles). If it **does not correct**, the deformity is considered **fixed** (bony).",
+    grading_or_notes:
+      "This test helps determine the optimal surgical or orthotic intervention for a high arch foot.",
+    youtube: "https://www.youtube.com/watch?v=ZTD2ekhsY6I",
+  },
+  {
+    id: 67,
+    region: "Foot",
+    test_name: "External Rotation Stress Test (Syndesmosis Ligament Test)",
+    slug: "external-rotation-stress-test",
+    purpose:
+      "To assess the integrity of the **Distal Tibiofibular Syndesmosis** (high ankle sprain ligaments) by applying a rotational stress.",
+    starting_position:
+      "Patient is sitting with the knee flexed to 90° and the foot hanging freely.",
+    procedure:
+      "The examiner stabilizes the distal tibia and applies a forceful, passive **external rotation force** to the foot.",
+    positive_test_criteria:
+      "Reproduction of **pain localized to the distal anterior and/or posterior tibiofibular joint** (the high ankle region).",
+    grading_or_notes:
+      "This test is highly specific for syndesmosis sprains. It is the rotational component of Kleiger's Test.",
+    youtube: "https://www.youtube.com/watch?v=s53uzyUv0bc",
+  },
+  {
+    id: 68,
+    region: "Foot",
+    test_name: "Feiss Line Test (or Feiss Line Grading)",
+    slug: "feiss-line-test",
+    purpose:
+      "To clinically assess and grade the degree of **longitudinal arch collapse (Pes Planus or Flat Foot)**.",
+    starting_position:
+      "Patient is sitting with the ankle in neutral, non-weight bearing.",
+    procedure:
+      "The examiner marks three points: the apex of the **medial malleolus**, the **navicular tuberosity**, and the head of the **first metatarsal**. A line (Feiss Line) is drawn between the malleolus and the metatarsal head. The patient is then asked to stand.",
+    positive_test_criteria:
+      "The **navicular tuberosity drops below the Feiss Line** upon weight-bearing. **Grade 1:** Drop is 1/3 of the distance to the floor. **Grade 2:** Drop is 2/3 of the distance. **Grade 3:** Navicular tuberosity rests on the floor.",
+    grading_or_notes:
+      "Measures flexible flatfoot severity. A greater drop indicates increased arch collapse.",
+    youtube: "https://www.youtube.com/watch?v=U6JXcqmKcQU",
+  },
+  {
+    id: 69,
+    region: "Foot",
+    test_name: "Navicular Drop Test (or Staheli's Arch Index)",
+    slug: "navicular-drop-test",
+    purpose:
+      "To quantify the change in height of the **medial longitudinal arch** from non-weight bearing to full weight bearing (assessing flexible flatfoot).",
+    starting_position:
+      "Patient is sitting with the foot resting comfortably (non-weight bearing).",
+    procedure:
+      "The examiner measures the vertical distance from the **navicular tuberosity** to the floor. The patient is then instructed to stand, and the measurement is repeated with **full weight bearing**.",
+    positive_test_criteria:
+      "A drop of **more than 10-15mm** in the navicular tuberosity height is considered excessive pronation and indicative of a flexible flatfoot.",
+    grading_or_notes:
+      "The difference between the two measurements provides a reproducible measure of arch collapse.",
+    youtube: "https://www.youtube.com/watch?v=BejuNMmD7-Y",
+  },
+  {
+    id: 70,
+    region: "Foot",
+    test_name: "Toe Spread Test",
+    slug: "toe-spread-test",
+    purpose:
+      "To assess the **strength and endurance of the intrinsic foot muscles** (IFMs), which are essential for arch stabilization and dynamic balance.",
+    starting_position:
+      "Patient is sitting or standing with the feet flat on the floor.",
+    procedure:
+      "The patient is instructed to actively **abduct (spread) the toes** as wide as possible. The distance between the 1st and 5th metatarsal heads is measured during spreading and at rest.",
+    positive_test_criteria:
+      "A **small or absent increase** in the transverse arch (distance between the metatarsal heads) compared to a normative value or the contralateral side suggests IFM weakness or dysfunction.",
+    grading_or_notes:
+      "Weakness of the IFMs is often linked to conditions like Plantar Fasciitis and Medial Tibial Stress Syndrome (shin splints).",
+    youtube: "https://www.youtube.com/watch?v=w4YfyOBjBGo",
+  },
+  {
+    id: 71,
+    region: "Foot",
+    test_name: "Windlass Test (Weight Bearing)",
+    slug: "windlass-test-weight-bearing",
+    purpose:
+      "To assess for **Plantar Fasciitis/Fasciosis** by tensioning the plantar fascia.",
+    starting_position:
+      "Patient is standing, bearing weight equally on both feet. The heel of the affected foot is slightly elevated (e.g., on a step or block).",
+    procedure:
+      "The examiner passively forces the patient's **great toe (hallux) into maximal dorsiflexion** (hyperextension).",
+    positive_test_criteria:
+      "The reproduction of **sharp pain at the insertion of the plantar fascia** on the medial calcaneal tuberosity (heel bone).",
+    grading_or_notes:
+      "Dorsiflexing the toe tightens the plantar fascia, acting like a 'windlass' to raise the arch and provoke symptoms.",
+    youtube: "https://www.youtube.com/watch?v=fg0PtnoAzSs",
+  },
+  {
+    id: 72,
+    region: "Knee",
+    test_name: "Anterior Cruciate Ligament (ACL) Injury",
+    slug: "anterior-cruciate-ligament-injury-test",
+    purpose:
+      "This is the **injury name** (a tear of the ACL), not a specific test. The main tests used to diagnose it are the **Lachman Test** and **Anterior Drawer Test**.",
+    starting_position: "N/A",
+    procedure: "N/A",
+    positive_test_criteria: "N/A",
+    grading_or_notes:
+      "ACL rupture is the most common ligamentous injury of the knee.",
+    youtube: "https://www.youtube.com/watch?v=kFGB7gW3pQ8",
+  },
+  {
+    id: 73,
+    region: "Knee",
+    test_name: "Anterior Drawer Test of the Knee",
+    slug: "anterior-drawer-test-of-the-knee",
+    purpose:
+      "To assess the integrity of the **Anterior Cruciate Ligament (ACL)**, particularly the anteromedial bundle.",
+    starting_position:
+      "Patient is supine. Hip is flexed to 45°, and the knee is flexed to **90°**. Foot is stabilized by the examiner sitting on it.",
+    procedure:
+      "The examiner grasps the tibia just below the joint line and applies a **straight anteriorly directed force** (pulling forward).",
+    positive_test_criteria:
+      "**Excessive anterior translation** of the tibia on the femur, compared to the unaffected side, or a 'soft' (absent) endpoint, indicating an ACL tear.",
+    grading_or_notes:
+      "Less sensitive than the Lachman Test in acute injuries, as hamstring spasm can limit translation. ",
+    youtube: "https://www.youtube.com/watch?v=IdnBKv38EEQ",
+  },
+  {
+    id: 74,
+    region: "Knee",
+    test_name: "Apley's Test (Compression/Distraction)",
+    slug: "apley-test",
+    purpose:
+      "To differentiate between **meniscal injury** (compression) and **ligamentous injury** (distraction) of the knee.",
+    starting_position: "Patient is prone. Knee is flexed to 90°.",
+    procedure:
+      "**Phase 1 (Menisci):** Examiner applies **axial compression** through the heel while internally and externally rotating the tibia. **Phase 2 (Ligaments):** Examiner applies **distraction** force while rotating the tibia.",
+    positive_test_criteria:
+      "**Compression (Phase 1):** Pain/clicking during rotation suggests a **meniscal tear**. **Distraction (Phase 2):** Pain with distraction/rotation that is relieved with compression suggests a **ligamentous injury**.",
+    grading_or_notes:
+      "Rotation combined with compression/distraction selectively stresses the menisci vs. the collateral ligaments.",
+    youtube: "https://www.youtube.com/watch?v=6Z_9lfX_Pc8",
+  },
+  {
+    id: 75,
+    region: "Knee",
+    test_name: "Beighton Score",
+    slug: "beighton-score-knee",
+    purpose:
+      "To quantify **generalized joint hypermobility** (laxity) across the body, which can predispose the knee to instability.",
+    starting_position: "Patient is standing.",
+    procedure:
+      "For the **knee component**: The patient is asked to **hyperextend the knee**. The examiner measures the degree of hyperextension.",
+    positive_test_criteria:
+      "A single point is scored for the knee if it can hyperextend **more than 10°**. A total score of 4/9 or more indicates general hypermobility.",
+    grading_or_notes:
+      "The test is used as a screening tool for underlying ligamentous laxity. ",
+    youtube: "https://www.youtube.com/watch?v=ZwWts_P-Xws",
+  },
+  {
+    id: 76,
+    region: "Knee",
+    test_name: "Dial Test (Posterolateral Corner Test)",
+    slug: "dial-test",
+    purpose:
+      "To detect **Posterolateral Corner (PLC) instability** and differentiate between PCL-only injury and combined PCL/PLC injury.",
+    starting_position:
+      "Patient is prone with the knees flexed to **30°** and then **90°**.",
+    procedure:
+      "The examiner stabilizes the thigh and applies a **maximal external rotation force** to the foot/ankle at both the 30° and 90° knee flexion positions. The degree of external rotation is measured.",
+    positive_test_criteria:
+      "An increase of **>10° of external rotation** compared to the unaffected side. **30° only:** PLC injury. **90° only:** Isolated PCL tear. **Both 30° and 90°:** Combined PLC and PCL injury.",
+    grading_or_notes:
+      "A positive test at 30° indicates PLC involvement, as the collateral ligaments are relatively slack at this angle. ",
+    youtube: "https://www.youtube.com/watch?v=3UGffd71KyI",
+  },
+  {
+    id: 77,
+    region: "Knee",
+    test_name: "Effusion tests of the Knee (Ballottement/Patellar Tap)",
+    slug: "effusion-test-of-the-knee",
+    purpose:
+      "To detect the presence of **intra-articular swelling (effusion)**, particularly large amounts of fluid.",
+    starting_position:
+      "Patient is supine with the knee relaxed and slightly extended.",
+    procedure:
+      "The examiner uses one hand to **milk the suprapatellar pouch** (proximal thigh) distally to force fluid toward the patella. The examiner then uses the fingers of the other hand to **firmly push the patella** down against the femur (the 'tap').",
+    positive_test_criteria:
+      "The examiner feels the patella **bounce or tap down** against the femur, indicating a significant volume of fluid pushing the patella up.",
+    grading_or_notes:
+      "This test is used for moderate to large effusions. The 'Bulge Sign' or 'Sweep Test' is used for smaller effusions.",
+    youtube: "https://www.youtube.com/watch?v=r18O50lzMGw",
+  },
+  {
+    id: 78,
+    region: "Knee",
+    test_name: "Ege's Test",
+    slug: "ege-test",
+    purpose:
+      "To assess for tears of the **medial or lateral meniscus** (an alternative to McMurray's Test).",
+    starting_position:
+      "Patient is standing with the feet shoulder-width apart.",
+    procedure:
+      "The patient squats slowly. The test is performed with the hips and feet held in **maximal external rotation** (to stress the medial meniscus) and then held in **maximal internal rotation** (to stress the lateral meniscus).",
+    positive_test_criteria:
+      "Pain and/or an audible **click** in the joint line during the squat, particularly between 90° and 120° of flexion.",
+    grading_or_notes:
+      "The amount of rotation determines which meniscus is stressed. External rotation stresses the medial meniscus.",
+    youtube: "https://www.youtube.com/watch?v=OUwzCKkGQjw",
+  },
+  {
+    id: 79,
+    region: "Knee",
+    test_name: "Ely's Test (Prone Rectus Femoris Contracture Test)",
+    slug: "ely-test-knee",
+    purpose:
+      "To assess for **tightness or contracture of the Rectus Femoris** muscle (a two-joint muscle crossing the hip and knee).",
+    starting_position: "Patient is prone with the pelvis stabilized.",
+    procedure:
+      "The examiner passively and maximally **flexes the patient's knee** on the affected side.",
+    positive_test_criteria:
+      "The patient's **hip passively flexes** (lifts the hip/pelvis off the table) as the knee is flexed, indicating that the rectus femoris is too tight to allow full knee flexion without moving the hip.",
+    grading_or_notes:
+      "This test can cause anterior hip pain, which should be noted.",
+    youtube: "https://www.youtube.com/watch?v=0FgacndWb4Q",
+  },
+  {
+    id: 80,
+    region: "Knee",
+    test_name: "Insall-Salvati Ratio",
+    slug: "insall-salvati-ratio",
+    purpose:
+      "A radiologic measurement used to assess for **Patella Alta** (high-riding patella) or **Patella Baja** (low-riding patella).",
+    starting_position: "N/A (Radiographic measurement).",
+    procedure:
+      "Measured on a lateral knee radiograph at 30° of knee flexion. The ratio is calculated by dividing the length of the **Patellar Tendon (LT)** by the greatest diagonal length of the **Patella (LP)**.",
+    positive_test_criteria:
+      "A **normal ratio is 1.0 (with a variation of $\\pm 0.2$)**. A ratio **> 1.2** indicates **Patella Alta**. A ratio **< 0.8** indicates **Patella Baja**.",
+    grading_or_notes:
+      "Patella Alta is a risk factor for Patellofemoral Instability (dislocation). ",
+    youtube: "https://www.youtube.com/watch?v=ftXs-8zraV0",
+  },
+  {
+    id: 81,
+    region: "Knee",
+    test_name: "Lachman Test",
+    slug: "lachman-test",
+    purpose:
+      "The **most sensitive** clinical test for detecting a tear of the **Anterior Cruciate Ligament (ACL)**.",
+    starting_position:
+      "Patient is supine. Knee is positioned in **20° to 30° of flexion** (a non-guarding position).",
+    procedure:
+      "The examiner stabilizes the femur with one hand and applies an **anterior translation force** (pulling forward) to the proximal tibia with the other hand.",
+    positive_test_criteria:
+      "**Excessive anterior translation** of the tibia compared to the unaffected side, or a **'soft' or 'mushy' endpoint** (loss of firm endpoint), indicating an ACL tear.",
+    grading_or_notes:
+      "The test's position minimizes hamstring involvement, improving sensitivity. Grading is based on the amount of translation (e.g., Grade I, II, III). ",
+    youtube: "https://www.youtube.com/watch?v=JFkbKNNa7xQ",
+  },
+  {
+    id: 82,
+    region: "Knee",
+    test_name: "Lever Sign Test",
+    slug: "liver-sign-test",
+    purpose:
+      "An alternative, potentially easier test to assess for rupture of the **Anterior Cruciate Ligament (ACL)**.",
+    starting_position:
+      "Patient is supine. The examiner places a clenched fist or rigid object **under the patient's calf** (proximal tibia).",
+    procedure:
+      "The examiner then applies a strong, downward pressure to the **distal thigh/femur**, attempting to extend the knee.",
+    positive_test_criteria:
+      "In a healthy knee, the downward pressure will cause the heel to **lift off the table**. If the **ACL is torn**, the heel will **fail to lift** or lift only minimally due to anterior translation of the tibia.",
+    grading_or_notes:
+      "The principle is that the intact ACL prevents the tibia from rotating anteriorly, forcing the heel up. If the ACL is ruptured, the tibia slides forward, preventing the lever action.",
+    youtube: "https://www.youtube.com/watch?v=T9ujIYIctdw",
+  },
+  {
+    id: 83,
+    region: "Knee",
+    test_name: "McMurrays Test",
+    slug: "mcmurrays-test",
+    purpose:
+      "To assess for a tear of the **medial or lateral meniscus** of the knee joint.",
+    starting_position:
+      "Patient is supine. The hip and knee are maximally flexed.",
+    procedure:
+      "**Medial Meniscus:** The tibia is held in **external rotation**. The examiner applies a **valgus stress** while slowly extending the knee. **Lateral Meniscus:** The tibia is held in **internal rotation**. The examiner applies a **varus stress** while slowly extending the knee.",
+    positive_test_criteria:
+      "A palpable or audible **click or thud** felt or heard along the joint line during extension, often accompanied by pain.",
+    grading_or_notes:
+      "The rotating and extending movement traps the torn portion of the meniscus, causing the click. ",
+    youtube: "https://www.youtube.com/watch?v=lwDFPAyGGgI",
+  },
+  {
+    id: 84,
+    region: "Knee",
+    test_name: "Moving Patellar Apprehension Test",
+    slug: "moving-patellar-apprehension-test",
+    purpose:
+      "To assess for **Patellofemoral Instability** (e.g., subluxation or dislocation) and chronic lateral patellar hypermobility.",
+    starting_position:
+      "Patient is supine. Knee is positioned in 20° of flexion (the position of typical instability).",
+    procedure:
+      "The examiner slowly and firmly attempts to **translate (push)** the patella **laterally**. This is done while the knee is slowly and carefully moved from flexion to extension.",
+    positive_test_criteria:
+      "The patient exhibits a strong **quadriceps contraction, verbal apprehension, or fear of dislocation** when the patella is pushed laterally, especially in the 20° to 30° flexion range.",
+    grading_or_notes:
+      "The test must elicit a fear response, not just pain, to be considered positive for instability.",
+    youtube: "https://www.youtube.com/watch?v=IKhEElT8jvQ",
+  },
+  {
+    id: 85,
+    region: "Knee",
+    test_name: "Muller's Test",
+    slug: "muller-test",
+    purpose:
+      "To screen for **Patellofemoral Pain Syndrome (PFPS)** and evaluate the ability of the vastus medialis obliquus (VMO) to stabilize the patella.",
+    starting_position:
+      "Patient is sitting with the leg dangling off the table, knee flexed to 90°. Examiner stabilizes the thigh.",
+    procedure:
+      "The patient is asked to **slowly extend the knee** while the examiner watches the patella's movement. The examiner may apply a gentle manual medial glide to the patella before extension is initiated.",
+    positive_test_criteria:
+      "The patient reports **pain or apprehension** between 30° and 0° of knee extension, or the examiner observes **abnormal lateral patellar tracking**.",
+    grading_or_notes:
+      "PFPS is often related to abnormal tracking or malalignment of the patella. ",
+    youtube: "https://www.youtube.com/shorts/iIOQsDTDkVI",
+  },
+  {
+    id: 86,
+    region: "Knee",
+    test_name: "Patellar Grinding Test (Clarks Sign or Zohlen Sign)",
+    slug: "patellar-grinding-test",
+    purpose:
+      "To assess for **Patellofemoral Pain Syndrome (PFPS)** and damage to the **articular cartilage** on the deep surface of the patella.",
+    starting_position: "Patient is supine with the knee fully extended.",
+    procedure:
+      "The examiner places the web space of the hand just superior to the patella and applies a firm, **distally directed pressure** (pushing the patella toward the feet) while instructing the patient to **gently and maximally contract the quadriceps**.",
+    positive_test_criteria:
+      "The patient reports **pain beneath or around the patella** during the resisted contraction, often accompanied by a **grinding or grating sensation** (crepitus).",
+    grading_or_notes:
+      "This test can be very painful and should be performed carefully. It is highly sensitive for patellofemoral joint irritation.",
+    youtube: "https://www.youtube.com/watch?v=pRqnODPqxFs",
+  },
+
+  {
+    test_name: "Adson's Test",
+    slug: "adson-test",
+    purpose:
+      "To assess for Thoracic Outlet Syndrome (TOS) due to compression of the neurovascular bundle by the anterior and middle scalene muscles.",
+    starting_position:
+      "Patient is sitting or standing. Examiner monitors the radial pulse.",
+    procedure:
+      "The patient extends the neck and turns the head **toward** the tested side. The examiner simultaneously abducts, extends, and externally rotates the patient's arm slightly. The patient takes a deep breath and holds it. The pulse is re-evaluated.",
+    positive_test_criteria:
+      "A diminished or absent radial pulse, and/or reproduction of the patient's symptoms (e.g., paresthesia or pain) in the upper limb.",
+    grading_or_notes:
+      "A modified test exists where the patient turns the head **away** from the tested side (for costoclavicular or other TOS causes).",
+    youtube: "https://www.youtube.com/watch?v=z5uIH69ke4E&t=33s",
+    id: 87,
+    region: "shoulder",
+  },
+  {
+    test_name: "Anterior Drawer Test Of The Shoulder",
+    slug: "anterior-drawer-test-of-the-shoulder",
+    purpose:
+      "To assess for anterior glenohumeral joint laxity and instability and the integrity of the anterior capsular structures.",
+    starting_position:
+      "Patient is supine. Shoulder is abducted 80-120\u00c2\u00b0, flexed 0-20\u00c2\u00b0, and laterally rotated 0-30\u00c2\u00b0.",
+    procedure:
+      "The examiner stabilizes the patient's scapula (coracoid process anteriorly, spine posteriorly) and grasps the proximal humerus. A force is applied to translate the humeral head **anteriorly**.",
+    positive_test_criteria:
+      "Excessive anterior translation of the humeral head compared to the opposite side, or reproduction of symptoms/apprehension. A 'clunk' may indicate a labral tear.",
+    grading_or_notes:
+      "Grading is based on the displacement: Grade 1 (reaches glenoid rim), Grade 2 (dislocates but reduces spontaneously), Grade 3 (dislocates and stays dislocated).",
+    youtube: "https://www.youtube.com/watch?v=G8s_7Q5zfTM",
+    id: 88,
+    region: "shoulder",
+  },
+  {
+    test_name: "Arm Squeeze Test",
+    slug: "arm-squeeze-test",
+    purpose:
+      "This is a new clinical test that may be useful to distinguish between Cervical radiculopathy from other shoulders related pathology. The anatomic reasoning behind this test is that because the musculocutaneous nerve (cervical root from C5 to C7), the radial nerve (from C5 to T1), the ulnar nerve (from C7 to T1), and the median nerve (from C5 to T1) are relatively superficial in the middle third of the arm and easy to elicit a painful provocation response by squeezing the arm. A moderate compression of skin, subcutis, and muscle by squeezing the middle third of the upper arm (brachial biceps and triceps area) on the side with shoulder pain elicits an intense reaction of local pain only in patients with cervical nerve root compression from C5 to T1, not when the pain arises from the shoulder.",
+    starting_position:
+      "Patient is sitting or standing with the arm resting at their side.",
+    procedure:
+      "The examiner places their hand around the patient's mid-arm and squeezes the arm firmly, compressing the rotator cuff tendons through the muscle belly.",
+    positive_test_criteria:
+      "The reproduction or increase of the patient's localized shoulder pain (not just discomfort from the squeeze).",
+    grading_or_notes:
+      "A sensitive, easy-to-perform screening test, but needs to be followed up with more specific tests if positive.",
+    youtube: "https://www.youtube.com/watch?v=JS-dphAKL8Y",
+    id: 89,
+    region: "shoulder",
+  },
+  {
+    test_name: "Bear Hug Test",
+    slug: "bear-hug-test",
+    purpose:
+      "To assess for a tear or significant weakness in the **subscapularis tendon** (subscapularis strength).",
+    starting_position:
+      "Patient is sitting or standing. The affected hand is placed on the opposite shoulder, with the elbow pointing forward.",
+    procedure:
+      "The patient actively pushes their hand into their shoulder. The examiner attempts to **externally rotate** the patient's arm and pull the hand away from the shoulder while the patient resists.",
+    positive_test_criteria:
+      "The patient is **unable to hold the hand against the opposite shoulder** due to weakness or pain, indicating a subscapularis tear.",
+    grading_or_notes: "A highly specific test for subscapularis pathology.",
+    youtube: "https://youtu.be/30C3DNq-w4g?si=FrR9L7S6kQD7lfmf",
+    id: 90,
+    region: "shoulder",
+  },
+  {
+    test_name: "Belly Press Test (or Abdominal Compression Test)",
+    slug: "belly-press-test",
+    purpose:
+      "To assess the function and strength of the **subscapularis muscle**, especially in cases where the Lift-Off test is restricted.",
+    starting_position:
+      "Patient is sitting or standing. The affected hand is placed on the abdomen (belly).",
+    procedure:
+      "The patient is instructed to push into their belly, trying to **keep the elbow forward**. The examiner monitors the pressure and the patient's elbow position.",
+    positive_test_criteria:
+      "The patient's **elbow moves posteriorly** (backward) or they cannot maintain pressure, suggesting a subscapularis tear.",
+    grading_or_notes:
+      "If the elbow drops back (posteriorly), it indicates the patient is using the wrist extensors and chest muscles instead of the subscapularis.",
+    youtube: "https://youtu.be/RDfStbLsj6Q?si=YMFKVoTajdwhPIGQ",
+    id: 91,
+    region: "shoulder",
+  },
+  {
+    test_name: "Biceps Load II Test",
+    slug: "biceps-load-ii-test",
+    purpose:
+      "To detect a **Superior Labral Anterior and Posterior (SLAP) lesion**, specifically by increasing tension on the biceps anchor.",
+    starting_position:
+      "Patient is supine. Shoulder is placed in 120\u00c2\u00b0 abduction, maximum external rotation, and elbow is flexed to 90\u00c2\u00b0 with the forearm supinated.",
+    procedure: "The examiner resists the patient's active **elbow flexion**.",
+    positive_test_criteria:
+      "The reproduction or increase of the patient's shoulder pain (typically deep, internal pain) during the resisted elbow flexion.",
+    grading_or_notes:
+      "A high-specificity test for SLAP lesions (Type II and IV).",
+    youtube: "https://youtu.be/dPh5wQmKTfk?si=02YuqvolUITFzu7Y",
+    id: 92,
+    region: "shoulder",
+  },
+  {
+    test_name: "Codman's Test (Drop Arm Test)",
+    slug: "codman-test",
+    purpose:
+      "Codman's test is typically used in the assessment of a suspected rotator cuff tear. This test is also commonly referred to as the drop-arm test or sign.",
+    starting_position:
+      "Patient is standing. Examiner passively abducts the patient's arm to 90\u00c2\u00b0.",
+    procedure:
+      "The therapist passively raises the patient's arm to 90 degrees of abduction. The patient then lowers the arm back to neutral with the palm down. If the patient's arm drops suddenly or experiences pain, then the test is considered positive.",
+    positive_test_criteria:
+      "The patient is **unable to smoothly control the descent** and the arm 'drops' suddenly to the side, or they experience a sudden onset of pain when attempting to maintain the 90\u00c2\u00b0 position.",
+    grading_or_notes:
+      "Often confused with a partial tear, but is highly suggestive of a complete or massive tear.",
+    youtube: "https://youtu.be/JXgRBeqToik?si=GpWe0XPEfn0K3Y7j",
+    id: 93,
+    region: "shoulder",
+  },
+  {
+    test_name:
+      "Costoclavicular or Military Brace or Eden\u00e2\u20ac\u2122s Test",
+    slug: "costoclavicular-or-military-brace",
+    purpose:
+      "To evaluate for **Thoracic Outlet Syndrome (TOS)** caused by compression in the **costoclavicular space** (between the clavicle and the first rib).",
+    starting_position:
+      "Patient is standing in a 'military attention' or exaggerated upright posture. Examiner palpates the radial pulse.",
+    procedure:
+      "Patient is standing. The examiner palpates the radial pulse and then draws the patient's shoulders down and back as the patient lifts their chest in an exaggerated (at attention posture). A positive test is indicated by an absence or decrease in vigor of the pulse and implies possible costoclavicular syndrome. It is also positive if the client experiences an increase of neurologic symptoms into the upper extremity on that side. This test is particularly effective in patients who complain of symptoms while wearing a backpack or heavycoat",
+    positive_test_criteria:
+      "A **marked decrease or abolition of the radial pulse** or the **reproduction of the patient's neurological symptoms** (e.g., numbness, tingling).",
+    grading_or_notes:
+      "This test reduces the space between the clavicle and the first rib, compressing the subclavian artery/vein and brachial plexus.",
+    youtube: "https://youtu.be/Mifo6ZzkNLA?si=x2S8UhcKevUDBxwp",
+    id: 94,
+    region: "shoulder",
+  },
+  {
+    test_name: "Crank Test",
+    slug: "crank-test",
+    purpose:
+      "To assess for a tear in the **glenoid labrum** (especially superior labral lesions) or generalized instability.",
+    starting_position:
+      "Patient is supine. Shoulder is elevated to 160\u00c2\u00b0 in the scapular plane, and the elbow is flexed to 90\u00c2\u00b0.",
+    procedure:
+      "Patient is sitting upright with the arm flexed to 90°, the examiner stands adjacent to the affected shoulde forearmr holding the flexed elbow or forearm.  Joint load is applied along the axis of the humerus with one hand while the other hand performs humeral rotation while the shoulder is being elevated in the scapular plane. The test can be repeated in supine. A positive test is indicated during the maneuver (usually during external rotation) if there is reproduction of symptoms (usually pain) with or without a click.",
+    positive_test_criteria:
+      "The reproduction of pain, or a **clicking/clunking sensation** within the shoulder during the rotation/axial load, which suggests labral damage.",
+    grading_or_notes:
+      "The axial load is crucial as it compresses the humeral head against the glenoid labrum.",
+    youtube: "https://youtu.be/HTpejI3FGG4?si=0ctmdQxlj9qlAZbX",
+    id: 95,
+    region: "shoulder",
+  },
+  {
+    test_name: "Wartenberg's Sign",
+    slug: "wartenberg-sign-test",
+    purpose:
+      "To test for **Ulnar Nerve palsy/weakness**, specifically of the Palmar Interossei, which leads to unopposed abduction of the little finger.",
+    starting_position: "Patient is sitting with hands resting palms down.",
+    procedure:
+      "The patient is asked to **adduct all fingers** (bring them together). The examiner observes the position of the fingers.",
+    positive_test_criteria:
+      "The **little finger remains persistently abducted** (stuck out laterally) and cannot be actively pulled fully next to the ring finger.",
+    grading_or_notes:
+      "This sign may be present in patients with Ulnar Nerve compression proximal to the elbow (Cubital Tunnel) or wrist (Guyon's Canal).",
+    youtube: "https://www.youtube.com/watch?v=K7EmeSGqEp4",
+    id: 96,
+    region: "elbow",
+  },
+  {
+    test_name: "Full Can Test",
+    slug: "full-can-test",
+    purpose:
+      "To test the integrity and strength of the **supraspinatus muscle and tendon** while placing less tension on the tendon than the Empty Can position.",
+    starting_position:
+      "Patient is sitting or standing. Arm is abducted to 90\u00c2\u00b0 in the **scapular plane** (30\u00c2\u00b0 of horizontal adduction) and held in **external rotation** (thumbs pointing up).",
+    procedure:
+      "The examiner applies downward pressure on the patient's forearm or wrist, and the patient is instructed to resist this pressure.",
+    positive_test_criteria:
+      "The reproduction of pain or notable weakness during resistance compared to the unaffected side.",
+    grading_or_notes:
+      "Research suggests the Full Can position may isolate the supraspinatus better and is less provocative of general impingement pain than the Empty Can test.",
+    youtube: "https://youtu.be/NuBOHdm20cc?si=uVbrjR7dRnDEaQCc",
+    id: 97,
+    region: "shoulder",
+  },
+  {
+    test_name: "Gerber's Test (Lift-Off Test)",
+    slug: "gerber-test-lift-off-test",
+    purpose:
+      "To assess for a **tear or weakness of the subscapularis muscle/tendon**.",
+    starting_position:
+      "Patient is standing or sitting. The dorsal surface of the affected hand is placed against the patient's mid-lumbar spine (hand behind the back).",
+    procedure:
+      "The patient is asked to **actively lift their hand away from their back**. If they can do this, the examiner applies a resistance force, attempting to push the hand back toward the spine.",
+    positive_test_criteria:
+      "The patient is **unable to actively lift their hand away from the back**, or they demonstrate significant weakness/pain when resisting the examiner's push-back force.",
+    grading_or_notes:
+      "If the patient performs the movement by extending the elbow or shoulder (compensation), the test is still suggestive of subscapularis insufficiency.",
+    youtube: "https://youtu.be/AgkTH52_PBI?si=IImYnNnF8tow7jZu",
+    id: 98,
+    region: "shoulder",
+  },
+  {
+    test_name: "Hara Test",
+    slug: "hara-test",
+    purpose:
+      "The Hara test is a functional assessment tool used to identify abnormalities in the kinetic chain of the upper extremity. It involves evaluating the coordination and movement patterns of the shoulder, scapula, and arm during a specific movement.",
+    starting_position:
+      "Patient is sitting or standing with arms at their sides.",
+    procedure:
+      "The patient is asked to keep their arms straight and slowly raise them overhead until their hands touch their ears. The examiner observes the shoulder and scapula movement throughout the full range of motion.",
+    positive_test_criteria:
+      "Any noticeable **asymmetry, winging, or abnormal movement patterns** of the scapula or arm during the test, suggesting scapular instability or muscular imbalance.",
+    grading_or_notes:
+      "The test is often repeated with palms up, and/or with light weights, to further provoke any compensatory patterns.",
+    youtube: "https://www.youtube.com/watch?v=gIl5mUzEhGk",
+    id: 99,
+    region: "shoulder",
+  },
+  {
+    test_name: "Hornblower's Sign (Teres Minor Test)",
+    slug: "hornblower-sign",
+    purpose:
+      "To assess for a tear or severe dysfunction of the **teres minor tendon** (and potentially infraspinatus).",
+    starting_position:
+      "Patient is sitting or standing. The arm is abducted to 99\u00c2\u00b0 and the elbow is flexed to 90\u00c2\u00b0.",
+    procedure:
+      "The examiner passively moves the shoulder into maximal **external rotation**. The patient is instructed to actively hold this position as the examiner releases support.",
+    positive_test_criteria:
+      "The patient is **unable to hold the external rotation** and the arm 'lags' or drops into internal rotation, suggesting a tear of the external rotators (teres minor).",
+    grading_or_notes:
+      "Also referred to as the External Rotation Lag Sign performed at 90\u00c2\u00b0 of abduction.",
+    youtube: "https://www.youtube.com/watch?v=am5XZ1VnoLc",
+    id: 100,
+    region: "shoulder",
+  },
+  {
+    test_name: "Infraspinatus Test",
+    slug: "infraspinatus-test",
+    purpose:
+      "The infraspinatus muscle is one of the rotator cuff muscles. Rotator cuff muscles dysfunction leads to shoulder impingement as the head of the humorous superiorly migrates during arm elevation. Infrapinatus muscle is often involved in shoulder pathologies as shoulder impingement and rotator cuff tears.The Infraspinatus test is used to test for infraspinatus muscle involvment in rotator cuff pathologies such as subacromial impingement or rotator cuff tears.",
+    starting_position:
+      "Patient is standing with the arm at the side, elbow at 90\u00c2\u00b0, and the humerus medially rotated to 45\u00c2\u00b0.",
+    procedure:
+      "The patient arms should be at his side not quite touching his trunk, with the elbows flexed to 90 degrees. The examiner places his hand on the dorsum of the patient’s hands. The patient is asked to externally rotate both forearms against the examiner’s resistance. The test is positive when there is weakness or pain in external rotation. Infraspinatus tears are usually painless so external rotation weakness strongly suggests infraspinatus tear.",
+    positive_test_criteria:
+      "Pain or the **inability to resist medial rotation** (weakness) compared to the unaffected side, indicating an infraspinatus strain or tear.",
+    grading_or_notes:
+      "This test attempts to isolate the infraspinatus, which is the primary external rotator of the shoulder.",
+    youtube: "https://www.youtube.com/watch?v=vzl97bB2hzQ",
+    id: 101,
+    region: "shoulder",
+  },
+  {
+    test_name: "Internal Rotation Lag Sign",
+    slug: "internal-rotation-lag-sign",
+    purpose: "To detect a **full-thickness tear of the subscapularis tendon**.",
+    starting_position:
+      "Patient is sitting or standing. The affected arm is behind the back, with the hand actively placed away from the back (Lift-Off position is achieved).",
+    procedure:
+      "Patient is seated with examiner standing behind the patient. The affected arm is brought into maximal internal rotation behind the back (dorsum of patients hand against the lumbar region). Examiner controls patient's arm at the elbow and wrist/hand which is passively brought into 20 degrees of extension, taking the forearm and hand away from the back. The patient is instructed to actively maintain this position, as the examiner releases the wrist but maintains support at the elbow.",
+    positive_test_criteria:
+      "The patient is **unable to hold the position** and the hand 'lags' or drops back toward the back/spine (loss of internal rotation), indicating subscapularis tear.",
+    grading_or_notes:
+      "A very specific test for subscapularis tear, especially a large or complete tear.",
+    youtube: "https://www.youtube.com/watch?v=FbxrdmtjwN8",
+    id: 102,
+    region: "shoulder",
+  },
+  {
+    test_name: "Jerk test",
+    slug: "jerk-test",
+    purpose:
+      "To detect **posteroinferior glenohumeral instability** and posterior labral pathology.",
+    starting_position:
+      "Patient is sitting. Shoulder is abducted to 90\u00c2\u00b0 and internally rotated. Examiner grasps the elbow and wrist.",
+    procedure:
+      "The examiner applies an **axial load** (force along the humerus) and simultaneously moves the arm **horizontally across the body** (horizontal adduction).",
+    positive_test_criteria:
+      "A sudden, painful **jerk or clunk sensation** as the humeral head subluxates posteriorly and then relocates when the load is released.",
+    grading_or_notes:
+      "A painful clunk is highly correlated with a posterior labral lesion.",
+    youtube: "https://www.youtube.com/watch?v=j_qG1MNOws8",
+    id: 103,
+    region: "shoulder",
+  },
+  {
+    test_name: "Jobes Relocation Test",
+    slug: "jobes-relocation-test",
+    purpose:
+      "To confirm and differentiate between anterior instability and primary rotator cuff impingement. It is performed after a positive Apprehension Test.",
+    starting_position:
+      "Patient is supine. Shoulder is abducted to 90\u00c2\u00b0 and maximally externally rotated (positive Apprehension position).",
+    procedure:
+      "The examiner maintains the apprehension position and then applies a strong, **posteriorly directed force to the anterior humeral head** (relocation force).",
+    positive_test_criteria:
+      "A **decrease or complete cessation of the patient's pain and/or apprehension** during the posterior push, followed by an increase in symptoms when the push is removed (Surprise Test).",
+    grading_or_notes:
+      "Pain relief indicates the symptoms were due to instability (humeral head sliding forward) rather than pure impingement.",
+    youtube: "https://www.youtube.com/watch?v=YX1uJhjhwWg",
+    id: 104,
+    region: "shoulder",
+  },
+  {
+    test_name: "Kim test",
+    slug: "kim-test",
+    purpose:
+      "To detect a **posteroinferior labral lesion** (tear) of the shoulder.",
+    starting_position:
+      "Patient is sitting. Shoulder is abducted to 90\u00c2\u00b0. Examiner stabilizes the lateral aspect of the shoulder.",
+    procedure:
+      "The examiner applies an **axial load** to the humerus and performs a combination of **45\u00c2\u00b0 diagonal elevation and internal rotation** of the arm.",
+    positive_test_criteria:
+      "A sudden onset of **posterior shoulder pain and a posterior click or clunk** with or without a sensation of the shoulder giving way.",
+    grading_or_notes:
+      "The Kim test is considered more sensitive than the Jerk Test for detecting the predominantly **inferior** component of a posteroinferior labral lesion.",
+    youtube: "https://www.youtube.com/watch?v=-knsALCdv_A",
+    id: 105,
+    region: "shoulder",
+  },
+  {
+    test_name: "Lag Sign of the Shoulder (External Rotation)",
+    slug: "lag-sign-of-the-shoulder-external-rotation",
+    purpose:
+      "To assess for a **full-thickness tear of the external rotator tendons** (supraspinatus and/or infraspinatus).",
+    starting_position:
+      "Patient is sitting. Arm is abducted to 90\u00c2\u00b0 and the elbow is flexed to 90\u00c2\u00b0.",
+    procedure:
+      "The examiner passively moves the patient's arm into near-maximal **external rotation**. The patient is instructed to actively **hold** this position as the examiner releases the wrist support.",
+    positive_test_criteria:
+      "The patient is **unable to hold the external rotation** and the arm 'lags' or drops back into internal rotation (loss of lag).",
+    grading_or_notes: "A high-specificity test for rotator cuff tears.",
+    youtube: "https://www.youtube.com/watch?v=JPsLBYjldGI",
+    id: 106,
+    region: "shoulder",
+  },
+  {
+    test_name: "Load and Shift",
+    slug: "load-and-shift",
+    purpose:
+      "A primary test to assess the degree of **glenohumeral joint stability and translation** (laxity) in the anterior, posterior, and inferior directions.",
+    starting_position:
+      "Patient is sitting with a straight posture, arm resting on the thigh. Examiner stabilizes the clavicle and scapula.",
+    procedure:
+      "**1. Load:** The examiner uses one hand to grasp the humeral head and applies an axial force to center the humeral head in the glenoid fossa. **2. Shift:** The examiner then applies a translation force in the anterior and posterior directions.",
+    positive_test_criteria:
+      "The reproduction of the patient's symptoms (pain/apprehension) and/or **excessive translation** (movement) of the humeral head compared to the unaffected side.",
+    grading_or_notes:
+      "A translation up to 25% of the humeral head diameter is considered normal anteriorly, and 50% is normal posteriorly.",
+    youtube: "https://www.youtube.com/watch?v=txARar71h5E",
+    id: 107,
+    region: "shoulder",
+  },
+  {
+    test_name: "Neer Test",
+    slug: "neer-test",
+    purpose:
+      "To detect **subacromial impingement syndrome (SAIS)**, specifically compression of the rotator cuff tendons under the coracoacromial arch.",
+    starting_position:
+      "Patient is sitting or standing. Examiner stabilizes the scapula.",
+    procedure:
+      "The examiner passively and forcibly **flexes the patient's arm forward** between 70\u00c2\u00b0 and 120\u00c2\u00b0 while maintaining **internal rotation**.",
+    positive_test_criteria:
+      "The reproduction of the patient's **shoulder pain** during the passive movement, indicating mechanical impingement.",
+    grading_or_notes:
+      "This test has high sensitivity, so a negative result is useful for ruling out impingement.",
+    youtube: "https://www.youtube.com/watch?v=nNyax0iocZo",
+    id: 108,
+    region: "shoulder",
+  },
+  {
+    test_name: "Norwood Stress Test",
+    slug: "norwood-stress-test",
+    purpose:
+      "To evaluate the integrity and tightness of the **posterior shoulder capsule** and diagnose **posterior instability**.",
+    starting_position:
+      "Patient is seated. The arm is in 90\u00c2\u00b0 abduction and maximal external rotation.",
+    procedure:
+      "The examiner applies an **axial load** to the humerus while simultaneously **adducting the arm across the patient's chest** (horizontal adduction) and maintaining external rotation.",
+    positive_test_criteria:
+      "The patient experiences **posterior shoulder pain or apprehension**, and/or the examiner feels **excessive posterior translation** of the humeral head on the glenoid.",
+    grading_or_notes:
+      "This test puts a strong stress on the posterior capsule.",
+    youtube: "https://www.youtube.com/watch?v=ST53UChoFRo",
+    id: 109,
+    region: "shoulder",
+  },
+  {
+    test_name: "O'Brien's Test (Active Compression Test)",
+    slug: "o-berin-test",
+    purpose:
+      "To detect **Superior Labral Anterior to Posterior (SLAP) lesions** or **Acromioclavicular (AC) joint pathology**.",
+    starting_position:
+      "Patient is sitting or standing. Arm is flexed to 90\u00c2\u00b0, horizontally adducted 10-15\u00c2\u00b0.",
+    procedure:
+      "**Phase 1 (SLAP/AC Joint):** Arm is internally rotated (thumb pointing down). Examiner applies a downward force that the patient resists. **Phase 2 (Control):** Arm is externally rotated (palm pointing up). Examiner applies the same downward force.",
+    positive_test_criteria:
+      "**Pain or clicking in Phase 1 that is relieved in Phase 2.** If pain is deep in the shoulder, it suggests a labral tear (SLAP). If pain is superficial at the top of the shoulder, it suggests AC joint pathology.",
+    grading_or_notes:
+      "Relief of pain in Phase 2 is essential for a true positive test.",
+    youtube: "https://www.youtube.com/watch?v=qkDvVBi0gg8",
+    id: 110,
+    region: "shoulder",
+  },
+  {
+    test_name: "Painful Arc",
+    slug: "painful-arc",
+    purpose:
+      "To diagnose **subacromial impingement syndrome (SAIS)**, specifically by identifying compression of the rotator cuff under the acromion.",
+    starting_position:
+      "Patient is sitting or standing with the arm resting at their side.",
+    procedure:
+      "The patient is asked to **actively abduct their arm** from a neutral position to full elevation.",
+    positive_test_criteria:
+      "Pain occurs within the specific range of **70\u00c2\u00b0 to 120\u00c2\u00b0 of abduction**, but pain is significantly diminished or absent both below 70\u00c2\u00b0 and above 120\u00c2\u00b0.",
+    grading_or_notes:
+      "Pain occurring near end-range elevation (170\u00c2\u00b0+) may indicate Acromioclavicular (AC) joint pathology.",
+    youtube: "https://www.youtube.com/watch?v=7-aXHIBRsbU",
+    id: 111,
+    region: "shoulder",
+  },
+  {
+    test_name: "Passive compression test",
+    slug: "passive-compression-test",
+    purpose:
+      "To detect **Superior Labral Anterior to Posterior (SLAP) lesions**.",
+    starting_position:
+      "Patient is supine, lying on the edge of the table near the affected shoulder. Arm is abducted to 90\u00c2\u00b0.",
+    procedure:
+      "The examiner applies an **axial load (compression)** through the humerus and simultaneously **externally rotates** the shoulder.",
+    positive_test_criteria:
+      "The reproduction of the patient's pain or a **clicking/clunking sensation** during the maneuver.",
+    grading_or_notes:
+      "A relatively new test that has shown good accuracy for detecting superior labral tears.",
+    youtube: "https://www.youtube.com/watch?v=G2n0Mu9BmEA",
+    id: 112,
+    region: "shoulder",
+  },
+  {
+    test_name: "Paxinos Test",
+    slug: "paxinos-test",
+    purpose:
+      "To detect pathology of the **Acromioclavicular (AC) joint** (e.g., sprain, arthritis).",
+    starting_position: "Patient is sitting. Arm is resting at the side.",
+    procedure:
+      "The examiner uses one hand to stabilize the posterior aspect of the clavicle while applying an **anteroinferior force** to the acromion with the heel of the other hand.",
+    positive_test_criteria:
+      "Pain located specifically over the **AC joint** during the maneuver.",
+    grading_or_notes:
+      "This test compresses the AC joint, which should provoke pain if the joint capsule or cartilage is damaged.",
+    youtube: "https://www.youtube.com/watch?v=fiEeyT9VsCc",
+    id: 113,
+    region: "shoulder",
+  },
+  {
+    test_name: "Rent Test",
+    slug: "rent-test",
+    purpose:
+      "To test for the presence of rotator cuff tears. The rent test is used in addition to other rotator cuff tear tests (Jobe test, Drop arm sign, Belly-press test, List-off test, Bear-hug test) to determine the location of the tear",
+    starting_position:
+      "Patient is sitting. The patient's shoulder is passively extended and positioned in a relaxed, internally rotated position.",
+    procedure:
+      "The examiner uses the thumb of the opposite hand to firmly palpate the area just anterior to the acromion, directly over the supraspinatus tendon insertion. The examiner then externally rotates the patient's arm slightly and repeats palpation.",
+    positive_test_criteria:
+      "A palpable **hole or gap (rent)** in the tendon upon deep palpation, indicating a full-thickness tear.",
+    grading_or_notes:
+      "Due to overlying structures, this test is often challenging to perform accurately but is highly suggestive of a tear when positive.",
+    youtube: "https://www.youtube.com/watch?v=RUh2bz4CXvE",
+    id: 114,
+    region: "shoulder",
+  },
+  {
+    test_name: "Resisted AC Joint Extension Test",
+    slug: "resisted-ac-joint-extension-test",
+    purpose:
+      "Resisted AC Joint Extension Test (or the AC Resisted Extension Test) is used to help identify acromioclavicular joint pathology in both traumatic and non-traumatic/chronic overuse cases,  and can be useful in helping differentiate between AC joint and impingement syndromes.",
+    starting_position:
+      "Patient is standing or sitting. Arm is positioned in 90\u00c2\u00b0 of forward flexion.",
+    procedure:
+      "The examiner resists the patient's active movement of **horizontal adduction** and/or **extension** of the arm across the body.",
+    positive_test_criteria:
+      "Pain is reproduced or significantly increased **specifically over the AC joint** (top of the shoulder) during the resisted movement.",
+    grading_or_notes: "This test places compressive stress on the AC joint.",
+    youtube: "https://www.youtube.com/watch?v=CHTIvg9a13M",
+    id: 115,
+    region: "shoulder",
+  },
+  {
+    test_name: "Roos Stress Test (Elevated Arm Stress Test)",
+    slug: "roos-stress-test",
+    purpose:
+      "A highly sensitive test to provoke symptoms associated with **Thoracic Outlet Syndrome (TOS)**.",
+    starting_position:
+      "Patient is sitting. Both arms are held in the 'stick-up' position: shoulders abducted 90\u00c2\u00b0, externally rotated, and elbows flexed 90\u00c2\u00b0.",
+    procedure:
+      "The patient is instructed to **rapidly open and close their hands (making fists) for up to three minutes** while maintaining the elevated arm position.",
+    positive_test_criteria:
+      "The patient is **unable to complete the three-minute period** due to heaviness, weakness, numbness, tingling, or pain. The test is considered positive if symptoms are reproduced, particularly paresthesia and circulatory changes (color/pallor).",
+    grading_or_notes:
+      "The reproduction of only fatigue or discomfort does not count as a positive test; the patient's neurological or vascular symptoms must be reproduced.",
+    youtube: "https://www.youtube.com/watch?v=0oGGdcQsBKY",
+    id: 116,
+    region: "shoulder",
+  },
+  {
+    test_name: "Scapular Assistance Test (SAT)",
+    slug: "scapular-assistance-test",
+    purpose:
+      "To determine if the patient's shoulder symptoms (often impingement) are due to or alleviated by **scapular dyskinesis (abnormal scapular movement)**.",
+    starting_position: "Patient is sitting or standing. Arm is at the side.",
+    procedure:
+      "The patient actively abducts or flexes the affected arm. The examiner assists the movement by manually **guiding and stabilizing the scapula** into better retraction and external rotation.",
+    positive_test_criteria:
+      "The patient reports a **reduction or complete elimination of pain** during the assisted movement, suggesting inadequate scapular control is a contributing factor to the pain.",
+    grading_or_notes:
+      "If symptoms improve, the treatment should focus on scapular stability and strengthening.",
+    youtube: "https://www.youtube.com/watch?v=pfXdmXL9ouM",
+    id: 117,
+    region: "shoulder",
+  },
+  {
+    test_name: "Scapular Retraction Test (SRT)",
+    slug: "scapular-retraction-test",
+    purpose:
+      "To test for improved rotator cuff strength when the **scapula is manually stabilized** in a retracted position.",
+    starting_position:
+      "Patient is sitting or standing. Examiner stands behind and manually stabilizes the scapula by retracting it.",
+    procedure:
+      "The patient performs a resisted strength test (e.g., Empty Can or external rotation) while the scapula is held in a retracted position. The result is compared to the strength without stabilization.",
+    positive_test_criteria:
+      "**Increased strength or decreased pain** during the resisted movement compared to when the scapula is not stabilized.",
+    grading_or_notes:
+      "Similar to the SAT, this indicates the scapular stabilizers are weak or firing incorrectly, requiring intervention.",
+    youtube: "https://www.youtube.com/watch?v=tyxDTbVn_gg",
+    id: 118,
+    region: "shoulder",
+  },
+  {
+    test_name: "Scarf Test (Horizontal Adduction Test)",
+    slug: "scarf-test",
+    purpose:
+      "To assess for pathology of the **Acromioclavicular (AC) joint** or, less commonly, posterior glenohumeral capsular tightness.",
+    starting_position:
+      "Patient is standing or sitting. Arm is flexed to 90\u00c2\u00b0.",
+    procedure:
+      "The examiner passively moves the patient's arm into maximal **horizontal adduction** (adducting the arm across the chest).",
+    positive_test_criteria:
+      "Pain is reproduced **specifically over the AC joint** at the end range of motion, indicating AC joint strain or arthritis.",
+    grading_or_notes:
+      "If the pain is deep and posterior, it may suggest posterior capsular restriction.",
+    youtube: "https://www.youtube.com/watch?v=DKLvt816x6o",
+    id: 119,
+    region: "shoulder",
+  },
+  {
+    test_name: "Serratus Anterior Strength Test (Punch out test)",
+    slug: "serratus-anterior-strength-test",
+    purpose:
+      "To assess the strength and function of the **Serratus Anterior muscle** and check for early signs of long thoracic nerve injury.",
+    starting_position:
+      "Patient is standing, facing a wall, with the arm flexed to 90\u00c2\u00b0.",
+    procedure:
+      "The patient is instructed to **push (punch)** their arm forward against the wall, maximally protracting the scapula.",
+    positive_test_criteria:
+      "**Medial winging of the scapula** (the medial border lifts off the rib cage) during the push, indicating Serratus Anterior weakness or injury to the long thoracic nerve.",
+    grading_or_notes:
+      "Should be compared to the opposite side. This test is a critical indicator of scapular stability.",
+    youtube: "https://www.youtube.com/watch?v=jatVx3v7qDI",
+    id: 120,
+    region: "shoulder",
+  },
+  {
+    test_name: "Shoulder Special Tests",
+    slug: "shoulder-special-test",
+    purpose:
+      "This is a general term, not a specific test. (Placeholder for organization).",
+    starting_position: "N/A",
+    procedure: "N/A",
+    positive_test_criteria: "N/A",
+    grading_or_notes:
+      "This entry should likely be removed from the final list as it is a category header, not a test.",
+    youtube: "https://www.youtube.com/watch?v=nUYE8cwtIDA",
+    id: 121,
+    region: "shoulder",
+  },
+  {
+    test_name: "Speeds Test (Biceps Straight-Arm Test)",
+    slug: "speeds-test",
+    purpose:
+      "Speed's Test is used to test for superior labral tears or bicipital tendonitis.",
+    starting_position:
+      "Patient is sitting or standing. Arm is forward flexed 60\u00c2\u00b0 to 90\u00c2\u00b0, elbow is extended, and forearm is fully **supinated** (palm up).",
+    procedure:
+      "To perform the Speed's Test, the examiner places the patient's arm in shoulder flexion, external rotation, full elbow extension, and forearm supination; manual resistance is then applied by the examiner in a downward direction. The test is considered to be positive if pain in the bicipital tendon or bicipital groove is reproduced.",
+    positive_test_criteria:
+      "Pain is reproduced **specifically in the bicipital groove** (anterior shoulder) during the resisted movement. Pain relief when the forearm is pronated suggests biceps pathology.",
+    grading_or_notes: "Pain deep within the joint may indicate a SLAP lesion.",
+    youtube: "https://www.youtube.com/watch?v=gbG_O9Gv8aQ",
+    id: 122,
+    region: "shoulder",
+  },
+  {
+    test_name: "Test Item Cluster - Full-Thickness Rotator Cuff Tear",
+    slug: "test-item-cluster-full-thickness-rotator-cuff-tear",
+    purpose:
+      "A combination of tests used to increase the accuracy of diagnosing a **full-thickness rotator cuff tear**.",
+    starting_position: "N/A",
+    procedure: "N/A",
+    positive_test_criteria:
+      "A positive diagnosis is highly likely if a specific combination of tests is positive. A common cluster includes: 1) **Drop Arm Sign** (positive), 2) **Painful Arc** (positive), and 3) **Infraspinatus Muscle Test** (weakness).",
+    grading_or_notes:
+      "Using test clusters provides higher diagnostic accuracy than single tests. Other clusters exist depending on the tear location.",
+    youtube: "https://www.youtube.com/watch?v=HW5IXL4_OmY",
+    id: 123,
+    region: "shoulder",
+  },
+  {
+    test_name: "Upper Limb Tension Tests (ULTTs)",
+    slug: "upper-limb-tension-tests",
+    purpose:
+      "A group of tests designed to place **tension on the peripheral and central nerves** of the upper limb to identify neurodynamic issues (e.g., nerve root compression, peripheral nerve entrapment).",
+    starting_position:
+      "Patient is supine. The examiner sequentially positions the shoulder, elbow, forearm, wrist, and hand to maximally elongate a specific nerve.",
+    procedure:
+      "**ULTT 1 (Median Nerve):** Shoulder depression, elbow extension, shoulder external rotation, forearm supination, wrist/finger extension. Other ULTTs target the Radial and Ulnar nerves.",
+    positive_test_criteria:
+      "Reproduction of the patient's **neurological symptoms** (e.g., burning, paresthesia, tingling) or an abnormal difference in end-range mobility/sensation compared to the unaffected side.",
+    grading_or_notes:
+      "Symptoms should be reduced by moving a distant joint (e.g., neck side bending away from the limb) to confirm the neurogenic nature.",
+    youtube: "https://www.youtube.com/watch?v=rir6x6Iiqc4",
+    id: 124,
+    region: "shoulder",
+  },
+  {
+    test_name: "Whipple Test (Cross-Arm Adduction Test)",
+    slug: "whipple-test",
+    purpose:
+      "A sensitive screening test for a variety of shoulder pathologies, particularly **Rotator Cuff Pathology** (specifically the supraspinatus).",
+    starting_position:
+      "Patient is standing. The arm is flexed to 90\u00c2\u00b0 and internally rotated (thumb down).",
+    procedure:
+      "The patient is instructed to **horizontally adduct** the arm (move it across the chest). The examiner applies resistance near the elbow, resisting this movement.",
+    positive_test_criteria:
+      "Reproduction of **pain or weakness** compared to the unaffected side.",
+    grading_or_notes:
+      "The test is often used as part of a cluster but is highly sensitive for supraspinatus-related pain.",
+    youtube: "https://www.youtube.com/watch?v=DKLvt816x6o",
+    id: 125,
+    region: "shoulder",
+  },
+  {
+    test_name: "Yocum's Test",
+    slug: "yocum-test",
+    purpose: "To assess for **subacromial impingement syndrome (SAIS)**.",
+    starting_position:
+      "Patient is sitting or standing. The hand of the affected side is placed on the **unaffected shoulder**.",
+    procedure:
+      "The patient is instructed to **lift the elbow** off the chest/rib cage against the resistance of the examiner's hand on the elbow.",
+    positive_test_criteria:
+      "Reproduction of **shoulder pain** during the active resisted elevation of the elbow.",
+    grading_or_notes:
+      "Similar in principle to the Neer and Hawkins-Kennedy tests, it loads the subacromial structures in an internally rotated position.",
+    youtube: "https://www.youtube.com/watch?v=40tc1PvrQGk",
+    id: 126,
+    region: "shoulder",
+  },
+
+  {
+    test_name: "Anterior Drawer of the Ankle",
+    slug: "anterior-drawer-of-the-ankle",
+    purpose:
+      "To assess the integrity of the **Anterior Talofibular Ligament (ATFL)**, the most commonly injured ligament in lateral ankle sprains.",
+    starting_position:
+      "Patient is supine or sitting with the foot hanging off the edge of the table. The ankle is held in **10\u00c2\u00b0 to 20\u00c2\u00b0 of plantarflexion**.",
+    procedure:
+      "The examiner stabilizes the distal tibia and applies a **straight anterior translation force** (pulling forward) to the calcaneus and talus.",
+    positive_test_criteria:
+      "**Excessive anterior translation** of the talus on the tibia, compared to the unaffected side, or a 'soft' (absent) endpoint, indicating an ATFL tear.",
+    grading_or_notes:
+      "A difference in translation of 3mm or more compared to the opposite side is generally considered positive for a tear.",
+    youtube: "https://www.youtube.com/watch?v=vAcBEYZKcto",
+    id: 127,
+    region: "ankel",
+  },
+  {
+    test_name: "External Rotation Stress Test (or Syndesmosis Ligament Test)",
+    slug: "syndesmosis-ligament-test",
+    purpose:
+      "To assess the integrity of the **Distal Tibiofibular Syndesmosis** (the 'high ankle sprain' ligaments, including the AITFL and PITFL).",
+    starting_position:
+      "Patient is sitting with the knee flexed to 90\u00c2\u00b0 and the foot hanging freely.",
+    procedure:
+      "The examiner stabilizes the tibia and applies a forceful, passive **external rotation force** to the foot (forefoot and talus) while the ankle is in a neutral position.",
+    positive_test_criteria:
+      "Reproduction of **pain localized to the distal anterior and/or posterior tibiofibular joint** (the high ankle region).",
+    grading_or_notes:
+      "A positive test strongly suggests a syndesmosis sprain. This test is the rotational component of Kleiger's Test. ",
+    youtube: "https://www.youtube.com/watch?v=s53uzyUv0bc",
+    id: 128,
+    region: "ankel",
+  },
+  {
+    test_name: "Figure of Eight Method of Measuring Ankle Joint Swelling",
+    slug: "figure-of-eight-method-of-measuring-ankle-joint-swelling",
+    purpose:
+      "To quantitatively measure and track **ankle and foot edema (swelling)** volume over time.",
+    starting_position:
+      "Patient is sitting with the ankle held in a neutral position.",
+    procedure:
+      "A measuring tape is used in a specific 'figure of eight' pattern: starting at the tibialis anterior tendon, circling the ankle, passing over the navicular, under the arch, across the Achilles, and returning to the start.",
+    positive_test_criteria:
+      "An **increase in measurement (circumference)** compared to the previous measurement or the opposite, unaffected ankle indicates worsening edema.",
+    grading_or_notes:
+      "This method is considered highly reliable for detecting small changes in swelling volume compared to simple circumference measurements. ",
+    youtube: "https://www.youtube.com/watch?v=7VIldqF2orY",
+    id: 129,
+    region: "ankel",
+  },
+  {
+    test_name: "Impingement sign ankle (Anterior Ankle Impingement)",
+    slug: "impingement-sign-ankle",
+    purpose:
+      "To diagnose **Anterior Ankle Impingement Syndrome** (bony or soft tissue impingement at the front of the joint).",
+    starting_position: "Patient is supine or sitting.",
+    procedure:
+      "The examiner passively forces the ankle into **maximal dorsiflexion** while applying an **axial compression** force through the heel.",
+    positive_test_criteria:
+      "Sharp **pain is reproduced at the anterior aspect of the ankle joint** at the end range of dorsiflexion.",
+    grading_or_notes:
+      "This test jams the talus into the tibia/fibula, compressing any soft tissue or bony spurs (osteophytes) that may be present.",
+    youtube: "https://www.youtube.com/watch?v=IbRCCIDa5-8",
+    id: 130,
+    region: "ankel",
+  },
+  {
+    test_name: "Kleiger's Test (External Rotation Test)",
+    slug: "kleiger-test",
+    purpose:
+      "To assess the integrity of the **Distal Tibiofibular Syndesmosis** (high ankle sprain) and the **Deltoid Ligament** (medial ankle).",
+    starting_position:
+      "Patient is sitting with the knee flexed to 90\u00c2\u00b0 and the foot hanging freely.",
+    procedure:
+      "The examiner stabilizes the lower leg and maximally **externally rotates the foot** (forefoot and talus) while applying a minimal distraction force.",
+    positive_test_criteria:
+      "1. **Syndesmosis Injury:** Pain localized to the **anterior/posterior tibiofibular ligaments**. 2. **Deltoid Ligament Injury:** Pain localized to the **medial joint line** (Deltoid ligament) with excessive talar displacement.",
+    grading_or_notes:
+      "Pain on the medial side with external rotation suggests a Deltoid ligament tear; pain proximal suggests a syndesmosis sprain.",
+    youtube: "https://www.youtube.com/watch?v=s53uzyUv0bc",
+    id: 131,
+    region: "ankel",
+  },
+  {
+    test_name: "Ottawa Ankle Rules",
+    slug: "ottawa-ankle-rules",
+    purpose:
+      "A **clinical decision-making tool** used to determine the need for **X-rays** following an acute ankle or mid-foot injury.",
+    starting_position:
+      "Patient is sitting or supine, immediately after injury.",
+    procedure:
+      "The patient is assessed for specific criteria: **1) Bone Tenderness:** over the posterior edge/tip of the lateral or medial malleolus. **2) Bone Tenderness:** over the navicular bone or base of the 5th metatarsal. **3) Weight Bearing:** inability to bear weight immediately and/or for four steps in the emergency department.",
+    positive_test_criteria:
+      "If the patient meets **any one of these criteria**, an X-ray is required to rule out a fracture.",
+    grading_or_notes:
+      "This tool is not a special test but a standard guideline with near 100% sensitivity for fractures, preventing unnecessary X-rays. ",
+    youtube: "https://www.youtube.com/watch?v=KDkkhGZF1TI",
+    id: 132,
+    region: "ankel",
+  },
+  {
+    test_name: "Peroneus Longus and Brevis Tests",
+    slug: "peroneus-longus-and-brevis-tests",
+    purpose:
+      "To assess the strength and integrity of the **Peroneal tendons** (Peroneus Longus and Brevis), often implicated in lateral ankle stability and tendinopathy.",
+    starting_position:
+      "Patient is sitting or supine. The examiner holds the foot in a slightly plantarflexed and inverted position.",
+    procedure:
+      "The patient is instructed to actively **evert and plantarflex the foot** against the strong resistance of the examiner.",
+    positive_test_criteria:
+      "Significant **pain and/or weakness** along the course of the peroneal tendons (lateral ankle and foot) during resisted contraction, suggesting tendinopathy or tear.",
+    grading_or_notes:
+      "The contraction of the peroneal muscles can also be used as a distraction force to check for peroneal tendon subluxation. ",
+    youtube: "https://www.youtube.com/watch?v=M13NIQvhRdM",
+    id: 133,
+    region: "ankel",
+  },
+  {
+    test_name: "Prone Anterior Drawer Test (Ankle)",
+    slug: "prone-anterior-drawer-test",
+    purpose:
+      "An alternative position to assess the integrity of the **Anterior Talofibular Ligament (ATFL)**, often more comfortable for the patient.",
+    starting_position:
+      "Patient is prone with the foot hanging off the edge of the table. The ankle is held in plantarflexion.",
+    procedure:
+      "The examiner stabilizes the proximal calf with the knee bent to 90\u00c2\u00b0 and applies an **anterior translation force** to the heel/talus (pulling the foot up and forward toward the ceiling).",
+    positive_test_criteria:
+      "**Excessive anterior translation** of the talus on the tibia, compared to the unaffected side, or a 'soft' (absent) endpoint.",
+    grading_or_notes:
+      "The mechanics are the same as the supine anterior drawer, but the prone position can sometimes reduce muscle guarding.",
+    youtube: "https://www.youtube.com/watch?v=IdnBKv38EEQ",
+    id: 134,
+    region: "ankel",
+  },
+  {
+    test_name: "Silfverskiold Test",
+    slug: "silfverskiold-test",
+    purpose:
+      "To differentiate between **gastrocnemius tightness** (a two-joint muscle) and **soleus/capsular tightness** (one-joint structure) as the cause of reduced ankle dorsiflexion.",
+    starting_position: "Patient is supine or sitting.",
+    procedure:
+      "**Phase 1 (Gastrocnemius):** The examiner passively measures ankle dorsiflexion with the **knee fully extended**. **Phase 2 (Soleus/Capsular):** The examiner passively measures ankle dorsiflexion with the **knee flexed** (to slacken the gastrocnemius).",
+    positive_test_criteria:
+      "If **dorsiflexion increases** significantly in Phase 2 (knee flexed), the restriction is due to **Gastrocnemius Tightness**. If dorsiflexion **remains limited** in both positions, the restriction is likely **Soleus or Ankle Capsule Tightness**.",
+    grading_or_notes: "This is a length assessment test, not an injury test. ",
+    youtube: "https://www.youtube.com/watch?v=ILtQhvYH2VQ",
+    id: 135,
+    region: "ankel",
+  },
+  {
+    test_name: "Squeeze Test (Tibia-Fibula Squeeze)",
+    slug: "tibia-fibula-squeeze",
+    purpose:
+      "To assess for a **Syndesmosis Sprain** (high ankle sprain) or a **Tibial/Fibular Fracture**.",
+    starting_position: "Patient is sitting or supine.",
+    procedure:
+      "The examiner firmly **squeezes the tibia and fibula together** (compression) at a point proximal to the suspected injury site (often mid-calf).",
+    positive_test_criteria:
+      "Sharp, localized **pain at the syndesmosis joint line** (distal tibiofibular joint) when the squeeze pressure is *released* (for syndesmosis) or pain anywhere along the shaft (for fracture).",
+    grading_or_notes:
+      "Compressing the bones causes them to separate slightly at the distal joint; releasing the compression allows them to spring apart, which stresses the injured syndesmosis ligaments.",
+    youtube: "https://www.youtube.com/watch?v=ANgWSz0UoDg",
+    id: 136,
+    region: "ankel",
+  },
+  {
+    test_name: "Star Excursion Balance Test (SEBT)",
+    slug: "star-excursion-balance-test",
+    purpose:
+      "A functional, dynamic balance and neuromuscular control test used to screen for **ankle instability** and **return-to-sport readiness**.",
+    starting_position:
+      "Patient stands in the center of a grid with one foot, facing a central point.",
+    procedure:
+      "The patient reaches out with the free limb to tap the ground along **eight standardized lines** (or fewer, common modified versions use 3 or 4) as far as possible while maintaining balance on the stance leg.",
+    positive_test_criteria:
+      "**Reduced reach distance** compared to the unaffected leg (often a 4cm difference is significant) or **loss of balance** on the stance leg.",
+    grading_or_notes:
+      "This is a performance measure. Reduced performance often correlates with chronic ankle instability. ",
+    youtube: "https://www.youtube.com/watch?v=4GMzE7NV3W0",
+    id: 137,
+    region: "ankel",
+  },
+  {
+    test_name: "Talar tilt",
+    slug: "talar-tilt",
+    purpose:
+      "To assess the integrity of the **collateral ligaments** of the ankle, specifically the **Calcaneofibular Ligament (CFL)** for inversion stress and the **Deltoid Ligament** for eversion stress.",
+    starting_position:
+      "Patient is supine or sitting with the foot hanging off the table. The ankle is held in neutral dorsiflexion.",
+    procedure:
+      "The examiner stabilizes the distal tibia and applies a forceful **inversion stress** (medial tilt) to the talus, followed by a forceful **eversion stress** (lateral tilt).",
+    positive_test_criteria:
+      "**Excessive gapping or tilting** of the talus within the mortise, compared to the unaffected side, or a 'soft' endpoint. **Excessive inversion** suggests CFL tear; **excessive eversion** suggests Deltoid ligament tear.",
+    grading_or_notes:
+      "The test is more specific to the CFL when the ankle is in neutral dorsiflexion, as this is the CFL's most stressed position.",
+    youtube: "https://www.youtube.com/watch?v=UHNbm6Z3XK4",
+    id: 138,
+    region: "ankel",
+  },
+  {
+    test_name: "Thompson Test (or Simmonds Test)",
+    slug: "thompson-test",
+    purpose: "To assess for a **complete rupture of the Achilles Tendon**.",
+    starting_position:
+      "Patient is prone with the feet hanging freely off the edge of the table (or kneeling with feet over the edge).",
+    procedure:
+      "The examiner firmly **squeezes the bulk of the calf muscle** (gastrocnemius-soleus complex).",
+    positive_test_criteria:
+      "The **absence of passive plantarflexion** (the foot fails to drop downward) in response to the calf squeeze, indicating a complete tear of the Achilles tendon.",
+    grading_or_notes:
+      "This test has high sensitivity and specificity. The squeeze relies on the connection between the calf muscle and the tendon to produce foot movement.",
+    youtube: "https://www.youtube.com/watch?v=z-7cJ7LpCqY",
+    id: 139,
+    region: "ankel",
+  },
+
+  {
+    test_name: "Beighton Score",
+    slug: "beighton-score-elbow",
+    purpose:
+      "To quantify **generalized joint hypermobility** (laxity) across the body, which can be a predisposing factor for elbow instability or other injuries.",
+    starting_position:
+      "Patient is standing and sitting, depending on the component being tested.",
+    procedure:
+      "The full score includes 9 points, testing bilateral hyperextension of the little finger, passive apposition of the thumb to the forearm, elbow hyperextension, knee hyperextension, and forward flexion of the trunk (palms to floor). For the **elbow** component: Examiner attempts to hyperextend the elbow beyond 10\u00c2\u00b0.",
+    positive_test_criteria:
+      "A score of **4/9 or more** is generally indicative of generalized joint hypermobility. A positive elbow component is **hyperextension > 10\u00c2\u00b0**.",
+    grading_or_notes:
+      "Though a general test, it's included here for assessing ligamentous laxity which affects elbow stability. ",
+    youtube: "https://www.youtube.com/watch?v=ZwWts_P-Xws",
+    id: 140,
+    region: "elbow",
+  },
+  {
+    test_name: "Elbow Extension Sign",
+    slug: "elbow-extension-sign",
+    purpose:
+      "A screening test used to rule out an **intra-articular fracture** (e.g., radial head or olecranon) in an acutely injured elbow.",
+    starting_position: "Patient is standing or sitting.",
+    procedure:
+      "The patient is asked to actively and completely **extend their elbow**.",
+    positive_test_criteria:
+      "The patient is **unable to achieve full elbow extension** (loss of the last 5-10\u00c2\u00b0 of extension).",
+    grading_or_notes:
+      "The test has high sensitivity. An elbow that can achieve full extension is highly unlikely to have a fracture, though it cannot rule out other soft tissue injuries.",
+    youtube: "https://www.youtube.com/watch?v=1TILxnuB4P0",
+    id: 141,
+    region: "elbow",
+  },
+  {
+    test_name: "Elbow Flexion Test",
+    slug: "elbow-flexion-test",
+    purpose:
+      "To provoke symptoms associated with **Cubital Tunnel Syndrome** (ulnar nerve entrapment at the elbow).",
+    starting_position: "Patient is sitting or standing.",
+    procedure:
+      "The patient is asked to maximally **flex both elbows** and maintain the position with the wrists extended for **3 to 5 minutes**.",
+    positive_test_criteria:
+      "The reproduction of the patient's symptoms, such as **pain, numbness, or paresthesia** in the distribution of the ulnar nerve (little finger and ulnar half of the ring finger).",
+    grading_or_notes:
+      "Maximal elbow flexion narrows the cubital tunnel, increasing tension and compression on the ulnar nerve.",
+    youtube: "https://www.youtube.com/watch?v=brN-VLUETVU",
+    id: 142,
+    region: "elbow",
+  },
+  {
+    test_name: "Elbow Quadrant Tests",
+    slug: "elbow-quardrant-test-elbow",
+    purpose:
+      "A generalized term for assessing the **end-feel and range of motion** of the elbow joint in flexion and extension, often used to assess stiffness or loose bodies.",
+    starting_position: "Patient is supine. Examiner is at the head of the bed.",
+    procedure:
+      "The examiner applies overpressure into **maximal elbow flexion and maximal extension**, while also introducing a slight valgus and varus stress near end-range to explore the entire joint quadrant.",
+    positive_test_criteria:
+      "The reproduction of pain, restriction of motion, or an abnormal 'springy' or 'bony' end-feel compared to the unaffected side.",
+    grading_or_notes:
+      "A bony end-feel can suggest osteophytes or loose bodies (joint mice).",
+    youtube: "https://www.youtube.com/watch?v=gqCcdxWNVcw",
+    id: 143,
+    region: "elbow",
+  },
+  {
+    test_name: "Elbow Varus Stress Test",
+    slug: "elbow-varus-stress-test",
+    purpose:
+      "To assess the integrity of the **Lateral Collateral Ligament (LCL)** (Radial Collateral Ligament) of the elbow.",
+    starting_position:
+      "Patient is supine or sitting. Elbow is flexed 20\u00c2\u00b0-30\u00c2\u00b0 (to unlock the olecranon).",
+    procedure:
+      "The examiner stabilizes the patient's humerus and applies a **varus (laterally directed) force** to the forearm, attempting to open the lateral joint line.",
+    positive_test_criteria:
+      "**Excessive gapping** on the lateral side compared to the unaffected side, reproduction of lateral elbow pain, or a soft/mushy end-feel.",
+    grading_or_notes:
+      "A positive test is often associated with Posterolateral Rotatory Instability (PLRI).",
+    youtube: "https://www.youtube.com/watch?v=5zl8GsG3hR4",
+    id: 144,
+    region: "elbow",
+  },
+  {
+    test_name:
+      "Golfer\u00e2\u20ac\u2122s Elbow Test (Medial Epicondylitis Test)",
+    slug: "medial-epicondylitis-test",
+    purpose:
+      "To screen for **Medial Epicondylitis** (Golfer's Elbow), which is inflammation/degeneration of the common flexor tendon origin.",
+    starting_position:
+      "Patient is sitting. Examiner palpates the medial epicondyle.",
+    procedure:
+      "The examiner passively **supinates the patient\u00e2\u20ac\u2122s forearm**, fully **extends the wrist**, and maximally **extends the elbow**.",
+    positive_test_criteria:
+      "Sudden or significant pain is reproduced over the **medial epicondyle** of the humerus.",
+    grading_or_notes:
+      "This maneuver maximally stretches the wrist flexors/forearm pronators that originate at the medial epicondyle. ",
+    youtube: "https://www.youtube.com/watch?v=u5H9iG8QhYA",
+    id: 145,
+    region: "elbow",
+  },
+  {
+    test_name: "Maudsley's Test (Middle Finger Extension Test)",
+    slug: "maudsley-test",
+    purpose:
+      "To screen for **Lateral Epicondylitis** (Tennis Elbow), specifically placing stress on the Extensor Digitorum Communis (EDC) muscle.",
+    starting_position: "Patient is sitting. Arm is resting comfortably.",
+    procedure:
+      "The examiner resists **extension of the patient's middle finger** while the elbow is in an extended position. The examiner simultaneously palpates the lateral epicondyle.",
+    positive_test_criteria:
+      "Pain is reproduced over the **lateral epicondyle** or just distal to it.",
+    grading_or_notes:
+      "This is a variant used to isolate the stress on the EDC tendon, which is often involved in Lateral Epicondylitis.",
+    youtube: "https://www.youtube.com/watch?v=BaxgmHT_2eQ",
+    id: 146,
+    region: "elbow",
+  },
+  {
+    test_name: "Milking Maneuver",
+    slug: "milking-maneuver-test",
+    purpose:
+      "To assess the integrity of the **Posterior Bundle of the Medial Collateral Ligament (MCL/UCL)**, commonly injured in overhead athletes.",
+    starting_position:
+      "Patient is sitting. Shoulder is flexed and abducted. Elbow is flexed to 90\u00c2\u00b0.",
+    procedure:
+      "The examiner grasps the patient's thumb and applies a forceful, sustained **valgus stress** to the elbow, as if 'milking' the forearm.",
+    positive_test_criteria:
+      "Reproduction of **medial elbow pain** or a feeling of **instability** in the medial joint.",
+    grading_or_notes:
+      "This maneuver is very specific to the MCL, especially the posterior bundle, by producing a high-intensity valgus load in a loaded position.",
+    youtube: "https://www.youtube.com/watch?v=4sa9goJ4afs",
+    id: 147,
+    region: "elbow",
+  },
+  {
+    test_name: "Moving Valgus Stress Test",
+    slug: "moving-valgus-stress-test",
+    purpose:
+      "A dynamic and highly accurate test for diagnosing a partial tear or instability of the **Medial Collateral Ligament (MCL/UCL)** in overhead athletes.",
+    starting_position:
+      "Patient is supine. Shoulder is abducted to 90\u00c2\u00b0 and maximally externally rotated. Elbow is flexed fully.",
+    procedure:
+      "While maintaining a constant **valgus stress** and external rotation, the examiner rapidly and smoothly moves the elbow from **full flexion to full extension** (or to about 30\u00c2\u00b0 extension) and back.",
+    positive_test_criteria:
+      "A sudden, sharp **reproduction of pain over the MCL** (medial elbow) that occurs through a specific arc of motion (usually between 70\u00c2\u00b0 and 120\u00c2\u00b0 of flexion).",
+    grading_or_notes:
+      "The painful arc is the key finding, indicating dynamic MCL insufficiency.",
+    youtube: "https://www.youtube.com/watch?v=JIU_kv5VoQk",
+    id: 148,
+    region: "elbow",
+  },
+  {
+    test_name: "Polk's Test (Hook Test)",
+    slug: "hook-test",
+    purpose:
+      "An obsolete or rarely used test, often confused with the **Hook Test** (which assesses the biceps tendon). Assuming the user intended Hook Test for Biceps integrity.",
+    starting_position:
+      "Patient is sitting. Elbow is flexed to 90\u00c2\u00b0 and the forearm is supinated.",
+    procedure:
+      "The examiner attempts to hook their index finger under the distal biceps tendon, just lateral to the antecubital fossa.",
+    positive_test_criteria:
+      "The **absence of a palpable tendon cord** or an inability to 'hook' the tendon, indicating a distal biceps tendon rupture.",
+    grading_or_notes:
+      "The ability to hook the tendon rules out a complete rupture of the distal biceps tendon.",
+    youtube: "https://www.youtube.com/watch?v=NhfeOJfVvyc",
+    id: 149,
+    region: "elbow",
+  },
+  {
+    test_name: "Pronator Teres Syndrome Test",
+    slug: "pronator-teres-syndrome-test",
+    purpose:
+      "To diagnose **Pronator Teres Syndrome**, which involves compression of the median nerve by the pronator teres muscle.",
+    starting_position: "Patient is sitting or standing. Arm is extended.",
+    procedure:
+      "The examiner forcibly **resists pronation** of the forearm while simultaneously extending the elbow from a flexed position.",
+    positive_test_criteria:
+      "The reproduction of **numbness and tingling** in the median nerve distribution (thumb, index, middle, and radial half of ring finger) or pain over the pronator teres muscle.",
+    grading_or_notes:
+      "Holding maximal resisted pronation for 30-60 seconds can also provoke symptoms.",
+    youtube: "https://www.youtube.com/watch?v=sL4OtTuf5hY",
+    id: 150,
+    region: "elbow",
+  },
+];

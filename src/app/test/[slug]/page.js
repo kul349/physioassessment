@@ -1,0 +1,204 @@
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import {
+  ChevronLeft,
+  Play,
+  Info,
+  ClipboardCheck,
+  UserCircle,
+  Video,
+  BookOpen,
+  ShieldAlert,
+} from "lucide-react";
+import { tests } from "@/data/tests";
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const test = tests.find((t) => t.slug === slug);
+  if (!test) return { title: "Test Not Found" };
+
+  return {
+    title: `${test.test_name} - Assessment`,
+    // ... rest of your metadata
+  };
+}
+
+export function generateStaticParams() {
+  return tests.map((test) => ({ slug: test.slug }));
+}
+
+function getEmbedUrl(url) {
+  if (!url) return null;
+  const match = url.match(/(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/user\/\S+| \/ytscreeningroom\?v=))([\w\-]{11})/);
+  return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+}
+
+export default async function SingleTestDetails({ params }) {
+  const { slug } = await params;
+  const test = tests.find((t) => t.slug === slug);
+  
+  if (!test) notFound();
+
+  const embedUrl = getEmbedUrl(test.youtube);
+  const relatedTests = tests.filter(
+    (t) => t.region === test.region && t.slug !== test.slug
+  ).slice(0, 4); // Limit to 4 tests
+
+  return (
+    <div className="min-h-screen bg-white font-sans text-slate-900 pb-20">
+      <nav className="text-sm py-3 px-6 text-slate-500">
+        <Link href="/" className="hover:underline">
+          Home
+        </Link>
+        &nbsp;
+        {" > "}
+        <Link href="/test" className="hover:underline">
+          Assessment Tests
+        </Link>
+        &nbsp; &gt;
+        <span className="text-slate-900 font- pl-1">{test.test_name}</span>
+      </nav>
+
+      <main className="max-w-4xl mx-auto px-6 mt-6">
+        <header className="mb-12">
+          <div className="inline-block bg-emerald-50 text-emerald-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+            Focus Area: {test.region}
+          </div>
+          <h1 className="text-4xl font-black text-slate-900 mb-6 leading-tight">
+            Understanding the <br />
+            <span className="text-emerald-600">{test.test_name}</span>
+          </h1>
+          <p className="text-xl text-slate-500 leading-relaxed border-l-4 border-emerald-100 pl-6 italic">
+            {test.purpose}
+          </p>
+        </header>
+
+        <section className="mb-16">
+          <div className="flex items-center gap-2 mb-4 text-slate-400">
+            <Video size={18} />
+            <h2 className="text-sm font-bold uppercase tracking-wider">
+              Watch how it done
+            </h2>
+          </div>
+          <div className="rounded-2rem overflow-hidden bg-slate-100 shadow-2xl shadow-slate-200/50 border border-slate-100">
+            {embedUrl ? (
+              <div className="aspect-video relative">
+                <iframe
+                  src={embedUrl}
+                  title={test.test_name}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full border-0"
+                />
+              </div>
+            ) : (
+              <div className="aspect-video flex flex-col items-center justify-center text-slate-400">
+                <Play size={40} className="mb-2 opacity-20" />
+                <p className="text-sm">Instructional video coming soon</p>
+              </div>
+            )}
+          </div>
+        </section>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="space-y-4">
+            <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900">
+              <UserCircle className="text-emerald-500" />
+              How do I start?
+            </h3>
+            <p className="text-slate-600 leading-relaxed bg-slate-50 p-6 rounded-2xl border border-slate-100">
+              {test.starting_position}
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900">
+              <ClipboardCheck className="text-emerald-500" />
+              What happens?
+            </h3>
+            <p className="text-slate-600 leading-relaxed bg-slate-50 p-6 rounded-2xl border border-slate-100">
+              {test.procedure}
+            </p>
+          </div>
+        </div>
+
+        <section className="bg-dark-gray-1 text-white p-10 rounded-[2.5rem] mb-12 shadow-xl shadow-slate-200">
+          <div className="flex items-center gap-2 text-emerald-400 mb-6">
+            <Info size={20} />
+            <h3 className="text-sm font-bold uppercase tracking-widest">
+              In Plain English
+            </h3>
+          </div>
+          <h4 className="text-2xl font-bold mb-4">
+            What does a Positive mean?
+          </h4>
+          <p className="text-slate-300 text-lg leading-relaxed mb-8">
+            {test.positive_test_criteria}
+          </p>
+          <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
+            <h5 className="text-xs font-bold text-emerald-400 uppercase mb-2">
+              Helpful Tip:
+            </h5>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              {test.grading_or_notes}
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-rose-50 border border-rose-100 p-8 rounded-3xl mb-16">
+          <div className="flex items-center gap-2 text-rose-600 mb-4">
+            <ShieldAlert size={20} />
+            <h3 className="font-bold text-lg">Safety First</h3>
+          </div>
+          <p className="text-sm text-rose-700 leading-relaxed">
+            This guide is to help you understand what happens in a clinic.{" "}
+            <strong>Do not try to diagnose yourself.</strong> If you have severe
+            pain, swelling, or cant put weight on your leg, please visit an
+            urgent care center or your doctor immediately.
+          </p>
+        </section>
+
+        {relatedTests.length > 0 && (
+          <section className="mb-16">
+            <h3 className="text-2xl font-bold mb-6">
+              Other {test.region} Tests
+            </h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {relatedTests.map((related) => (
+                <li key={related.slug}>
+                  <Link
+                    href={`/tests/${related.slug}`}
+                    className="block p-4 bg-slate-50 border border-slate-100 rounded-xl hover:shadow-lg hover:bg-emerald-50 transition-all"
+                  >
+                    <h4 className="font-semibold text-slate-900">
+                      {related.test_name}
+                    </h4>
+                    <p className="text-sm text-slate-500 truncate">
+                      {related.purpose}
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="text-center mt-6">
+              <Link
+                href="/assessment-tests"
+                className="text-emerald-600 font-bold hover:underline"
+              >
+                Browse All Assessment Tests
+              </Link>
+            </div>
+          </section>
+        )}
+
+        <footer className="mt-24 pt-12 border-t border-slate-100 text-center">
+          <p className="text-xs text-slate-400 max-w-xl mx-auto leading-loose italic">
+            This is an open learning resource designed to empower patients with
+            knowledge. Information is updated regularly by our community of
+            health advocates.
+          </p>
+        </footer>
+      </main>
+    </div>
+  );
+}
