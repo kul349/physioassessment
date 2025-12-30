@@ -31,17 +31,17 @@ export async function generateMetadata({ params }) {
       title: `${test.test_name} Assessment Guide`,
       description: test.purpose,
       type: "article",
-      url: `https://yoursite.com/tests/${slug}`,
+      url: `https://physioassessment.vercel.app/tests/${slug}`,
       images: [
         {
-          url: "https://yoursite.com/og-test-image.jpg",
+          url: "https://physioassessment.vercel.app/images/img-slider-1.webp",
           width: 1200,
           height: 630,
           alt: test.test_name,
         },
       ],
     },
-    canonical: `https://yoursite.com/tests/${slug}`,
+    canonical: `https://physioassessment.vercel.app/tests/${slug}`,
   };
 }
 
@@ -82,7 +82,6 @@ export default async function SingleTestDetails({ params }) {
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 pb-20">
-      {/* JSON-LD Schema Markup */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
@@ -147,7 +146,6 @@ export default async function SingleTestDetails({ params }) {
             Focus Area: <span className="capitalize">{test.region}</span>
           </div>
 
-          {/* Better semantic heading structure */}
           <h1 className="text-4xl font-black text-slate-900 mb-6 leading-tight">
             Understanding the {test.test_name} Assessment
           </h1>

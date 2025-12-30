@@ -82,7 +82,6 @@ const AssessmentStagesPage = () => {
     script.textContent = JSON.stringify(schemaData);
     document.head.appendChild(script);
 
-    // Update meta tags
     document.title =
       "Physiotherapy Assessment Stages Guide | Clinical Evaluation Process";
 
