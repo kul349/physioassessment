@@ -1,15 +1,10 @@
-import tests from "@/data/tests"; 
+import { tests } from "@/data/tests";
 
 export default function sitemap() {
   const baseUrl = "https://physioassessment.vercel.app/";
 
   // Static pages
-  const staticPages = [
-    "",
-    "/test",
-    "/about-us",
-    "/assessment-stage",
-  ];
+  const staticPages = ["", "/test", "/about-us", "/assessment-stage"];
 
   const staticRoutes = staticPages.map((route) => ({
     url: `${baseUrl}${route}`,
