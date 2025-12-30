@@ -2,7 +2,7 @@ import { tests } from "@/data/tests";
 
 const baseUrl = "https://physioassessment.vercel.app";
 
-function generateSitemap() {
+function generateSitemapXml() {
   const staticPages = ["", "/test", "/about-us", "/assessment-stage"];
 
   const staticUrls = staticPages
@@ -38,8 +38,12 @@ ${testUrls}
 </urlset>`;
 }
 
-export default function handler(req, res) {
-  const sitemap = generateSitemap();
-  res.setHeader("Content-Type", "application/xml");
-  res.status(200).send(sitemap);
+export async function GET() {
+  const sitemap = generateSitemapXml();
+  return new Response(sitemap, {
+    status: 200,
+    headers: {
+      "Content-Type": "application/xml",
+    },
+  });
 }
