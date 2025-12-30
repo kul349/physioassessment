@@ -88,10 +88,8 @@ const AssessmentStagesPage = () => {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="max-w-6xl mx-auto px-6 pb-32 pt-20">
         <div className="relative">
-          {/* Vertical Timeline Line */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-emerald-100 -translate-x-1/2" />
 
           <div className="space-y-32">
@@ -106,17 +104,14 @@ const AssessmentStagesPage = () => {
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
-                {/* Image Visualization Side */}
                 <div className="w-full lg:w-1/2">
                   <div className="relative group">
-                    {/* Floating Accent Circle */}
                     <div
                       className={`absolute -top-6 -left-6 w-24 h-24 rounded-full blur-3xl opacity-20 ${stage.color}`}
                     />
 
                     <div className="relative overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.08)] bg-white border border-slate-100 group-hover:shadow-emerald-900/5 transition-all duration-500">
                       <div className="aspect-4/3 relative flex items-center justify-center bg-slate-50">
-                        {/* Themed Visual Placeholder */}
                         <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center overflow-hidden">
                           <div
                             className={`absolute top-0 right-0 p-8 opacity-5 ${stage.textColor}`}
@@ -196,7 +191,6 @@ const AssessmentStagesPage = () => {
           </div>
         </div>
 
-        {/* Professional Video Experience */}
         <motion.section
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -204,7 +198,6 @@ const AssessmentStagesPage = () => {
           className="mt-40"
         >
           <div className="relative group">
-            {/* Background glowing accent */}
             <div className="absolute -inset-1 bg-linear-to-r from-emerald-500 to-teal-500 rounded-[2.5rem] blur opacity-25 group-hover:opacity-40 transition duration-1000" />
 
             <div className="relative bg-slate-900 rounded-4xl overflow-hidden shadow-2xl">
