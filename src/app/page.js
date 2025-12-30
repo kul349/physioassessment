@@ -53,7 +53,7 @@ export default function HomePage() {
       name: "PhysioTest",
       description: "Patient-friendly physiotherapy assessment test guides",
       url: "https://yoursite.com",
-      logo: "https://yoursite.com/logo.png",
+      logo: "https://physioassessment.vercel.app/logo.png",
       sameAs: [
         "https://facebook.com/physiotest",
         "https://twitter.com/physiotest",
@@ -104,7 +104,7 @@ export default function HomePage() {
     );
     updateMetaTag("og:type", "website");
     updateMetaTag("og:url", "https://yoursite.com");
-    updateMetaTag("og:image", "https://yoursite.com/og-image.jpg");
+    updateMetaTag("og:image", "https://physioassessment.vercel.app/og-image.jpg");
     updateMetaTag("twitter:card", "summary_large_image");
     updateMetaTag(
       "twitter:title",

@@ -36,14 +36,14 @@ function TestDetailPage() {
       "@type": "SearchResultsPage",
       name: "Physical Assessment Test Guides",
       description: "Search and find guides for physical assessment tests",
-      url: "https://yoursite.com/test",
+      url: "https://physioassessment.vercel.app/test",
       numberOfResults: filtered.length,
       itemListElement: visibleTests.map((test, index) => ({
         "@type": "ListItem",
         position: index + 1,
         name: test.test_name,
         description: test.purpose,
-        url: `https://yoursite.com/test/${test.slug}`,
+        url: `https://physioassessment.vercel.app/test/${test.slug}`,
       })),
     };
 
@@ -84,7 +84,7 @@ function TestDetailPage() {
     updateMetaTag("og:title", pageTitle);
     updateMetaTag("og:description", pageDesc);
     updateMetaTag("og:type", "website");
-    updateMetaTag("og:url", "https://yoursite.com/test");
+    updateMetaTag("og:url", "https://physioassessment.vercel.app/test");
     updateMetaTag("twitter:card", "summary_large_image");
     updateMetaTag("twitter:title", pageTitle);
     updateMetaTag("twitter:description", pageDesc);

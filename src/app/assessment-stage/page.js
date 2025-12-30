@@ -1,6 +1,7 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   ClipboardCheck,
   Activity,
@@ -8,6 +9,7 @@ import {
   Dumbbell,
   PlayCircle,
   ChevronRight,
+  ArrowRight,
 } from "lucide-react";
 
 const stages = [
@@ -58,10 +60,95 @@ const stages = [
 ];
 
 const AssessmentStagesPage = () => {
+  useEffect(() => {
+    // Add JSON-LD structured data for assessment process
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "EducationalOccupationalCredential",
+      name: "Physiotherapy Assessment Stages",
+      description:
+        "Complete guide to physiotherapy assessment stages and clinical evaluation process",
+      url: "https://physioassessment.vercel.app/assessment-stages",
+      educationalLevel: "Professional Training",
+      hasPart: stages.map((stage, index) => ({
+        "@type": "EducationalOccupationalCredential",
+        name: stage.step,
+        description: stage.description,
+        position: index + 1,
+      })),
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(schemaData);
+    document.head.appendChild(script);
+
+    // Update meta tags
+    document.title =
+      "Physiotherapy Assessment Stages Guide | Clinical Evaluation Process";
+
+    const updateMetaTag = (name, content) => {
+      let tag =
+        document.querySelector(`meta[name="${name}"]`) ||
+        document.querySelector(`meta[property="${name}"]`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(name.includes("og:") ? "property" : "name", name);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    };
+
+    updateMetaTag(
+      "description",
+      "Learn the 4 stages of physiotherapy assessment: Initial Evaluation, Physical Tests, Diagnosis & Plan, and Follow-Up exercises. Complete clinical guide for patients."
+    );
+    updateMetaTag(
+      "keywords",
+      "physiotherapy assessment stages, clinical evaluation, physical examination, rehabilitation process, patient education"
+    );
+    updateMetaTag(
+      "og:title",
+      "Physiotherapy Assessment Stages | Clinical Guide"
+    );
+    updateMetaTag(
+      "og:description",
+      "Understand each stage of the physiotherapy assessment process with our detailed clinical guide"
+    );
+    updateMetaTag("og:type", "article");
+    updateMetaTag("og:url", "https://physioassessment.vercel.app/assessment-stages");
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-emerald-100">
-      {/* Header Section */}
       <header className="relative py-28 overflow-hidden bg-slate-50 border-b border-emerald-100/50">
+        <nav className="mb-8 text-sm text-slate-500" aria-label="breadcrumb">
+          <ol className="flex items-center justify-center gap-2">
+            <li>
+              <Link
+                href="/"
+                className="hover:text-emerald-600 transition-colors"
+              >
+                Home
+              </Link>
+            </li>
+            <li>/</li>
+            <li>
+              <Link
+                href="/test"
+                className="hover:text-emerald-600 transition-colors"
+              >
+                Assessment Tests
+              </Link>
+            </li>
+            <li>/</li>
+            <li className="text-slate-900 font-semibold">Assessment Stages</li>
+          </ol>
+        </nav>{" "}
         <div className="absolute inset-0 bg-[radial-gradient(#10b981_0.5px,transparent_0.5px)] [bg-size-24px_24px] opacity-[0.15] -z-10" />
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
@@ -82,19 +169,19 @@ const AssessmentStagesPage = () => {
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto font-light">
               Master the standardized evaluation framework designed to optimize
               patient recovery and clinical precision through systematic
-              analysis.
+              analysis. Learn the 4 essential stages of physiotherapy
+              assessment.
             </p>
           </motion.div>
         </div>
       </header>
-
       <main className="max-w-6xl mx-auto px-6 pb-32 pt-20">
         <div className="relative">
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-emerald-100 -translate-x-1/2" />
 
           <div className="space-y-32">
             {stages.map((stage, index) => (
-              <motion.div
+              <motion.section
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -171,7 +258,10 @@ const AssessmentStagesPage = () => {
                         key={i}
                         className="flex items-center gap-3 text-slate-500 text-sm font-medium"
                       >
-                        <ChevronRight className="w-4 h-4 text-emerald-500" />
+                        <ChevronRight
+                          className="w-4 h-4 text-emerald-500"
+                          aria-hidden="true"
+                        />
                         {item}
                       </li>
                     ))}
@@ -186,16 +276,66 @@ const AssessmentStagesPage = () => {
                     </span>
                   </div>
                 </div>
-              </motion.div>
+              </motion.section>
             ))}
           </div>
         </div>
 
+        {/* ===== SECTION 1: RELATED TESTS INTERNAL LINKS ===== */}
         <motion.section
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-40"
+          className="mt-40 mb-40"
+        >
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">
+            Explore Assessment Tests
+          </h2>
+          <p className="text-slate-600 mb-12 max-w-2xl">
+            Each assessment stage utilizes specific clinical tests. Dive deeper
+            into our comprehensive library of physiotherapy assessment guides.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Link
+              href="/test"
+              className="group p-8 bg-emerald-50 border border-emerald-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg transition-all"
+            >
+              <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-700">
+                View All Assessment Tests
+              </h3>
+              <p className="text-slate-600 mb-4">
+                Browse our complete library of physiotherapy assessment tests
+                with detailed explanations and video demonstrations.
+              </p>
+              <span className="flex items-center gap-2 text-emerald-600 font-bold">
+                Explore tests <ArrowRight size={16} aria-hidden="true" />
+              </span>
+            </Link>
+
+            <Link
+              href="/about"
+              className="group p-8 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg transition-all"
+            >
+              <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-700">
+                Learn About Our Approach
+              </h3>
+              <p className="text-slate-600 mb-4">
+                Understand how we translate complex physiotherapy assessments
+                into patient-friendly educational resources.
+              </p>
+              <span className="flex items-center gap-2 text-emerald-600 font-bold">
+                Learn more <ArrowRight size={16} aria-hidden="true" />
+              </span>
+            </Link>
+          </div>
+        </motion.section>
+
+        {/* ===== SECTION 2: VIDEO TUTORIAL ===== */}
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-40"
         >
           <div className="relative group">
             <div className="absolute -inset-1 bg-linear-to-r from-emerald-500 to-teal-500 rounded-[2.5rem] blur opacity-25 group-hover:opacity-40 transition duration-1000" />
@@ -204,7 +344,10 @@ const AssessmentStagesPage = () => {
               <div className="grid lg:grid-cols-5 gap-0">
                 <div className="lg:col-span-2 p-10 md:p-16 flex flex-col justify-center bg-slate-800/50">
                   <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-emerald-500/20">
-                    <PlayCircle className="text-white w-10 h-10" />
+                    <PlayCircle
+                      className="text-white w-10 h-10"
+                      aria-hidden="true"
+                    />
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                     Practical{" "}
@@ -213,7 +356,7 @@ const AssessmentStagesPage = () => {
                   <p className="text-slate-400 text-lg mb-8 leading-relaxed">
                     Watch a complete, real-time assessment demonstration.
                     Perfect for visual learners looking to refine their patient
-                    handling techniques.
+                    handling techniques and understand the clinical process.
                   </p>
                   <div className="flex items-center gap-4 text-emerald-400 font-bold text-sm uppercase tracking-widest">
                     <span className="w-8 h-px bg-emerald-400/30" />
@@ -224,7 +367,7 @@ const AssessmentStagesPage = () => {
                 <div className="lg:col-span-3 bg-black relative flex items-center justify-center min-h-75 md:min-h-125">
                   <iframe
                     src="https://www.youtube.com/embed/JFMhJBCfHbE"
-                    title="Physiotherapy Education Video"
+                    title="Complete Physiotherapy Assessment Walkthrough Video"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="absolute inset-0 w-full h-full border-0"
@@ -232,6 +375,103 @@ const AssessmentStagesPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </motion.section>
+
+        {/* ===== SECTION 3: EXTERNAL RESOURCES ===== */}
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">
+            Professional Resources
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a
+              href="https://www.apta.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-6 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg transition-all group"
+            >
+              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-700">
+                American Physical Therapy Association
+              </h3>
+              <p className="text-slate-600 text-sm mb-3">
+                Professional organization providing clinical guidelines and best
+                practices for physiotherapy assessments.
+              </p>
+              <span className="text-emerald-600 font-bold text-sm flex items-center gap-2">
+                Visit APTA <ArrowRight size={14} aria-hidden="true" />
+              </span>
+            </a>
+
+            <a
+              href="https://www.mayoclinic.org/patient-care"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-6 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg transition-all group"
+            >
+              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-700">
+                Mayo Clinic
+              </h3>
+              <p className="text-slate-600 text-sm mb-3">
+                Comprehensive medical information about conditions and treatment
+                approaches.
+              </p>
+              <span className="text-emerald-600 font-bold text-sm flex items-center gap-2">
+                Explore <ArrowRight size={14} aria-hidden="true" />
+              </span>
+            </a>
+
+            <a
+              href="https://pubmed.ncbi.nlm.nih.gov/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-6 bg-white border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg transition-all group"
+            >
+              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-700">
+                PubMed
+              </h3>
+              <p className="text-slate-600 text-sm mb-3">
+                Access peer-reviewed research on physiotherapy assessment
+                techniques and outcomes.
+              </p>
+              <span className="text-emerald-600 font-bold text-sm flex items-center gap-2">
+                Search research <ArrowRight size={14} aria-hidden="true" />
+              </span>
+            </a>
+          </div>
+        </motion.section>
+
+        {/* ===== SECTION 4: FOOTER CTA ===== */}
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="py-16 px-8 bg-linear-to-r from-emerald-600 to-emerald-700 rounded-3xl text-white text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Master Assessment Stages?
+          </h2>
+          <p className="text-lg mb-8 opacity-95 max-w-2xl mx-auto">
+            Explore our complete library of physiotherapy tests and develop a
+            deeper understanding of clinical assessment.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/test"
+              className="px-10 py-4 bg-white text-emerald-700 font-bold rounded-full hover:shadow-lg transition-all"
+            >
+              Explore Test Library
+            </Link>
+            <Link
+              href="/about"
+              className="px-10 py-4 bg-emerald-800/40 text-white font-bold border border-emerald-400/50 rounded-full hover:bg-emerald-800 transition-all"
+            >
+              Learn Our Mission
+            </Link>
           </div>
         </motion.section>
       </main>

@@ -21,7 +21,7 @@ function AboutClient() {
       name: "PhysioTest",
       description:
         "Educational resource helping patients understand physical assessment tests",
-      url: "https://yoursite.com/about",
+      url: "https://physioassessment.vercel.app/about-us",
       sameAs: [
         "https://facebook.com/physiotest",
         "https://twitter.com/physiotest",
@@ -38,7 +38,6 @@ function AboutClient() {
     };
   }, []);
 
-  // Update meta tags dynamically
   useEffect(() => {
     document.title =
       "About PhysioTest | Patient-Friendly Physical Assessment Guides";
@@ -70,7 +69,7 @@ function AboutClient() {
       "Patient-friendly guides to physical assessment tests. Understand what happens during your exam and what results mean for your recovery."
     );
     updateMetaTag("og:type", "website");
-    updateMetaTag("og:url", "https://yoursite.com/about");
+    updateMetaTag("og:url", "https://physioassessment.vercel.app/about-us");
   }, []);
 
   return (
