@@ -7,6 +7,6 @@ export default function robots() {
         disallow: ["/api", "/_next"],
       },
     ],
-    sitemap: "https://physioassessment.vercel.app//sitemap.xml",
+    sitemap: "https://physioassessment.vercel.app/sitemap.xml",
   };
 }
