@@ -8,6 +8,8 @@ import {
   Stethoscope,
   Search,
   ArrowRight,
+  Filter,
+  ExternalLink,
 } from "lucide-react";
 
 function TestDetailPage() {
@@ -16,12 +18,18 @@ function TestDetailPage() {
   const visibleTests = filtered.slice(0, visibleCount);
   const [prevSearch, setPrevSearch] = useState(search);
 
+  const testsByRegion = {
+    Knee: filtered.filter((t) => t.region === "Knee"),
+    Shoulder: filtered.filter((t) => t.region === "Shoulder"),
+    Ankle: filtered.filter((t) => t.region === "Ankle"),
+    Hip: filtered.filter((t) => t.region === "Hip"),
+  };
+
   if (search !== prevSearch) {
     setPrevSearch(search);
     setVisibleCount(20);
   }
 
-  // Add JSON-LD schema for search results page
   useEffect(() => {
     const schemaData = {
       "@context": "https://schema.org",
@@ -44,7 +52,6 @@ function TestDetailPage() {
     script.textContent = JSON.stringify(schemaData);
     document.head.appendChild(script);
 
-    // Update page title and meta tags based on search
     const pageTitle = search
       ? `${search} Physical Assessment Tests | Test Guides`
       : "Physical Assessment Test Guides | Learn Medical Tests";
@@ -140,6 +147,36 @@ function TestDetailPage() {
         </div>
 
         <div className="max-w-5xl mx-auto px-6 mt-12">
+          {!search && (
+            <section className="mb-16">
+              <div className="flex items-center gap-2 mb-8">
+                <Filter size={20} className="text-emerald-600" />
+                <h2 className="text-2xl font-bold text-slate-900">
+                  Browse Tests by Body Region
+                </h2>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {Object.entries(testsByRegion).map(([region, tests]) =>
+                  tests.length > 0 ? (
+                    <Link
+                      key={region}
+                      href={`?region=${region.toLowerCase()}`}
+                      onClick={() => setSearch(region)}
+                      className="p-4 bg-white border border-slate-100 rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 transition-all group"
+                    >
+                      <h3 className="font-bold text-slate-900 group-hover:text-emerald-700">
+                        {region} Tests
+                      </h3>
+                      <p className="text-xs text-slate-500">
+                        {tests.length} guides
+                      </p>
+                    </Link>
+                  ) : null
+                )}
+              </div>
+            </section>
+          )}
+
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-xl font-bold text-slate-800">
               {search ? `Results for "${search}"` : "All Assessment Tests"}
@@ -181,7 +218,7 @@ function TestDetailPage() {
                   href={`/test/${test.slug}`}
                   className="flex items-center text-emerald-600 font-bold text-sm hover:text-emerald-700 transition-colors"
                 >
-                  Learn more
+                  Read the {test.test_name} guide
                   <ArrowRight
                     className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
                     aria-hidden="true"
@@ -201,10 +238,16 @@ function TestDetailPage() {
                 <h3 className="text-xl font-bold text-slate-800">
                   No guides found
                 </h3>
-                <p className="text-slate-500">
+                <p className="text-slate-500 mb-6">
                   Try a different body part or keyword. For example: knee,
-                  shoulder, ankle, or test name like "Lachman".
+                  shoulder, ankle, or test name like &quot;Lachman&quot;.
                 </p>
+                <Link
+                  href="/test"
+                  className="text-emerald-600 font-bold hover:underline"
+                >
+                  View all assessment tests →
+                </Link>
               </div>
             )}
           </div>
@@ -220,8 +263,172 @@ function TestDetailPage() {
               <p className="text-sm text-slate-500">
                 These guides are designed to help you understand what happens
                 during a physical exam. Click on any test to see a video
-                demonstration and a step-by-step breakdown of the assessment.
+                demonstration and a step-by-step breakdown.
+                <Link
+                  href="/about-us"
+                  className="text-emerald-600 hover:underline ml-1"
+                >
+                  Learn about our mission →
+                </Link>
               </p>
+            </div>
+          </section>
+
+          <section className="mt-16 p-8 bg-emerald-50 rounded-3xl border border-emerald-200">
+            <h3 className="font-bold text-slate-900 mb-6">
+              Trusted Medical Resources
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <a
+                href="https://www.apta.org/patient-care/health-conditions"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 bg-white rounded-2xl border border-emerald-200 hover:border-emerald-500 hover:shadow-md transition-all group"
+              >
+                <div className="flex items-start justify-between mb-2">
+                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700">
+                    American Physical Therapy Association
+                  </h4>
+                  <ExternalLink size={16} className="text-emerald-600" />
+                </div>
+                <p className="text-xs text-slate-500">
+                  Professional organization with patient education resources
+                </p>
+              </a>
+
+              <a
+                href="https://www.mayoclinic.org/patient-care"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 bg-white rounded-2xl border border-emerald-200 hover:border-emerald-500 hover:shadow-md transition-all group"
+              >
+                <div className="flex items-start justify-between mb-2">
+                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700">
+                    Mayo Clinic
+                  </h4>
+                  <ExternalLink size={16} className="text-emerald-600" />
+                </div>
+                <p className="text-xs text-slate-500">
+                  Comprehensive information on medical conditions
+                </p>
+              </a>
+
+              <a
+                href="https://www.nih.gov/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 bg-white rounded-2xl border border-emerald-200 hover:border-emerald-500 hover:shadow-md transition-all group"
+              >
+                <div className="flex items-start justify-between mb-2">
+                  <h4 className="font-bold text-slate-900 group-hover:text-emerald-700">
+                    National Institutes of Health
+                  </h4>
+                  <ExternalLink size={16} className="text-emerald-600" />
+                </div>
+                <p className="text-xs text-slate-500">
+                  Medical research and health information
+                </p>
+              </a>
+            </div>
+          </section>
+
+          <section className="mt-16 pt-12 border-t border-slate-200">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div>
+                <h4 className="font-bold text-slate-900 mb-4">Navigation</h4>
+                <ul className="space-y-2">
+                  <li>
+                    <Link
+                      href="/"
+                      className="text-emerald-600 hover:text-emerald-700 font-semibold text-sm hover:underline"
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/about"
+                      className="text-emerald-600 hover:text-emerald-700 font-semibold text-sm hover:underline"
+                    >
+                      About PhysioTest
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-4">
+                  Test Categories
+                </h4>
+                <ul className="space-y-2">
+                  {Object.keys(testsByRegion).map((region) => (
+                    <li key={region}>
+                      <Link
+                        href={`?region=${region.toLowerCase()}`}
+                        onClick={() => setSearch(region)}
+                        className="text-emerald-600 hover:text-emerald-700 font-semibold text-sm hover:underline"
+                      >
+                        {region} Tests
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-4">
+                  Professional Orgs
+                </h4>
+                <ul className="space-y-2">
+                  <li>
+                    <a
+                      href="https://www.apta.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-600 hover:text-emerald-700 font-semibold text-sm hover:underline flex items-center gap-1"
+                    >
+                      APTA <ExternalLink size={12} />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.aaos.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-600 hover:text-emerald-700 font-semibold text-sm hover:underline flex items-center gap-1"
+                    >
+                      AAOS <ExternalLink size={12} />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* External Resources - Health Info */}
+              <div>
+                <h4 className="font-bold text-slate-900 mb-4">Health Info</h4>
+                <ul className="space-y-2">
+                  <li>
+                    <a
+                      href="https://www.mayoclinic.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-600 hover:text-emerald-700 font-semibold text-sm hover:underline flex items-center gap-1"
+                    >
+                      Mayo Clinic <ExternalLink size={12} />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://medlineplus.gov/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-600 hover:text-emerald-700 font-semibold text-sm hover:underline flex items-center gap-1"
+                    >
+                      MedlinePlus <ExternalLink size={12} />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </section>
 
