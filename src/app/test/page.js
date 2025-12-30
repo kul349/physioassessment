@@ -21,8 +21,11 @@ function TestDetailPage() {
   const testsByRegion = {
     Knee: filtered.filter((t) => t.region === "Knee"),
     Shoulder: filtered.filter((t) => t.region === "Shoulder"),
-    Ankle: filtered.filter((t) => t.region === "Ankle"),
+    Ankle: filtered.filter((t) => t.region === "ankel"),
     Hip: filtered.filter((t) => t.region === "Hip"),
+    Elbow: filtered.filter((t) => t.region === "elbow"),
+    Wrist: filtered.filter((t) => t.region === "Wrist/Hand"),
+    Spine: filtered.filter((t) => t.region === "Cervical Spine"),
   };
 
   if (search !== prevSearch) {

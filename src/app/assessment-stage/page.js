@@ -61,7 +61,6 @@ const stages = [
 
 const AssessmentStagesPage = () => {
   useEffect(() => {
-    // Add JSON-LD structured data for assessment process
     const schemaData = {
       "@context": "https://schema.org",
       "@type": "EducationalOccupationalCredential",
