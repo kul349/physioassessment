@@ -291,7 +291,7 @@ export default function TestPageClient({ }) {
                   </li>
                   <li>
                     <Link
-                      href="/about"
+                      href="/about-us"
                       className="text-emerald-600 hover:text-emerald-700 font-semibold text-sm hover:underline"
                     >
                       About PhysioTest

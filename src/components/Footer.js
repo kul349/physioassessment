@@ -22,14 +22,15 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { label: "Get Tests", href: "/page/test-details" },
-    { label: "Assessment Stage", href: "/page/assessment-stage" },
+    { label: "Get Tests", href: "/test" },
+    { label: "Assessment Stage", href: "/assessment-stage" },
     {
       label: "Educational Video",
       href: "https://www.youtube.com/watch?v=JFMhJBCfHbE",
     },
     { label: "Download Guide", href: "#guide" },
   ];
+  
 
   return (
     <footer className="bg-slate-950 text-slate-300">
@@ -124,7 +125,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Newsletter / App Status */}
           <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
             <h3 className="text-white font-bold mb-4">Latest Updates</h3>
             <p className="text-xs text-slate-400 mb-4">
@@ -146,7 +146,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Section */}
       <div className="border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">

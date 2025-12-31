@@ -14,7 +14,7 @@ const DownloadSection = () => {
   ];
 
   const handleDownload = () => {
-    setLoading(true); // start spinner/loading
+    setLoading(true); 
 
     setTimeout(() => {
       const pdfUrl = "physio_tests_report.pdf"; 
@@ -98,7 +98,6 @@ const DownloadSection = () => {
                 ))}
               </motion.div>
 
-              {/* Download button with delay & spinner */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

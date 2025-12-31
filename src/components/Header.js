@@ -87,21 +87,19 @@ function Header() {
                     Home
                   </Link>
                   <Link
-                    to="/page/test-details"
+                    to="/test"
                     onClick={() => setMenuOpen(false)}
                   >
                     Tests
                   </Link>
                   <Link
-                    to="/page/assessment-stage"
+                    to="/assessment-stage"
                     onClick={() => setMenuOpen(false)}
                   >
                     Assessment
                   </Link>
-                  <Link to="/page/blog" onClick={() => setMenuOpen(false)}>
-                    Blog
-                  </Link>
-                  <Link to="/page/about-us" onClick={() => setMenuOpen(false)}>
+                 
+                  <Link to="/about-us" onClick={() => setMenuOpen(false)}>
                     About Us
                   </Link>
                 </nav>
