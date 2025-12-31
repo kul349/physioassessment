@@ -1,180 +1,334 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import { notFound } from "next/navigation";
 import Link from "next/link";
+import Script from "next/script";
 import {
-  BookOpen,
-  Activity,
-  Stethoscope,
-  Search,
-  ArrowRight,
-  Filter,
+  Play,
+  Info,
+  ClipboardCheck,
+  UserCircle,
+  Video,
+  ShieldAlert,
 } from "lucide-react";
+import { getTests } from "@/data/tests";
 
-export default function TestDetailPage({ initialTests, initialSearch }) {
-  const [search, setSearch] = useState(initialSearch);
-  const [visibleCount, setVisibleCount] = useState(20);
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const test = getTests.find((t) => t.slug === slug);
+  if (!test) return { title: "Test Not Found" };
 
-  const filtered = search
-    ? initialTests.filter(
-        (t) =>
-          t.test_name.toLowerCase().includes(search.toLowerCase()) ||
-          t.region.toLowerCase().includes(search.toLowerCase())
-      )
-    : initialTests;
+  return {
+    title: `${test.test_name} Assessment Guide | Clinical Testing`,
+    description: `Learn about the ${test.test_name} test. ${test.purpose} Understand how it's performed, what positive results mean, and when to seek care.`,
+    keywords: [
+      test.test_name,
+      test.region,
+      "assessment test",
+      "clinical test",
+      "physical examination",
+    ].join(", "),
+    openGraph: {
+      title: `${test.test_name} Assessment Guide`,
+      description: test.purpose,
+      type: "article",
+      url: `https://physioassessment.vercel.app/test/${slug}`,
+      images: [
+        {
+          url: "https://physioassessment.vercel.app/images/img-slider-1.webp",
+          width: 1200,
+          height: 630,
+          alt: test.test_name,
+        },
+      ],
+    },
+    canonical: `https://physioassessment.vercel.app/test/${slug}`,
+  };
+}
 
-  const visibleTests = filtered.slice(0, visibleCount);
+export function generateStaticParams() {
+  return tests.map((test) => ({ slug: test.slug }));
+}
 
-  const testsByRegion = {
-    Knee: filtered.filter((t) => t.region === "Knee"),
-    Shoulder: filtered.filter((t) => t.region === "Shoulder"),
-    Ankle: filtered.filter((t) => t.region === "ankel"),
-    Hip: filtered.filter((t) => t.region === "Hip"),
-    Elbow: filtered.filter((t) => t.region === "elbow"),
-    Wrist: filtered.filter((t) => t.region === "Wrist/Hand"),
-    Spine: filtered.filter((t) => t.region === "Cervical Spine"),
+function getEmbedUrl(url) {
+  if (!url) return null;
+  const match = url.match(
+    /(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/user\/\S+|\/ytscreeningroom\?v=))([\w\-]{11})/
+  );
+  return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+}
+
+export default function SingleTestDetails({ params }) {
+  const { slug } = params;
+  const test = tests.find((t) => t.slug === slug);
+
+  if (!test) notFound();
+
+  const embedUrl = getEmbedUrl(test.youtube);
+  const relatedTests = tests
+    .filter((t) => t.region === test.region && t.slug !== test.slug)
+    .slice(0, 4);
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalScholarlyArticle",
+    headline: test.test_name,
+    description: test.purpose,
+    image: ["https://physioassessment.vercel.app/images/img-slider-1.webp"],
+    author: { "@type": "Organization", name: "PhysioTest" },
+    publisher: {
+      "@type": "Organization",
+      name: "PhysioTest",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://physioassessment.vercel.app/logo.png",
+      },
+    },
+    mainEntityOfPage: `https://physioassessment.vercel.app/test/${slug}`,
+    datePublished: "2025-12-31",
+    dateModified: new Date().toISOString(),
   };
 
-  // Reset visible count when search changes (non-blocking)
-  useEffect(() => {
-    const timer = setTimeout(() => setVisibleCount(20), 0);
-    return () => clearTimeout(timer);
-  }, [search]);
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How do I perform this test?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: test.procedure,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What does a positive result mean?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: test.positive_test_criteria,
+        },
+      },
+    ],
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://physioassessment.vercel.app/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Assessment Tests",
+        item: "https://physioassessment.vercel.app/test",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: test.test_name,
+        item: `https://physioassessment.vercel.app/test/${slug}`,
+      },
+    ],
+  };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] pb-20 font-sans">
-      <div className="bg-white border-b border-slate-200 pt-16 pb-12 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-            <Activity className="w-3 h-3" aria-hidden="true" />
-            Education Library
-          </div>
-          <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
-            Physical Assessment{" "}
-            <span className="text-emerald-600">Test Guides</span>
-          </h1>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-            Simple, easy-to-understand explanations of common physical
-            assessments. Search for a body part or a specific test name below.
-          </p>
-          <div className="relative max-w-xl mx-auto group">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Search
-                className="h-5 w-5 text-slate-400 group-focus-within:text-emerald-500 transition-colors"
-                aria-hidden="true"
-              />
-            </div>
-            <input
-              type="text"
-              placeholder="Search by test name or body part (e.g., Lachman, knee, shoulder)"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              aria-label="Search assessment tests"
-              className="block w-full pl-12 pr-4 py-4 bg-white border-2 border-slate-100 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all shadow-sm"
-            />
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-white font-sans text-slate-900 pb-20">
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
-      <div className="max-w-5xl mx-auto px-6 mt-12">
-        {/* Browse by region */}
-        {!search && (
+      <nav className="text-sm py-3 px-6 text-slate-500" aria-label="breadcrumb">
+        <ol className="flex items-center flex-wrap gap-2">
+          <li className="flex items-center gap-2">
+            <Link href="/" className="hover:text-emerald-600 transition-colors">
+              Home
+            </Link>
+            <span className="text-slate-400">/</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <Link
+              href="/test"
+              className="hover:text-emerald-600 transition-colors"
+            >
+              Assessment Tests
+            </Link>
+            <span className="text-slate-400">/</span>
+          </li>
+          <li>
+            <span className="text-slate-900 font-semibold">
+              {test.test_name}
+            </span>
+          </li>
+        </ol>
+      </nav>
+
+      <main className="max-w-4xl mx-auto px-6 mt-6">
+        <header className="mb-12">
+          <div className="inline-block bg-emerald-50 text-emerald-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+            Focus Area: <span className="capitalize">{test.region}</span>
+          </div>
+          <h1 className="text-4xl font-black text-slate-900 mb-6 leading-tight">
+            Understanding the {test.test_name} Assessment
+          </h1>
+          <p className="text-xl text-slate-500 leading-relaxed border-l-4 border-emerald-100 pl-6 italic">
+            {test.purpose}
+          </p>
+        </header>
+
+        <section className="mb-16" aria-labelledby="video-section">
+          <div className="flex items-center gap-2 mb-4 text-slate-400">
+            <Video size={18} aria-hidden="true" />
+            <h2
+              id="video-section"
+              className="text-sm font-bold uppercase tracking-wider"
+            >
+              Watch How It&apos;s Done
+            </h2>
+          </div>
+          <div className="rounded-2xl overflow-hidden bg-slate-100 shadow-2xl shadow-slate-200/50 border border-slate-100">
+            {embedUrl ? (
+              <div className="aspect-video relative">
+                <iframe
+                  src={embedUrl}
+                  title={`${test.test_name} instructional video`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full border-0"
+                />
+              </div>
+            ) : (
+              <div className="aspect-video flex flex-col items-center justify-center text-slate-400">
+                <Play
+                  size={40}
+                  className="mb-2 opacity-20"
+                  aria-hidden="true"
+                />
+                <p className="text-sm">Instructional video coming soon</p>
+              </div>
+            )}
+          </div>
+        </section>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <section>
+            <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 mb-4">
+              <UserCircle className="text-emerald-500" aria-hidden="true" />
+              How do I start?
+            </h3>
+            <p className="text-slate-600 leading-relaxed bg-slate-50 p-6 rounded-2xl border border-slate-100">
+              {test.starting_position}
+            </p>
+          </section>
+
+          <section>
+            <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 mb-4">
+              <ClipboardCheck className="text-emerald-500" aria-hidden="true" />
+              What happens?
+            </h3>
+            <p className="text-slate-600 leading-relaxed bg-slate-50 p-6 rounded-2xl border border-slate-100">
+              {test.procedure}
+            </p>
+          </section>
+        </div>
+
+        <section className="bg-slate-900 text-white p-10 rounded-[2.5rem] mb-12 shadow-xl shadow-slate-200">
+          <div className="flex items-center gap-2 text-emerald-400 mb-6">
+            <Info size={20} aria-hidden="true" />
+            <h3 className="text-sm font-bold uppercase tracking-widest">
+              In Plain English
+            </h3>
+          </div>
+          <h4 className="text-2xl font-bold mb-4">
+            What Does a Positive Result Mean?
+          </h4>
+          <p className="text-slate-300 text-lg leading-relaxed mb-8">
+            {test.positive_test_criteria}
+          </p>
+          <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
+            <h5 className="text-xs font-bold text-emerald-400 uppercase mb-2">
+              Helpful Tip:
+            </h5>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              {test.grading_or_notes}
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-rose-50 border border-rose-100 p-8 rounded-3xl mb-16">
+          <div className="flex items-center gap-2 text-rose-600 mb-4">
+            <ShieldAlert size={20} aria-hidden="true" />
+            <h3 className="font-bold text-lg">Safety First</h3>
+          </div>
+          <p className="text-sm text-rose-700 leading-relaxed">
+            This guide is to help you understand what happens in a clinic.{" "}
+            <strong>Do not try to diagnose yourself.</strong> If you have severe
+            pain, swelling, or cannot put weight on your leg, please visit an
+            urgent care center or your doctor immediately.
+          </p>
+        </section>
+
+        {/* Related Tests */}
+        {relatedTests.length > 0 && (
           <section className="mb-16">
-            <div className="flex items-center gap-2 mb-8">
-              <Filter size={20} className="text-emerald-600" />
-              <h2 className="text-2xl font-bold text-slate-900">
-                Browse Tests by Body Region
-              </h2>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {Object.entries(testsByRegion).map(([region, tests]) =>
-                tests.length > 0 ? (
-                  <button
-                    key={region}
-                    onClick={() => setSearch(region)}
-                    className="p-4 bg-white border border-slate-100 rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 transition-all group"
+            <h3 className="text-2xl font-bold mb-6">
+              Other {test.region} Tests
+            </h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {relatedTests.map((related) => (
+                <li key={related.slug}>
+                  <Link
+                    href={`/tests/${related.slug}`}
+                    className="block p-4 bg-slate-50 border border-slate-100 rounded-xl hover:shadow-lg hover:bg-emerald-50 transition-all"
                   >
-                    <h3 className="font-bold text-slate-900 group-hover:text-emerald-700">
-                      {region} Tests
-                    </h3>
-                    <p className="text-xs text-slate-500">
-                      {tests.length} guides
+                    <h4 className="font-semibold text-slate-900">
+                      {related.test_name}
+                    </h4>
+                    <p className="text-sm text-slate-500 truncate">
+                      {related.purpose}
                     </p>
-                  </button>
-                ) : null
-              )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="text-center mt-6">
+              <Link
+                href="/assessment-tests"
+                className="text-emerald-600 font-bold hover:underline"
+              >
+                Browse All Assessment Tests
+              </Link>
             </div>
           </section>
         )}
 
-        {/* Test cards */}
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-xl font-bold text-slate-800">
-            {search ? `Results for "${search}"` : "All Assessment Tests"}
-          </h2>
-          <span
-            className="text-slate-400 text-sm font-medium"
-            aria-live="polite"
-          >
-            {filtered.length} test{filtered.length !== 1 ? "s" : ""} found
-          </span>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {visibleTests.map((test) => (
-            <article
-              key={test.id}
-              className="group bg-white rounded-4xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:border-emerald-500/30 hover:-translate-y-1 transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex justify-between items-start mb-4">
-                  <span className="px-3 py-1 bg-slate-50 text-[10px] font-black uppercase tracking-wider rounded-lg group-hover:bg-emerald-50 group-hover:text-emerald-700 transition-colors">
-                    {test.region}
-                  </span>
-                  <div
-                    className="p-2 rounded-full bg-slate-50 text-slate-300 group-hover:text-emerald-500 transition-colors"
-                    aria-hidden="true"
-                  >
-                    <Stethoscope className="w-4 h-4" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-700 transition-colors line-clamp-2">
-                  {test.test_name}
-                </h3>
-                <p className="text-slate-500 text-sm leading-relaxed line-clamp-3 mb-6">
-                  {test.purpose}
-                </p>
-              </div>
-              <Link
-                href={`/test/${test.slug}`}
-                className="flex items-center text-emerald-600 font-bold text-sm hover:text-emerald-700 transition-colors"
-              >
-                Read the {test.test_name} guide
-                <ArrowRight
-                  className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
-                  aria-hidden="true"
-                />
-              </Link>
-            </article>
-          ))}
-        </div>
-
-        {/* Load more */}
-        {visibleCount < filtered.length && (
-          <div className="flex justify-center mt-12">
-            <button
-              onClick={() => setVisibleCount((prev) => prev + 20)}
-              className="bg-emerald-600 text-white px-10 py-4 rounded-2xl font-bold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/20"
-            >
-              Load More Tests
-            </button>
-          </div>
-        )}
-
-        <p className="text-[10px] text-slate-400 text-center mt-12 uppercase tracking-[0.2em] font-bold">
-          ⚠️ Not for diagnostic use. Consult a doctor for any pain or symptoms.
-        </p>
-      </div>
+        <footer className="mt-24 pt-12 border-t border-slate-100 text-center">
+          <p className="text-xs text-slate-400 max-w-xl mx-auto leading-loose italic">
+            This is an open learning resource designed to empower patients with
+            knowledge. Information is updated regularly by our community of
+            health advocates.
+          </p>
+        </footer>
+      </main>
     </div>
   );
 }
