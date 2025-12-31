@@ -8,9 +8,7 @@ function Header() {
 
   return (
     <section className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 ">
-      {/* ================= HEADER ================= */}
       <div className="flex justify-between items-center px-4 py-4 max-w-7xl mx-auto">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-emerald-500 font-bold text-xl">
             P
@@ -20,7 +18,6 @@ function Header() {
           </h2>
         </Link>
 
-        {/* ================= DESKTOP MENU ================= */}
         <nav className="hidden md:flex gap-6 uppercase text-xs font-bold text-slate-700 tracking-widest leading-none">
           <Link href="/" className="hover:text-emerald-600 transition-colors">
             Home
@@ -83,23 +80,23 @@ function Header() {
                 </div>
 
                 <nav className="flex flex-col px-6 py-6 gap-6 uppercase text-xs font-bold text-slate-700">
-                  <Link to="/" onClick={() => setMenuOpen(false)}>
+                  <Link href="/" onClick={() => setMenuOpen(false)}>
                     Home
                   </Link>
                   <Link
-                    to="/test"
+                    href="/test"
                     onClick={() => setMenuOpen(false)}
                   >
                     Tests
                   </Link>
                   <Link
-                    to="/assessment-stage"
+                    href="/assessment-stage"
                     onClick={() => setMenuOpen(false)}
                   >
                     Assessment
                   </Link>
                  
-                  <Link to="/about-us" onClick={() => setMenuOpen(false)}>
+                  <Link href="/about-us" onClick={() => setMenuOpen(false)}>
                     About Us
                   </Link>
                 </nav>

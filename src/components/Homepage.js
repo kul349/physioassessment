@@ -163,7 +163,7 @@ export default function HomePage() {
             </Link>
 
             <Link
-              href="/about"
+              href="/about-us"
               className="group p-8 bg-white rounded-2xl border border-emerald-100 hover:border-emerald-500 hover:shadow-lg transition-all"
             >
               <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
@@ -200,7 +200,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ===== SECTION 2: EXTERNAL RESOURCE LINKS ===== */}
         <section className="my-16 py-12">
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-12 text-center">
             Trusted Medical Resources
@@ -281,7 +280,7 @@ export default function HomePage() {
               Browse All Tests
             </Link>
             <Link
-              href="/about"
+              href="/about-us"
               className="px-10 py-4 bg-emerald-800/40 text-white font-bold border border-emerald-400/50 rounded-full hover:bg-emerald-800 transition-all"
             >
               Learn About Us
