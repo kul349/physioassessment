@@ -3,7 +3,7 @@ import { getTests } from "@/data/tests";
 
 export async function generateMetadata({ searchParams }) {
   const search = searchParams?.search || "";
-  const initialTests = await getTests(search);
+  const initialTests = getTests;
 
   const pageTitle = search
     ? `${search} Physical Assessment Tests | PhysioTest`
