@@ -60,11 +60,10 @@ export async function generateMetadata({ searchParams }) {
   };
 }
 
-export default async function TestPage({ searchParams }) {
-  const initialTests = await getTests(searchParams?.search || "");
+
+export default function TestPage({ searchParams }) {
+  const initialTests = getTests; 
   const initialSearch = searchParams?.search || "";
 
-  return (
-    <TestPageClient initialTests={initialTests} initialSearch={initialSearch} />
-  );
+  return <TestPageClient initialTests={initialTests} initialSearch={initialSearch} />;
 }
