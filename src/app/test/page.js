@@ -1,5 +1,5 @@
-import TestDetailPage from "@/components/TestDetailPage";
-import { getTests } from "@/data/tests"; // Server-safe function
+import TestDetailPage from "@/components/DetailsPage";
+import { getTests } from "@/data/tests"; 
 
 export async function generateMetadata({ searchParams }) {
   const search = searchParams?.search || "";
