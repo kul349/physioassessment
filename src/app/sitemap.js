@@ -1,4 +1,4 @@
-import { tests } from "@/data/tests";
+import { getTests } from "@/data/tests";
 
 export const dynamic = "force-dynamic";
 
@@ -14,7 +14,7 @@ export default async function sitemap() {
     })
   );
 
-  const testPages = tests.map((test) => ({
+  const testPages = getTests.map((test) => ({
     url: `${baseUrl}/test/${test.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
