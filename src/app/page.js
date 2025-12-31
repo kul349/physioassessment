@@ -1,4 +1,4 @@
-import HomePageClient from "@/components/Homepage";
+import HomePage from "@/components/Homepage";
 import Script from "next/script";
 
 export const metadata = {
@@ -18,7 +18,7 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "PhysioTest – Physiotherapy Assessment Tests Explained",
+    title: "PhysioTest - Physiotherapy Assessment Tests Explained",
     description:
       "Clear and simple explanations of physiotherapy assessment tests for patients and students.",
     url: "https://physioassessment.vercel.app",
