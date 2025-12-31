@@ -311,7 +311,7 @@ const AssessmentStagesPage = () => {
             </Link>
 
             <Link
-              href="/about"
+              href="/about-us"
               className="group p-8 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg transition-all"
             >
               <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-700">
