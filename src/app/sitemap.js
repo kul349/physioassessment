@@ -14,12 +14,14 @@ export default async function sitemap() {
     })
   );
 
-  const testPages = getTests.map((test) => ({
-    url: `${baseUrl}/test/${test.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
+  const testPages = Array.isArray(getTests)
+    ? getTests.map((test) => ({
+        url: `${baseUrl}/test/${test.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.8,
+      }))
+    : [];
 
   return [...staticPages, ...testPages];
 }
