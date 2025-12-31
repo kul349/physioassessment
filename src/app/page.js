@@ -1,4 +1,4 @@
-import HomePageClient from "@/components/HomePageClient";
+import HomePageClient from "@/components/Homepage";
 import Script from "next/script";
 
 export const metadata = {
