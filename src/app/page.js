@@ -5,41 +5,37 @@ export const metadata = {
   title: "Physiotherapy Assessment Tests Guide | PhysioTest",
   description:
     "Understand physiotherapy assessment tests with patient-friendly guides, videos, and step-by-step explanations.",
-
   keywords: [
     "physiotherapy assessment tests",
     "physical therapy tests",
     "patient education physiotherapy",
     "physio test guide",
   ],
-
   alternates: {
     canonical: "https://physioassessment.vercel.app",
   },
-
   openGraph: {
     title: "PhysioTest - Physiotherapy Assessment Tests Explained",
     description:
       "Clear and simple explanations of physiotherapy assessment tests for patients and students.",
     url: "https://physioassessment.vercel.app",
     siteName: "PhysioTest",
+    type: "website",
     images: [
       {
-        url: "https://physioassessment.vercel.app/og-image.jpg",
+        url: "https://physioassessment.vercel.app/images/open-graph.jpg",
         width: 1200,
         height: 630,
         alt: "PhysioTest Physiotherapy Assessment Tests",
       },
     ],
-    type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "PhysioTest - Physiotherapy Assessment Tests",
     description:
       "Patient-friendly physiotherapy assessment test guides with videos.",
-    images: ["https://physioassessment.vercel.app/og-image.jpg"],
+    images: ["https://physioassessment.vercel.app/images/open-graph.jpg"],
   },
 };
 
@@ -64,6 +60,27 @@ export default function Page() {
           }),
         }}
       />
+
+      <Script
+        id="meta-tags"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            <meta property="og:title" content="PhysioTest - Physiotherapy Assessment Tests Explained" />
+            <meta property="og:description" content="Clear and simple explanations of physiotherapy assessment tests for patients and students." />
+            <meta property="og:image" content="https://physioassessment.vercel.app/images/open-graph.jpg" />
+            <meta property="og:url" content="https://physioassessment.vercel.app" />
+            <meta property="og:type" content="website" />
+
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="PhysioTest - Physiotherapy Assessment Tests" />
+            <meta name="twitter:description" content="Patient-friendly physiotherapy assessment test guides with videos." />
+            <meta name="twitter:image" content="https://physioassessment.vercel.app/images/open-graph.jpg" />
+          `,
+        }}
+      />
+
       <HomePage />
     </>
   );
