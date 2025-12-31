@@ -77,9 +77,7 @@ export default function TestPageClient({ initialTests, initialSearch }) {
         </div>
       </div>
 
-      {/* Test Listing */}
       <div className="max-w-5xl mx-auto px-6 mt-12">
-        {/* Browse by region */}
         {!search && (
           <section className="mb-16">
             <div className="flex items-center gap-2 mb-8">

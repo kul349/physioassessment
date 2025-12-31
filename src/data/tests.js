@@ -1,4 +1,4 @@
-export const tests=[
+export const getTests = [
   {
     id: 1,
     region: "Shoulder",
