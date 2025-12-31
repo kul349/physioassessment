@@ -14,5 +14,5 @@ export function useTests() {
     );
   }, [search]);
 
-  return { tests, filtered, search, setSearch, loading: false, error: null };
+  return { getTests, filtered, search, setSearch, loading: false, error: null };
 }

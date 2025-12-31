@@ -1,8 +1,9 @@
 import TestPageClient from "@/components/DetailsPage";
-import { getTests } from "@/data/tests"; 
+import { getTests } from "@/data/tests";
 
 export async function generateMetadata({ searchParams }) {
-  const search = searchParams?.search || "";
+  const params = await searchParams;
+  const search = params?.search || "";
   const initialTests = getTests;
 
   const pageTitle = search
@@ -16,54 +17,15 @@ export async function generateMetadata({ searchParams }) {
   return {
     title: pageTitle,
     description: pageDesc,
-    keywords: [
-      "physical assessment tests",
-      search || "orthopedic tests",
-      "medical tests",
-      "physical therapy",
-      "test guides",
-    ],
-    alternates: {
-      canonical: "https://physioassessment.vercel.app/test",
-    },
-    openGraph: {
-      title: pageTitle,
-      description: pageDesc,
-      url: "https://physioassessment.vercel.app/test",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: pageTitle,
-      description: pageDesc,
-    },
-    other: [
-      {
-        type: "application/ld+json",
-        content: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "SearchResultsPage",
-          name: "Physical Assessment Test Guides",
-          description: pageDesc,
-          url: "https://physioassessment.vercel.app/test",
-          numberOfResults: initialTests.length,
-          itemListElement: initialTests.map((test, i) => ({
-            "@type": "ListItem",
-            position: i + 1,
-            name: test.test_name,
-            description: test.purpose,
-            url: `https://physioassessment.vercel.app/test/${test.slug}`,
-          })),
-        }),
-      },
-    ],
   };
 }
 
+export default async function TestPage({ searchParams }) {
+  const params = await searchParams; // ✅ unwrap
+  const initialSearch = params?.search || "";
+  const initialTests = getTests;
 
-export default function TestPage({ searchParams }) {
-  const initialTests = getTests; 
-  const initialSearch = searchParams?.search || "";
-
-  return <TestPageClient initialTests={initialTests} initialSearch={initialSearch} />;
+  return (
+    <TestPageClient initialTests={initialTests} initialSearch={initialSearch} />
+  );
 }
