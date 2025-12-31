@@ -55,7 +55,6 @@ export default function HomePage() {
       </h1>
 
       <div className="px-4 sm:px-6 lg:px-8 mt-10 min-h-screen bg-white font-sans">
-        {/* Hero Slider */}
         <div className="relative w-full overflow-hidden mb-8 min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] px-3 sm:px-4 md:px-6 rounded-2xl md:rounded-[2.5rem] shadow-lg shadow-emerald-900/5 md:shadow-2xl md:shadow-emerald-900/10">
           {slides.map((slide, index) => (
             <div
