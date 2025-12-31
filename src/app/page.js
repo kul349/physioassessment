@@ -36,7 +36,7 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "PhysioTest – Physiotherapy Assessment Tests",
+    title: "PhysioTest - Physiotherapy Assessment Tests",
     description:
       "Patient-friendly physiotherapy assessment test guides with videos.",
     images: ["https://physioassessment.vercel.app/og-image.jpg"],

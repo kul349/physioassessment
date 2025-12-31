@@ -1,4 +1,4 @@
-import TestDetailPage from "@/components/DetailsPage";
+import TestPageClient from "@/components/DetailsPage";
 import { getTests } from "@/data/tests"; 
 
 export async function generateMetadata({ searchParams }) {
@@ -65,6 +65,6 @@ export default async function TestPage({ searchParams }) {
   const initialSearch = searchParams?.search || "";
 
   return (
-    <TestDetailPage initialTests={initialTests} initialSearch={initialSearch} />
+    <TestPageClient initialTests={initialTests} initialSearch={initialSearch} />
   );
 }

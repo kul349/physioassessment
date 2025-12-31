@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 
 function AboutClient() {
-  // Add JSON-LD schema markup on mount
   useEffect(() => {
     const schemaData = {
       "@context": "https://schema.org",
