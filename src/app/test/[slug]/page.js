@@ -45,7 +45,7 @@ export async function generateMetadata({ params }) {
 }
 
 export function generateStaticParams() {
-  return tests.map((test) => ({ slug: test.slug }));
+  return getTests.map((test) => ({ slug: test.slug }));
 }
 
 function getEmbedUrl(url) {
@@ -58,12 +58,12 @@ function getEmbedUrl(url) {
 
 export default function SingleTestDetails({ params }) {
   const { slug } = params;
-  const test = tests.find((t) => t.slug === slug);
+  const test = getTests.find((t) => t.slug === slug);
 
   if (!test) notFound();
 
   const embedUrl = getEmbedUrl(test.youtube);
-  const relatedTests = tests
+  const relatedTests = getTests
     .filter((t) => t.region === test.region && t.slug !== test.slug)
     .slice(0, 4);
 
