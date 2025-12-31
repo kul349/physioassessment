@@ -1,342 +1,72 @@
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import Script from "next/script";
-import {
-  Play,
-  Info,
-  ClipboardCheck,
-  UserCircle,
-  Video,
-  ShieldAlert,
-} from "lucide-react";
-import { tests } from "@/data/tests";
+import TestDetailPage from "@/components/DetailsPage";
+import { tests } from "@/data/tests"; 
 
-export async function generateMetadata({ params }) {
-  const { slug } = params;
-  const test = tests.find((t) => t.slug === slug);
-  if (!test) return { title: "Test Not Found" };
+export async function generateMetadata({ searchParams }) {
+  const search = searchParams?.search || "";
+  const filteredTests = await tests(search); 
+
+  const pageTitle = search
+    ? `${search} Physical Assessment Tests | PhysioTest`
+    : "Physical Assessment Test Guides | Learn Medical Tests";
+
+  const pageDesc = search
+    ? `Find guides and explanations for "${search}" physical assessment tests. Understand what happens during your exam and what results mean.`
+    : "Explore our library of physical assessment test guides. Easy-to-understand explanations of common orthopedic tests performed by therapists and doctors.";
 
   return {
-    title: `${test.test_name} Assessment Guide | Clinical Testing`,
-    description: `Learn about the ${test.test_name} test. ${test.purpose} Understand how it's performed, what positive results mean, and when to seek care.`,
+    title: pageTitle,
+    description: pageDesc,
     keywords: [
-      test.test_name,
-      test.region,
-      "assessment test",
-      "clinical test",
-      "physical examination",
-    ].join(", "),
+      "physical assessment tests",
+      search || "orthopedic tests",
+      "medical tests",
+      "physical therapy",
+      "test guides",
+    ],
+    alternates: {
+      canonical: "https://physioassessment.vercel.app/test",
+    },
     openGraph: {
-      title: `${test.test_name} Assessment Guide`,
-      description: test.purpose,
-      type: "article",
-      url: `https://physioassessment.vercel.app/test/${slug}`,
-      images: [
-        {
-          url: "https://physioassessment.vercel.app/images/img-slider-1.webp",
-          width: 1200,
-          height: 630,
-          alt: test.test_name,
-        },
-      ],
+      title: pageTitle,
+      description: pageDesc,
+      url: "https://physioassessment.vercel.app/test",
+      type: "website",
     },
-    canonical: `https://physioassessment.vercel.app/test/${slug}`,
-  };
-}
-
-export function generateStaticParams() {
-  return tests.map((test) => ({ slug: test.slug }));
-}
-
-function getEmbedUrl(url) {
-  if (!url) return null;
-  const match = url.match(
-    /(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/user\/\S+|\/ytscreeningroom\?v=))([\w\-]{11})/
-  );
-  return match ? `https://www.youtube.com/embed/${match[1]}` : null;
-}
-
-export default function SingleTestDetails({ params }) {
-  const { slug } = params;
-  const test = tests.find((t) => t.slug === slug);
-
-  if (!test) notFound();
-
-  const embedUrl = getEmbedUrl(test.youtube);
-  const relatedTests = tests
-    .filter((t) => t.region === test.region && t.slug !== test.slug)
-    .slice(0, 4);
-
-  // Schema JSON-LD
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "MedicalScholarlyArticle",
-    headline: test.test_name,
-    description: test.purpose,
-    image: ["https://physioassessment.vercel.app/images/img-slider-1.webp"],
-    author: { "@type": "Organization", name: "PhysioTest" },
-    publisher: {
-      "@type": "Organization",
-      name: "PhysioTest",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://physioassessment.vercel.app/logo.png",
-      },
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description: pageDesc,
     },
-    mainEntityOfPage: `https://physioassessment.vercel.app/test/${slug}`,
-    datePublished: "2025-12-31",
-    dateModified: new Date().toISOString(),
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
+    other: [
       {
-        "@type": "Question",
-        name: "How do I perform this test?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: test.procedure,
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What does a positive result mean?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: test.positive_test_criteria,
-        },
+        type: "application/ld+json",
+        content: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SearchResultsPage",
+          name: "Physical Assessment Test Guides",
+          description: pageDesc,
+          url: "https://physioassessment.vercel.app/test",
+          numberOfResults: filteredTests.length,
+          itemListElement: filteredTests.map((test, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: test.test_name,
+            description: test.purpose,
+            url: `https://physioassessment.vercel.app/test/${test.slug}`,
+          })),
+        }),
       },
     ],
   };
+}
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://physioassessment.vercel.app/",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Assessment Tests",
-        item: "https://physioassessment.vercel.app/test",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: test.test_name,
-        item: `https://physioassessment.vercel.app/test/${slug}`,
-      },
-    ],
-  };
+export default async function TestPage({ searchParams }) {
+  const initialTests = await getTests(searchParams?.search || "");
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 pb-20">
-      {/* JSON-LD Scripts */}
-      <Script
-        id="article-schema"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <Script
-        id="breadcrumb-schema"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-
-      {/* Breadcrumb Navigation */}
-      <nav className="text-sm py-3 px-6 text-slate-500" aria-label="breadcrumb">
-        <ol className="flex items-center flex-wrap gap-2">
-          <li className="flex items-center gap-2">
-            <Link href="/" className="hover:text-emerald-600 transition-colors">
-              Home
-            </Link>
-            <span className="text-slate-400">/</span>
-          </li>
-          <li className="flex items-center gap-2">
-            <Link
-              href="/test"
-              className="hover:text-emerald-600 transition-colors"
-            >
-              Assessment Tests
-            </Link>
-            <span className="text-slate-400">/</span>
-          </li>
-          <li>
-            <span className="text-slate-900 font-semibold">
-              {test.test_name}
-            </span>
-          </li>
-        </ol>
-      </nav>
-
-      {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 mt-6">
-        <header className="mb-12">
-          <div className="inline-block bg-emerald-50 text-emerald-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
-            Focus Area: <span className="capitalize">{test.region}</span>
-          </div>
-          <h1 className="text-4xl font-black text-slate-900 mb-6 leading-tight">
-            Understanding the {test.test_name} Assessment
-          </h1>
-          <p className="text-xl text-slate-500 leading-relaxed border-l-4 border-emerald-100 pl-6 italic">
-            {test.purpose}
-          </p>
-        </header>
-
-        {/* Video Section */}
-        <section className="mb-16" aria-labelledby="video-section">
-          <div className="flex items-center gap-2 mb-4 text-slate-400">
-            <Video size={18} aria-hidden="true" />
-            <h2
-              id="video-section"
-              className="text-sm font-bold uppercase tracking-wider"
-            >
-              Watch How It&apos;s Done
-            </h2>
-          </div>
-          <div className="rounded-2xl overflow-hidden bg-slate-100 shadow-2xl shadow-slate-200/50 border border-slate-100">
-            {embedUrl ? (
-              <div className="aspect-video relative">
-                <iframe
-                  src={embedUrl}
-                  title={`${test.test_name} instructional video`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full border-0"
-                />
-              </div>
-            ) : (
-              <div className="aspect-video flex flex-col items-center justify-center text-slate-400">
-                <Play
-                  size={40}
-                  className="mb-2 opacity-20"
-                  aria-hidden="true"
-                />
-                <p className="text-sm">Instructional video coming soon</p>
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* How to Start & Procedure */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <section>
-            <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 mb-4">
-              <UserCircle className="text-emerald-500" aria-hidden="true" />
-              How do I start?
-            </h3>
-            <p className="text-slate-600 leading-relaxed bg-slate-50 p-6 rounded-2xl border border-slate-100">
-              {test.starting_position}
-            </p>
-          </section>
-
-          <section>
-            <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 mb-4">
-              <ClipboardCheck className="text-emerald-500" aria-hidden="true" />
-              What happens?
-            </h3>
-            <p className="text-slate-600 leading-relaxed bg-slate-50 p-6 rounded-2xl border border-slate-100">
-              {test.procedure}
-            </p>
-          </section>
-        </div>
-
-        {/* Results */}
-        <section className="bg-slate-900 text-white p-10 rounded-[2.5rem] mb-12 shadow-xl shadow-slate-200">
-          <div className="flex items-center gap-2 text-emerald-400 mb-6">
-            <Info size={20} aria-hidden="true" />
-            <h3 className="text-sm font-bold uppercase tracking-widest">
-              In Plain English
-            </h3>
-          </div>
-          <h4 className="text-2xl font-bold mb-4">
-            What Does a Positive Result Mean?
-          </h4>
-          <p className="text-slate-300 text-lg leading-relaxed mb-8">
-            {test.positive_test_criteria}
-          </p>
-          <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
-            <h5 className="text-xs font-bold text-emerald-400 uppercase mb-2">
-              Helpful Tip:
-            </h5>
-            <p className="text-sm text-slate-400 leading-relaxed">
-              {test.grading_or_notes}
-            </p>
-          </div>
-        </section>
-
-        {/* Safety */}
-        <section className="bg-rose-50 border border-rose-100 p-8 rounded-3xl mb-16">
-          <div className="flex items-center gap-2 text-rose-600 mb-4">
-            <ShieldAlert size={20} aria-hidden="true" />
-            <h3 className="font-bold text-lg">Safety First</h3>
-          </div>
-          <p className="text-sm text-rose-700 leading-relaxed">
-            This guide is to help you understand what happens in a clinic.{" "}
-            <strong>Do not try to diagnose yourself.</strong> If you have severe
-            pain, swelling, or cannot put weight on your leg, please visit an
-            urgent care center or your doctor immediately.
-          </p>
-        </section>
-
-        {/* Related Tests */}
-        {relatedTests.length > 0 && (
-          <section className="mb-16">
-            <h3 className="text-2xl font-bold mb-6">
-              Other {test.region} Tests
-            </h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {relatedTests.map((related) => (
-                <li key={related.slug}>
-                  <Link
-                    href={`/tests/${related.slug}`}
-                    className="block p-4 bg-slate-50 border border-slate-100 rounded-xl hover:shadow-lg hover:bg-emerald-50 transition-all"
-                  >
-                    <h4 className="font-semibold text-slate-900">
-                      {related.test_name}
-                    </h4>
-                    <p className="text-sm text-slate-500 truncate">
-                      {related.purpose}
-                    </p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="text-center mt-6">
-              <Link
-                href="/assessment-tests"
-                className="text-emerald-600 font-bold hover:underline"
-              >
-                Browse All Assessment Tests
-              </Link>
-            </div>
-          </section>
-        )}
-
-        <footer className="mt-24 pt-12 border-t border-slate-100 text-center">
-          <p className="text-xs text-slate-400 max-w-xl mx-auto leading-loose italic">
-            This is an open learning resource designed to empower patients with
-            knowledge. Information is updated regularly by our community of
-            health advocates.
-          </p>
-        </footer>
-      </main>
-    </div>
+    <TestDetailPage
+      initialTests={initialTests}
+      initialSearch={searchParams?.search || ""}
+    />
   );
 }

@@ -1,7 +1,5 @@
 "use client";
-
-import { useTests } from "../../hooks/useTests";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   BookOpen,
@@ -13,9 +11,19 @@ import {
   ExternalLink,
 } from "lucide-react";
 
-export default function TestDetailPage() {
-  const { filtered, search, setSearch, loading, error } = useTests();
+export default function TestPageClient({ initialTests, initialSearch }) {
+  const [search, setSearch] = useState(initialSearch);
+  const [tests, setTests] = useState(initialTests);
   const [visibleCount, setVisibleCount] = useState(20);
+
+  const filtered = search
+    ? initialTests.filter(
+        (t) =>
+          t.test_name.toLowerCase().includes(search.toLowerCase()) ||
+          t.region.toLowerCase().includes(search.toLowerCase())
+      )
+    : initialTests;
+
   const visibleTests = filtered.slice(0, visibleCount);
 
   const testsByRegion = {
@@ -28,28 +36,19 @@ export default function TestDetailPage() {
     Spine: filtered.filter((t) => t.region === "Cervical Spine"),
   };
 
-  if (loading)
-    return (
-      <div className="min-h-screen flex items-center justify-center text-slate-500">
-        Loading assessments...
-      </div>
-    );
-
-  if (error)
-    return (
-      <div className="min-h-screen flex items-center justify-center text-red-500">
-        {error.message || "Something went wrong"}
-      </div>
-    );
+  useEffect(() => {
+    const timer = setTimeout(() => setVisibleCount(20), 0);
+    return () => clearTimeout(timer);
+  }, [search]);
+  
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] pb-20 font-sans">
-      {/* Hero Section */}
       <div className="bg-white border-b border-slate-200 pt-16 pb-12 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-            <Activity className="w-3 h-3" aria-hidden="true" /> Education
-            Library
+            <Activity className="w-3 h-3" aria-hidden="true" />
+            Education Library
           </div>
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
             Physical Assessment{" "}
@@ -78,9 +77,9 @@ export default function TestDetailPage() {
         </div>
       </div>
 
-      {/* Body Section */}
+      {/* Test Listing */}
       <div className="max-w-5xl mx-auto px-6 mt-12">
-        {/* Browse by Region */}
+        {/* Browse by region */}
         {!search && (
           <section className="mb-16">
             <div className="flex items-center gap-2 mb-8">
@@ -92,9 +91,8 @@ export default function TestDetailPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {Object.entries(testsByRegion).map(([region, tests]) =>
                 tests.length > 0 ? (
-                  <Link
+                  <button
                     key={region}
-                    href={`?region=${region.toLowerCase()}`}
                     onClick={() => setSearch(region)}
                     className="p-4 bg-white border border-slate-100 rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 transition-all group"
                   >
@@ -104,7 +102,7 @@ export default function TestDetailPage() {
                     <p className="text-xs text-slate-500">
                       {tests.length} guides
                     </p>
-                  </Link>
+                  </button>
                 ) : null
               )}
             </div>
@@ -161,30 +159,8 @@ export default function TestDetailPage() {
               </Link>
             </article>
           ))}
-
-          {filtered.length === 0 && (
-            <div className="col-span-full py-20 text-center">
-              <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="w-8 h-8 text-slate-300" aria-hidden="true" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-800">
-                No guides found
-              </h3>
-              <p className="text-slate-500 mb-6">
-                Try a different body part or keyword. For example: knee,
-                shoulder, ankle, or test name like &quot;Lachman&quot;.
-              </p>
-              <Link
-                href="/test"
-                className="text-emerald-600 font-bold hover:underline"
-              >
-                View all assessment tests →
-              </Link>
-            </div>
-          )}
         </div>
 
-        {/* Load More */}
         {visibleCount < filtered.length && (
           <div className="flex justify-center mt-12">
             <button
