@@ -267,7 +267,7 @@ export default async function SingleTestDetails({ params }) {
               {relatedTests.map((related) => (
                 <li key={related.slug}>
                   <Link
-                    href={`/tests/${related.slug}`}
+                    href={`/test/${related.slug}`}
                     className="block p-4 bg-slate-50 border border-slate-100 rounded-xl hover:shadow-lg hover:bg-emerald-50 transition-all"
                   >
                     <h4 className="font-semibold text-slate-900">
@@ -282,7 +282,7 @@ export default async function SingleTestDetails({ params }) {
             </ul>
             <div className="text-center mt-6">
               <Link
-                href="/assessment-tests"
+                href="/assessment-stage"
                 className="text-emerald-600 font-bold hover:underline"
               >
                 Browse All Assessment Tests
