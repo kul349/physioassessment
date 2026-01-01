@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -114,28 +115,24 @@ export default function PhysioFAQ() {
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
-          <div className="lg:col-span-5 sticky top-32">
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-xs font-black uppercase tracking-widest mb-6">
               <HelpCircle size={16} />
               Common Questions
             </div>
-
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8">
               Empower Your <span className="text-emerald-600">Recovery</span>{" "}
               Journey
             </h2>
-
             <p className="text-lg text-slate-500 mb-10">
               Everything you need to know about using our 150+ movement tests
               and educational resources.
             </p>
-
             <div className="space-y-4 mb-10">
               <Feature icon={PlayCircle} text="150+ HD Video Tutorials" />
               <Feature icon={BookOpen} text="Detailed Self-Assessment Guides" />
               <Feature icon={ShieldCheck} text="Safe, Science-Backed Methods" />
             </div>
-
             <div className="p-8 bg-emerald-600 rounded-3xl text-white">
               <h4 className="text-xl font-bold mb-2">Need technical help?</h4>
               <p className="text-sm mb-6 opacity-90">
@@ -147,7 +144,7 @@ export default function PhysioFAQ() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 rounded-3xl border border-slate-100 shadow-xl overflow-hidden">
+          <div className="lg:col-span-7 rounded-3xl border border-slate-100 shadow-xl lg:overflow-hidden">
             {faqs.map((faq) => (
               <AccordionItem
                 key={faq.id}

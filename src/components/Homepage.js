@@ -48,8 +48,6 @@ export default function HomePage() {
 
   return (
     <>
-      
-
       <h1 className="sr-only">
         PhysioTest - Understand Physiotherapy Assessment Tests for Your Recovery
       </h1>
@@ -260,11 +258,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        <main id="learning">
           <PhysioFAQ />
-        </main>
+        
 
-        <section className="my-20 py-12 px-8 bg-linear-to-r from-emerald-600 to-emerald-700 rounded-3xl text-white text-center">
+        <section className="my-20 py-12 px-8 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-3xl text-white text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-6">
             Ready to Understand Your Assessment Tests?
           </h2>
