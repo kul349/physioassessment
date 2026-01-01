@@ -2,8 +2,8 @@ import TestPageClient from "@/components/DetailsPage";
 import { getTests } from "@/data/tests";
 
 export async function generateMetadata({ searchParams }) {
-  const search = searchParams?.search || "";
-
+const params=await searchParams;
+const search=params.search
   const pageTitle = search
     ? `${search} Physical Assessment Tests | PhysioTest`
     : "Physical Assessment Test Guides | Learn Medical Tests";

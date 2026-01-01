@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect} from "react";
 import { useTests } from "../hooks/useTests";
 import Link from "next/link";
 import {
@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 export default function TestPageClient({ }) {
-  const { tests, filtered, search, setSearch, loading, error } = useTests();
+  const {filtered, search, setSearch, loading, error } = useTests();
 
   
   const [visibleCount, setVisibleCount] = useState(20);
@@ -33,9 +33,9 @@ export default function TestPageClient({ }) {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisibleCount(20), 0);
-    return () => clearTimeout(timer);
+    setVisibleCount(20);
   }, [search]);
+  
   
 
   if (loading) {
@@ -136,7 +136,7 @@ export default function TestPageClient({ }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {visibleTests.map((test) => (
               <article
-                key={test.id}
+                key={test.slug}
                 className="group bg-white rounded-4xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:border-emerald-500/30 hover:-translate-y-1 transition-all flex flex-col justify-between"
               >
                 <div>
