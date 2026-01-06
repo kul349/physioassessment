@@ -51,20 +51,23 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-zinc-50 text-slate-900 antialiased">
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-G-8WHHY072DH"
+          src="https://www.googletagmanager.com/gtag/js?id=G-8WHHY072DH"
           strategy="afterInteractive"
         />
+
         <Script id="google-analytics" strategy="afterInteractive">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-G-8WHHY072DH', {
-              page_path: window.location.pathname,
-            });
-          `}
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-8WHHY072DH', {
+      page_path: window.location.pathname,
+    });
+  `}
         </Script>
-        <GoogleAnalytics GA_MEASUREMENT_ID="G-G-8WHHY072DH" />
+
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-8WHHY072DH" />
 
         <Header />
         <main className="min-h-screen">{children}</main>
