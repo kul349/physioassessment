@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import GoogleAnalytics from "../components/GoogleAnalytics";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 
 export const metadata = {
   title: {
@@ -71,6 +73,8 @@ export default function RootLayout({ children }) {
 
         <Header />
         <main className="min-h-screen">{children}</main>
+        <SpeedInsights />
+
         <Footer />
       </body>
     </html>
