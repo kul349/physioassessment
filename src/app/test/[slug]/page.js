@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${test.test_name} Assessment Guide | Clinical Testing`,
-    description: `Learn about the ${test.test_name} test. ${test.purpose} Understand how it's performed, what positive results mean, and when to seek care.`,
+    description: `Learn about the ${test.test_name} test.Understand how it's performed, what positive results mean, and when to seek care.`,
     keywords: [
       test.test_name,
       test.region,
