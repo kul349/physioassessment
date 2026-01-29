@@ -115,7 +115,7 @@ export default function TestPageClient({ }) {
                         {tests.length} guides
                       </p>
                     </Link>
-                  ) : null
+                  ) : null,
                 )}
               </div>
             </section>
@@ -241,14 +241,14 @@ export default function TestPageClient({ }) {
               </a>
 
               <a
-                href="https://www.mayoclinic.org/patient-care"
+                href="https://www.physio-pedia.com/home/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 bg-white rounded-2xl border border-emerald-200 hover:border-emerald-500 hover:shadow-md transition-all group"
               >
                 <div className="flex items-start justify-between mb-2">
                   <h4 className="font-bold text-slate-900 group-hover:text-emerald-700">
-                    Mayo Clinic
+                    Physiopedia
                   </h4>
                   <ExternalLink size={16} className="text-emerald-600" />
                 </div>

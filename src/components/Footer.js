@@ -10,6 +10,7 @@ import {
   Stethoscope,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -40,9 +41,15 @@ const Footer = () => {
           {/* Column 1: Brand */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2 text-white">
-              <div className="p-2 bg-emerald-600 rounded-lg">
-                <Stethoscope className="w-6 h-6" />
-              </div>
+              <div className="relative w-10 h-10 rounded-full overflow-hidden translate-y-[1px]">
+                          <Image
+                            src="/images/logoimage.jpg"
+                            alt="PhysioTest logo"
+                            fill
+                            className="object-cover scale-150"
+                            priority
+                          />
+                        </div>
               <span className="text-2xl font-bold tracking-tight">
                 Physio<span className="text-emerald-500">Tests</span>
               </span>

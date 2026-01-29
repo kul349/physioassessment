@@ -3,20 +3,29 @@ import {Menu,X} from "lucide-react"
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <section className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 ">
       <div className="flex justify-between items-center px-4 py-4 max-w-7xl mx-auto">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-emerald-500 font-bold text-xl">
-            P
-          </div>
-          <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
-            Physio<span className="text-emerald-600">Test</span>
-          </h2>
-        </Link>
+          <Link href="/" className="flex items-center gap-3">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden translate-y-[1px]">
+              <Image
+                src="/images/imagelogo.jpg"
+                alt="PhysioTest logo"
+                fill
+                className="object-cover scale-150"
+                priority
+              />
+            </div>
+
+            <h2 className="text-2xl font-bold leading-none">
+              Physio<span className="text-emerald-600">Test</span>
+            </h2>
+          </Link>
+      
 
         <nav className="hidden md:flex gap-6 uppercase text-xs font-bold text-slate-700 tracking-widest leading-none">
           <Link href="/" className="hover:text-emerald-600 transition-colors">
@@ -34,7 +43,6 @@ function Header() {
           >
             Assessment
           </Link>
-         
 
           <Link
             href="/about-us"
@@ -83,10 +91,7 @@ function Header() {
                   <Link href="/" onClick={() => setMenuOpen(false)}>
                     Home
                   </Link>
-                  <Link
-                    href="/test"
-                    onClick={() => setMenuOpen(false)}
-                  >
+                  <Link href="/test" onClick={() => setMenuOpen(false)}>
                     Tests
                   </Link>
                   <Link
@@ -95,7 +100,7 @@ function Header() {
                   >
                     Assessment
                   </Link>
-                 
+
                   <Link href="/about-us" onClick={() => setMenuOpen(false)}>
                     About Us
                   </Link>
