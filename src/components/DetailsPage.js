@@ -353,12 +353,12 @@ export default function TestPageClient({ }) {
                 <ul className="space-y-2">
                   <li>
                     <a
-                      href="https://www.mayoclinic.org/"
+                      href="https://www.physio-pedia.com/home/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-emerald-600 hover:text-emerald-700 font-semibold text-sm hover:underline flex items-center gap-1"
                     >
-                      Mayo Clinic <ExternalLink size={12} />
+                      Physiopedia <ExternalLink size={12} />
                     </a>
                   </li>
                   <li>
