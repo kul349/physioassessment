@@ -52,10 +52,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-zinc-50 text-slate-900 antialiased">
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-8WHHY072DH"
-          strategy="afterInteractive"
-        />
+      
 
         <Script id="google-analytics" strategy="afterInteractive">
           {`
