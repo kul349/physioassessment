@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
     ].join(", "),
     openGraph: {
       title: `${test.test_name} Assessment Guide`,
-      description: test.purpose,
+      description: `step-by-step ${test.test_name} procedure for ${test.region} assessment`,
       type: "article",
       url: `https://physioassessment.vercel.app/tests/${slug}`,
       images: [
@@ -210,7 +210,32 @@ export default async function SingleTestDetails({ params }) {
             </p>
           </section>
         </div>
-
+        {test.clinical_evidence && (
+          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 my-8">
+            <h3 className="text-lg font-bold mb-4">Clinical Accuracy</h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <span className="text-xs font-bold text-slate-400 uppercase">
+                  Sensitivity
+                </span>
+                <p className="text-xl font-black text-emerald-600">
+                  {test.clinical_evidence.sensitivity}
+                </p>
+              </div>
+              <div>
+                <span className="text-xs font-bold text-slate-400 uppercase">
+                  Specificity
+                </span>
+                <p className="text-xl font-black text-blue-600">
+                  {test.clinical_evidence.specificity}
+                </p>
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-slate-500 italic">
+              Source: {test.clinical_evidence.source}
+            </p>
+          </div>
+        )}
         <section
           className="bg-slate-900 text-white p-10 rounded-[2.5rem] mb-12 shadow-xl shadow-slate-200"
           aria-labelledby="results-section"

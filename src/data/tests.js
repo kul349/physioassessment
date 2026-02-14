@@ -72,6 +72,13 @@ export const getTests = [
     region: "Shoulder",
     test_name: "Yergason's Test",
     slug: "yergason-test",
+    "clinical_evidence": {
+      "sensitivity": "43%",
+      "specificity": "79%",
+      "reliability": "Moderate",
+      "source": "Holtby & Razmjou (2004)",
+      "interpretation": "Better at ruling 'in' biceps tendon pathology than ruling it out."
+    },
     purpose:
       "To assess for **pathology of the Long Head of the Biceps tendon** (e.g., instability, tear, or tendinopathy) and its stability in the bicipital groove.",
     starting_position:
@@ -105,6 +112,13 @@ export const getTests = [
     region: "Elbow",
     test_name: "Cozen's Test",
     slug: "cozen-test",
+    "clinical_evidence": {
+      "sensitivity": "84%",
+      "specificity": "N/A",
+      "reliability": "Moderate",
+      "source": "Saroja et al. (2014)",
+      "interpretation": "A primary provocative test for tennis elbow assessment."
+    },
     purpose:
       "To detect **Lateral Epicondylitis** (Tennis Elbow), which is tendinopathy of the **Extensor Carpi Radialis Brevis (ECRB)** origin.",
     starting_position:
@@ -188,6 +202,13 @@ export const getTests = [
     region: "Wrist/Hand",
     test_name: "Beighton Score",
     slug: "beighton-score",
+    "clinical_evidence": {
+      "sensitivity": "High",
+      "specificity": "High",
+      "reliability": "Excellent",
+      "source": "Beighton et al. (1973)",
+      "interpretation": "Standardized score where ≥5/9 usually indicates generalized hypermobility."
+    },
     purpose:
       "To quantify **generalized joint hypermobility** (laxity) across the body. The wrist/hand components assess passive joint laxity.",
     starting_position: "Patient is sitting or standing.",
@@ -2405,6 +2426,13 @@ export const getTests = [
   {
     test_name: "Maudsley's Test (Middle Finger Extension Test)",
     slug: "maudsley-test",
+    "clinical_evidence": {
+      "sensitivity": "88%",
+      "specificity": "N/A",
+      "reliability": "Moderate",
+      "source": "Saroja et al. (2014)",
+      "interpretation": "Highly effective for provoking symptoms of lateral epicondylalgia."
+    },
     purpose:
       "To screen for **Lateral Epicondylitis** (Tennis Elbow), specifically placing stress on the Extensor Digitorum Communis (EDC) muscle.",
     starting_position: "Patient is sitting. Arm is resting comfortably.",
@@ -2438,6 +2466,13 @@ export const getTests = [
   {
     test_name: "Moving Valgus Stress Test",
     slug: "moving-valgus-stress-test",
+    "clinical_evidence": {
+      "sensitivity": "100%",
+      "specificity": "75%",
+      "reliability": "High",
+      "source": "O'Driscoll SW, et al. (2005)",
+      "interpretation": "A negative result highly effectively rules out a UCL tear (SnNout)."
+    },
     purpose:
       "A dynamic and highly accurate test for diagnosing a partial tear or instability of the **Medial Collateral Ligament (MCL/UCL)** in overhead athletes.",
     starting_position:
